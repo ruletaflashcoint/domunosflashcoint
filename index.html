@@ -19,7 +19,7 @@
 <meta name="apple-mobile-web-app-title" content="Domino Flash Coin">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="manifest.webmanifest?v=0.01">
-<title>Domino Flash Coin — 0.02</title>
+<title>Domino Flash Coin — PRUEBAS 0.02</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{--gold:#ffd45a;--gold2:#e79a00;--blue:#258cff;--panel:rgba(8,12,20,.92);--line:rgba(255,215,90,.30);--muted:#a9b2c1;--red:#d32934;--green:#12a755}
@@ -2264,7 +2264,7 @@ body.domino-spectating #dominoSeats .domino-seat .domino-avatar{pointer-events:n
       <input id="regPass2" class="field" type="password" placeholder="Confirmar contraseña" minlength="6" autocomplete="new-password" required>
       <label class="save-login"><input id="regSavePassword" type="checkbox"><span>Guardar acceso con el gestor del navegador</span></label>
       <div class="dfc-privacy-note">Usamos tu nombre y correo para tu cuenta. Tu nombre, ID público y foto elegida son visibles en las funciones sociales. La sesión se guarda en este dispositivo. Flash Coin son créditos gratuitos de entretenimiento, sin valor monetario.</div>
-      <label class="save-login"><input id="regPrivacyRead" type="checkbox" required><span>He leído la <a data-dfc-privacy href="https://cakon170812-hub.github.io/marketflsh/privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a> y confirmo que tengo 18 años o más.</span></label>
+      <label class="save-login"><input id="regPrivacyRead" type="checkbox" required><span>He leído la <a data-dfc-privacy href="https://ruletaflashcoint.github.io/domunosflashcoint/privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a> y confirmo que tengo 18 años o más.</span></label>
       <button class="primary" type="submit">CREAR CUENTA</button>
     </form>
     <form id="loginForm" class="hidden">
@@ -2275,7 +2275,7 @@ body.domino-spectating #dominoSeats .domino-seat .domino-avatar{pointer-events:n
       <button id="forgotPasswordBtn" class="auth-link" type="button">¿Olvidaste tu contraseña?</button>
     </form>
     <div id="authMsg" class="msg"></div>
-    <div class="dfc-privacy-links"><a data-dfc-privacy href="https://cakon170812-hub.github.io/marketflsh/privacidad.html" target="_blank" rel="noopener noreferrer">Privacidad y eliminación de cuenta</a><a data-dfc-support href="mailto:julioangel170812@gmail.com">Soporte</a></div>
+    <div class="dfc-privacy-links"><a data-dfc-privacy href="https://ruletaflashcoint.github.io/domunosflashcoint/privacidad.html" target="_blank" rel="noopener noreferrer">Privacidad y eliminación de cuenta</a><a data-dfc-support href="mailto:julioangel170812@gmail.com">Soporte</a></div>
   </div>
 </section>
 
@@ -2427,7 +2427,7 @@ body.domino-spectating #dominoSeats .domino-seat .domino-avatar{pointer-events:n
 
 <div id="gameDevelopmentPanel" class="overlay"><div class="panel"><button class="close" data-close="gameDevelopmentPanel">✕</button><div class="game-dev-message"><div id="gameDevelopmentIcon" class="big">🎮</div><h3 id="gameDevelopmentTitle">Juego</h3><p>Este juego está en desarrollo. Muy pronto estará disponible dentro de Domino Flash Coin.</p></div></div></div>
 
-<div id="balancePanel" class="overlay"><div class="panel"><button class="close" data-close="balancePanel">✕</button><h2>💰 Flash Coin</h2><div class="card"><span class="tiny">Saldo disponible</span><strong style="font-size:28px" id="balancePanelValue" class="fc-balance">0.000 FC</strong><span class="tiny">Tu ID: <b id="balancePublicId"></b><button id="copyBalanceIdBtn" type="button" class="copy-btn">Copiar</button></span></div><h3>Solicitudes</h3><div id="requestsList"></div><h3>Historial</h3><div id="ledgerList"></div></div></div>
+<div id="balancePanel" class="overlay"><div class="panel"><button class="close" data-close="balancePanel">✕</button><h2>💰 Flash Coin</h2><div class="card"><span class="tiny">Saldo disponible</span><strong style="font-size:28px" id="balancePanelValue" class="fc-balance">0.000 FC</strong><span class="tiny">Tu ID: <b id="balancePublicId"></b><button id="copyBalanceIdBtn" type="button" class="copy-btn">Copiar</button></span></div><button type="button" class="action green" id="dfcGiftFromBalance">🎁 Transferencia Regalo Flash Coin</button><div class="tiny">Envía gratis a cualquier ID registrado; sin comisiones ni valor monetario.</div><h3>Solicitudes</h3><div id="requestsList"></div><h3>Historial</h3><div id="ledgerList"></div></div></div>
 
 <div id="onlineUsersPanel" class="overlay"><div class="panel"><button class="close" data-close="onlineUsersPanel">✕</button><h2>🟢 Usuarios en línea</h2><div id="onlineUsersRound" class="online-round-note">Cargando última ronda...</div><div id="onlineUsersList"></div></div></div>
 
@@ -2452,7 +2452,7 @@ body.domino-spectating #dominoSeats .domino-seat .domino-avatar{pointer-events:n
 <div class="section"><h3>⚡ Mi Flash Coin</h3><div class="tiny">Envía o solicita Flash Coin usando tu saldo personal de la cuenta líder.</div><div class="row"><input id="leaderTransferId" class="field" inputmode="numeric" maxlength="6" placeholder="ID de 6 dígitos"><button id="leaderFindTransferBtn" type="button" class="search-mini" title="Buscar ID">🔎</button></div><div id="leaderTransferUserResult"></div><input id="leaderTransferAmount" class="field" type="number" min="0.001" step="0.001" placeholder="Monto FC"><button id="leaderSendFcBtn" class="action green">Enviar Flash Coin</button><button id="leaderRequestFcBtn" class="action">Solicitar Flash Coin</button><div id="leaderTransferMsg" class="msg"></div></div>
 <div class="section"><h3>Asignar promotores</h3><div class="row"><input id="adminPromId" class="field" inputmode="numeric" maxlength="6" placeholder="ID usuario"><button id="adminFindPromBtn" class="action blue">Buscar</button></div><div id="adminPromResult"></div></div>
 <div class="section"><h3>Comunicado</h3><label class="switch-line"><input id="adminNoticeEnabled" class="switch" type="checkbox"><span>Mostrar comunicado a los usuarios</span></label><textarea id="adminNotice" class="field" rows="3" placeholder="Escribe el comunicado..."></textarea><div class="row"><div><label class="tiny">Visible durante (segundos)</label><input id="adminNoticeVisible" class="field" type="number" min="1" max="3600" value="10"></div><div><label class="tiny">Reaparece cada (segundos)</label><input id="adminNoticeRepeat" class="field" type="number" min="1" max="86400" value="300"></div></div><button id="adminSaveNoticeBtn" class="action green">Guardar comunicado</button></div>
-<div class="section"><h3>Recarga por ID</h3><div class="row"><input id="adminRechargeId" class="field" inputmode="numeric" maxlength="6" placeholder="ID de 6 dígitos"><button id="adminFindRechargeBtn" type="button" class="search-mini" title="Buscar ID">🔎</button></div><div id="adminRechargeUserResult"></div><input id="adminRechargeAmount" class="field" type="number" step="0.001" min="0.001" placeholder="Monto FC"><button id="adminRechargeBtn" class="action green">Acreditar recarga</button></div>
+<div class="section"><h3>Regalo gratuito por ID (Líder)</h3><div class="row"><input id="adminRechargeId" class="field" inputmode="numeric" maxlength="6" placeholder="ID de 6 dígitos"><button id="adminFindRechargeBtn" type="button" class="search-mini" title="Buscar ID">🔎</button></div><div id="adminRechargeUserResult"></div><input id="adminRechargeAmount" class="field" type="number" step="0.001" min="0.001" placeholder="Monto FC"><button id="adminRechargeBtn" class="action green">Regalar Flash Coin gratis</button></div>
 <div class="section"><h3>Configuración de la ruleta</h3><label class="tiny">Temporizador de ronda (segundos)</label><input id="adminSeconds" class="field" type="number" min="5" max="300"><label class="tiny">Apuesta mínima (mínimo 0.010 FC)</label><input id="adminMinBet" class="field" type="number" min="0.01" step="0.001"><label class="tiny">Porcentaje global de pago (0–100%)</label><input id="adminPayoutPct" class="field" type="number" min="0" max="100" step="0.01"><label class="tiny">⏱ Duración visual del giro (segundos)</label><input id="adminSpinDuration" class="field" type="number" min="3" max="20" step="0.5" inputmode="decimal"><div class="tiny">Controla cuánto tiempo y cuántas vueltas da la ruleta antes de detenerse. No cambia el número ganador.</div><label class="tiny">Enlace grupo WhatsApp</label><input id="adminGroupUrl" class="field" placeholder="https://chat.whatsapp.com/..."><button id="adminSaveSettingsBtn" class="action">Guardar configuración</button></div>
 <div class="section"><h3>🁫 Configuración del Dominó</h3><div class="tiny">Edita cada modalidad. Los cambios aplican a las próximas manos, sin borrar las mesas ni los saldos actuales.</div><div id="dominoAdminConfigs"></div><div id="dominoAdminMsg" class="msg"></div></div>
 <div class="section"><h3>Seguridad del panel</h3><label class="switch-line"><input id="leaderPasswordRequiredSwitch" class="switch" type="checkbox"><span>Solicitar contraseña al entrar al panel</span></label><div class="tiny">Si lo apagas, la contraseña no se elimina: el Administrador Líder autorizado entra directamente. Puedes volver a activarlo cuando quieras.</div><div id="leaderPasswordModeMsg" class="msg"></div><h3 style="margin-top:14px">Cambiar contraseña del panel</h3><input id="oldLeaderPass" class="field" type="password" placeholder="Contraseña actual"><input id="newLeaderPass" class="field" type="password" placeholder="Nueva contraseña"><button id="changeLeaderPassBtn" class="action dark">Cambiar contraseña</button></div><div id="adminMsg" class="msg"></div></div></div>
@@ -2461,7 +2461,7 @@ body.domino-spectating #dominoSeats .domino-seat .domino-avatar{pointer-events:n
 
 <div id="allUsersPanel" class="overlay"><div class="panel"><button class="close" data-close="allUsersPanel">✕</button><h2>👥 Todos los usuarios</h2>
   <div class="admin-users-toolbar"><div class="row"><input id="leaderUsersSearch" class="field" inputmode="numeric" maxlength="6" placeholder="Buscar por ID de 6 dígitos"><button id="leaderUsersSearchBtn" type="button" class="search-mini" title="Buscar ID">🔎</button></div><div id="leaderUsersCount" class="admin-users-count">Cargando usuarios...</div></div>
-  <div id="leaderSelectedUserActions" class="admin-user-actions hidden"><h3>Usuario seleccionado</h3><div id="leaderSelectedUserCard"></div><input id="leaderUsersAmount" class="field" type="number" min="0.001" step="0.001" placeholder="Monto FC"><button id="leaderUsersSendBtn" type="button" class="action green">Enviar Flash Coin</button><button id="leaderUsersRequestBtn" type="button" class="action">Solicitar Flash Coin</button><button id="leaderUsersRechargeBtn" type="button" class="action blue">Acreditar recarga</button><div id="leaderUsersMsg" class="msg"></div></div>
+  <div id="leaderSelectedUserActions" class="admin-user-actions hidden"><h3>Usuario seleccionado</h3><div id="leaderSelectedUserCard"></div><input id="leaderUsersAmount" class="field" type="number" min="0.001" step="0.001" placeholder="Monto FC"><button id="leaderUsersSendBtn" type="button" class="action green">Enviar Flash Coin</button><button id="leaderUsersRequestBtn" type="button" class="action">Solicitar Flash Coin</button><button id="leaderUsersRechargeBtn" type="button" class="action blue">Regalar Flash Coin gratis</button><div id="leaderUsersMsg" class="msg"></div></div>
   <div id="leaderUsersList" class="admin-users-list"></div>
 </div></div>
 
@@ -2483,8 +2483,8 @@ body.domino-spectating #dominoSeats .domino-seat .domino-avatar{pointer-events:n
 
 <div id="copyToast" class="copy-toast">Copiado</div>
 <script>
-const SUPABASE_URL='https://mvwpbhhhspcaurjgsegz.supabase.co';
-const SUPABASE_KEY='sb_publishable_nO8z0atB5iB5Bri2iRXwdw_PJUOQvCx';
+const SUPABASE_URL='https://REEMPLAZAR-CON-TU-PROYECTO.supabase.co';
+const SUPABASE_KEY='REEMPLAZAR_CON_CLAVE_PUBLICA_DE_PRUEBAS';
 const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 const WHEEL_ORDER=[0,7,2,11,4,9,1,12,5,8,3,10,6];
 const AWAY_KEY='rf_away_since_v02'; // compatibilidad: ya no cierra la sesión por ausencia
@@ -3044,7 +3044,7 @@ function showReceipt(title,r){
   const titleText=String(title||'');
   const isPromoter=/promotor/i.test(titleText);
   const isLeaderTransfer=/envío.*administrador líder|envío.*líder/i.test(titleText);
-  const operation=isPromoter?'Recarga por promotor':(isLeaderTransfer?'Envío del Administrador Líder':'Recarga de saldo');
+  const operation=isPromoter?'Transferencia Regalo Flash Coin':(isLeaderTransfer?'Transferencia Regalo Flash Coin':'Regalo Flash Coin gratuito');
   const issuer=isPromoter?(me?.first_name||'Promotor')+' '+(me?.last_name||''):'Administrador Líder';
   const issuerId=me?.public_id?('ID '+me.public_id):'Sistema Flash Coin';
   const ref='FC'+String(r.receipt_id||Date.now()).padStart(10,'0');
@@ -3075,7 +3075,7 @@ function showReceipt(title,r){
         ${receiptLine('Referencia',ref)}
       </section>
       <div class="receipt-balance"><span>Nuevo saldo del usuario</span><b>${money(r.balance_after)} FC</b></div>
-      <footer class="receipt-foot">FLASH COIN · JUEGA · RECARGA · GANA<div class="receipt-ref">Documento interno · ${esc(ref)}</div></footer>
+      <footer class="receipt-foot">FLASH COIN · JUEGA · COMPARTE · DISFRUTA<div class="receipt-ref">Documento interno · ${esc(ref)}</div></footer>
     </article>`;
   show('receiptPanel');
 }
@@ -3969,7 +3969,7 @@ async function promAction(kind){
   if(kind==='send'){
     const receipt=Array.isArray(data)?data[0]:data;
     $('promSearchId').value='';$('promAmount').value='';$('promSearchResult').innerHTML='';$('promUserCard').innerHTML='';selectedPromUser=null;
-    hide('promUserPanel');await loadMe();renderMe();showReceipt('Comprobante de recarga del promotor',receipt);
+    hide('promUserPanel');await loadMe();renderMe();showReceipt('Comprobante de Transferencia Regalo Flash Coin',receipt);
   }else{
     msg('promUserMsg','Solicitud enviada al usuario.');
   }
@@ -4031,7 +4031,7 @@ async function leaderTransferAction(kind){
   if(kind==='send'){
     const receipt=Array.isArray(data)?data[0]:data;
     $('leaderTransferId').value='';$('leaderTransferAmount').value='';$('leaderTransferUserResult').innerHTML='';selectedLeaderTransferUser=null;msg('leaderTransferMsg','');
-    await loadMe();renderMe();showReceipt('Comprobante de envío del Administrador Líder',receipt);
+    await loadMe();renderMe();showReceipt('Transferencia Regalo Flash Coinistrador Líder',receipt);
   }else{
     $('leaderTransferAmount').value='';msg('leaderTransferMsg','Solicitud enviada al usuario.');
   }
@@ -4135,7 +4135,7 @@ $('adminRechargeBtn').onclick=async()=>{
   if(error)return msg('adminMsg',errText(error));
   const receipt=Array.isArray(data)?data[0]:data;
   $('adminRechargeId').value='';$('adminRechargeAmount').value='';$('adminRechargeUserResult').innerHTML='';selectedAdminRechargeUser=null;msg('adminMsg','');
-  showReceipt('Comprobante de recarga',receipt);
+  showReceipt('Comprobante de regalo Flash Coin',receipt);
 };
 $('adminSaveSettingsBtn').onclick=async()=>{
   const payload={p_round_seconds:Number($('adminSeconds').value),p_min_bet:Number($('adminMinBet').value),p_payout_probability:Number($('adminPayoutPct').value),p_spin_duration_seconds:Number($('adminSpinDuration').value),p_whatsapp_group_url:$('adminGroupUrl').value.trim()};
@@ -4229,8 +4229,8 @@ showReceipt=function(title,r){
   let operation='Movimiento de Flash Coin';
   if(/promotor/i.test(titleText))operation='Envío de Promotor';
   else if(/administrativa|cartera/i.test(titleText))operation='Envío de Cartera Administrativa';
-  else if(/líder|lider/i.test(titleText))operation='Envío del Administrador Líder';
-  else if(/recarga/i.test(titleText))operation='Recarga de saldo';
+  else if(/líder|lider/i.test(titleText))operation='Transferencia Regalo Flash Coin';
+  else if(/recarga/i.test(titleText))operation='Regalo Flash Coin gratuito';
   const ref='FC'+String(r.receipt_id||Date.now()).padStart(10,'0');
   const state=r.status||'Completada';
   $('receiptTitle').textContent=title||'Comprobante';
@@ -4257,7 +4257,7 @@ showReceipt=function(title,r){
         ${receiptLine('Referencia',ref)}
       </section>
       <div class="receipt-balance"><span>Saldo resultante del destino</span><b>${money(r.balance_after)} FC</b></div>
-      <footer class="receipt-foot">FLASH COIN · JUEGA · RECARGA · GANA<div class="receipt-ref">Documento interno · ${esc(ref)}</div></footer>
+      <footer class="receipt-foot">FLASH COIN · JUEGA · COMPARTE · DISFRUTA<div class="receipt-ref">Documento interno · ${esc(ref)}</div></footer>
     </article>`;
   show('receiptPanel');
 };
@@ -4462,7 +4462,7 @@ $('promConfirmDoBtn').onclick=async()=>{
     pendingPromAction=null;msg('promConfirmMsg','');hide('promConfirmPanel');
     if(op.kind==='send'){
       $('promSearchId').value='';$('promAmount').value='';$('promSearchResult').innerHTML='';$('promUserCard').innerHTML='';selectedPromUser=null;
-      hide('promUserPanel');await loadMe();renderMe();showReceipt('Comprobante de envío del Promotor',receipt);
+      hide('promUserPanel');await loadMe();renderMe();showReceipt('Transferencia Regalo Flash Coin',receipt);
     }else{
       $('promAmount').value='';showRequestReceipt('Solicitud enviada',receipt);msg('promUserMsg','');
     }
@@ -4497,7 +4497,7 @@ leaderTransferAction=async function(kind){
   const receipt=oneRow(data);
   if(kind==='send'){
     $('leaderTransferId').value='';$('leaderTransferAmount').value='';$('leaderTransferUserResult').innerHTML='';selectedLeaderTransferUser=null;msg('leaderTransferMsg','');
-    await loadMe();renderMe();showReceipt('Comprobante de envío del Administrador Líder',receipt);
+    await loadMe();renderMe();showReceipt('Transferencia Regalo Flash Coinistrador Líder',receipt);
   }else{
     $('leaderTransferAmount').value='';msg('leaderTransferMsg','');showRequestReceipt('Solicitud enviada',receipt);
   }
@@ -4539,7 +4539,7 @@ adminWalletAction=async function(kind){
   const {data,error}=await sb.rpc(fn,{p_public_id:id,p_amount:amount});if(error)return msg('adminWalletMsg',errText(error));
   await Promise.all([loadLeaderWallets(),loadAdminWalletHistory(),loadMe(),loadLedger()]);renderMe();
   $('adminWalletAmount').value='';
-  if(kind==='send')showReceipt('Comprobante de envío de Cartera Administrativa',oneRow(data));
+  if(kind==='send')showReceipt('Transferencia Regalo Flash Coin de Cartera Administrativa',oneRow(data));
   else if(kind==='request')showRequestReceipt('Solicitud enviada',oneRow(data));
   else msg('adminWalletMsg','Saldo retirado a la Cartera Administrativa.');
 };
@@ -4616,7 +4616,7 @@ async function adminWalletActionV10(kind){
       await refreshAllWalletData();
       $('adminWalletAmount').value='';
       msg('adminWalletMsg','Envío completado correctamente.');
-      showReceipt('Comprobante de envío de Cartera Administrativa',oneRow(data));
+      showReceipt('Transferencia Regalo Flash Coin de Cartera Administrativa',oneRow(data));
       return;
     }
 
@@ -4816,13 +4816,13 @@ async function leaderUsersOperation(kind){
   try{
     if(kind==='send'){
       const {data,error}=await sb.rpc('rf_leader_send_fc_v08',{p_public_id:id,p_amount:amount});if(error)throw error;
-      const r=oneRow(data);showReceipt('Envío del Administrador Líder',r);msg('leaderUsersMsg','Envío completado.');
+      const r=oneRow(data);showReceipt('Transferencia Regalo Flash Coin',r);msg('leaderUsersMsg','Envío completado.');
     }else if(kind==='request'){
       const {data,error}=await sb.rpc('rf_leader_request_fc_v08',{p_public_id:id,p_amount:amount});if(error)throw error;
       showRequestReceipt('Solicitud del Administrador Líder',oneRow(data));msg('leaderUsersMsg','Solicitud enviada.');
     }else if(kind==='recharge'){
       const {data,error}=await sb.rpc('rf_admin_recharge_v04',{p_public_id:id,p_amount:amount});if(error)throw error;
-      const r=oneRow(data);showReceipt('Recarga por Administrador',r);msg('leaderUsersMsg','Recarga acreditada.');
+      const r=oneRow(data);showReceipt('Regalo gratuito del Administrador',r);msg('leaderUsersMsg','Regalo gratuito acreditado.');
     }
     $('leaderUsersAmount').value='';
     await Promise.all([loadMe(),loadLeaderUsers($('leaderUsersSearch').value)]);renderMe();
@@ -7442,7 +7442,7 @@ body.domino-spectating .domino-seat.mine{box-shadow:none!important}
         const t=(dominoLobbyData?.tables||[]).find(x=>Number(x.id)===Number(dominoCurrentTableId));
         const c=(dominoLobbyData?.configs||[]).find(x=>Number(x.id)===Number(t?.config_id))||dominoState?.config;
         if(!c)return window.mf19Toast?.('No se pudo identificar la modalidad de esta mesa','error');
-        if(noMainBalance()||mainBalance()+0.000001<Number(c.min_entry||0))return window.mf19Toast?.('Saldo insuficiente: recarga hasta '+dominoMoney(c.min_entry)+' FC para sentarte.','error');
+        if(noMainBalance()||mainBalance()+0.000001<Number(c.min_entry||0))return window.mf19Toast?.('Saldo insuficiente: necesitas '+dominoMoney(c.min_entry)+' FC para sentarte.','error');
         // Abrimos el mismo selector de fichas, PERO la confirmación posterior
         // usa el ID exacto del espectador y no el emparejamiento automático.
         originalOpenBuyin(Number(c.id));
@@ -7653,7 +7653,7 @@ body.domino-spectating .domino-seat.mine{box-shadow:none!important}
     let joined=false;
     try{
       await loadMe();renderMe();
-      if(mainBalance()+0.000001<amount)throw Error('Saldo Flash Coin insuficiente. Espera la recarga.');
+      if(mainBalance()+0.000001<amount)throw Error('Saldo Flash Coin insuficiente. Solicita un regalo gratuito.');
       const {data,error}=await sb.rpc('rf_domino_spectator_join_v110',{
         p_table_id:tableId,p_buyin:Number(amount.toFixed(3))
       });
@@ -7686,7 +7686,7 @@ body.domino-spectating .domino-seat.mine{box-shadow:none!important}
     }finally{button.disabled=false;updateSpectatorBar()}
   };
 
-  // Una recarga recibida mientras observa debe habilitar el botón sin salir.
+  // Un regalo recibido mientras observa debe habilitar el botón sin salir.
   let mf110BalanceBusy=false;
   setInterval(async()=>{
     if(!spectatorMode||document.hidden||mf110BalanceBusy)return;
@@ -7876,7 +7876,7 @@ body.domino-spectating .domino-seat.mine{box-shadow:none!important}
       <h3>Dominó</h3><p>El área de dominó permite participar en partidas desde las mesas disponibles, interactuar con otros jugadores y consultar el desarrollo de las partidas. El botón «Ver mesa» permite observar sin Flash Coin y sin ocupar un asiento; para jugar se confirma una entrada con saldo suficiente.</p>
       <h3>Flash Coin y movimientos</h3><p>Los créditos Flash Coin se muestran en el saldo de la cuenta. La aplicación permite consultar movimientos y utilizar las funciones internas habilitadas para el usuario.</p>
       <h3>Promotores y asistencia</h3><p>Los promotores autorizados pueden distribuir créditos virtuales gratuitamente. La sección «Promotores Info» facilita consultar los contactos disponibles.</p>
-      <h3>Privacidad y soporte</h3><p>Dirigida a personas de 18 años o más. Consulta la <a data-dfc-privacy href="https://cakon170812-hub.github.io/marketflsh/privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a>. Para soporte o eliminación de cuenta: <a data-dfc-support href="mailto:julioangel170812@gmail.com">julioangel170812@gmail.com</a>. También puedes iniciar la solicitud desde Configuración → Privacidad y soporte.</p>
+      <h3>Privacidad y soporte</h3><p>Dirigida a personas de 18 años o más. Consulta la <a data-dfc-privacy href="https://ruletaflashcoint.github.io/domunosflashcoint/privacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a>. Para soporte o eliminación de cuenta: <a data-dfc-support href="mailto:julioangel170812@gmail.com">julioangel170812@gmail.com</a>. También puedes iniciar la solicitud desde Configuración → Privacidad y soporte.</p>
       <h3>Uso responsable</h3><p>Se recomienda mantener la seguridad de la cuenta y consultar las indicaciones y reglas visibles de cada juego antes de participar.</p>
       <p style="margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16);font-size:12px;color:#b4bdca">Nota sobre los créditos: Flash Coin es un recurso virtual destinado exclusivamente al entretenimiento dentro de la aplicación. Su distribución es gratuita; no tiene valor monetario ni puede comprarse, venderse o canjearse por dinero real, bienes o premios de valor económico.</p>
     </div>
@@ -8049,7 +8049,7 @@ function mfShowVerifiedTieWin(result,key,uid){
       ['🪙','Mi Flash Coin','Enviar y solicitar','personal'],
       ['🧑‍💼','Promotores','Asignar permisos','promoters'],
       ['📢','Comunicados','Mensajes y avisos','notices'],
-      ['💸','Recarga por ID','Buscar y acreditar','recharge'],
+      ['💸','Regalo gratuito por ID','Buscar y regalar gratis','recharge'],
       ['🎰','Ruleta','Ajustes del juego','roulette'],
       ['🁫','Mesas de dominó','Editar mesas','domino'],
       ['🔐','Seguridad','Contraseña y acceso','security'],
@@ -9047,7 +9047,7 @@ body.domino-spectating #dominoSpectatorBar{max-width:min(94%,490px)!important;fl
   <p>Tu foto de perfil es opcional. Solo se sube la imagen que seleccionas y se muestra como parte de tu perfil público. Los enlaces de WhatsApp abren un servicio externo cuando eliges utilizarlos.</p>
   <p>La sesión y tus preferencias se guardan en este dispositivo. Si eliges guardar tu contraseña, se utiliza el gestor de contraseñas del navegador; úsalo solo en un dispositivo de confianza.</p>
   <p>Aplicación dirigida a personas de 18 años o más. Los Flash Coin se distribuyen gratis y solo sirven para entretenimiento: no se compran, venden ni canjean por dinero, bienes o premios de valor económico. Puedes mirar las mesas de dominó aunque tengas 0 Flash Coin.</p>
-  <a class="action dark" href="https://cakon170812-hub.github.io/marketflsh/privacidad.html" target="_blank" rel="noopener noreferrer">Leer política de privacidad completa</a>
+  <a class="action dark" href="https://ruletaflashcoint.github.io/domunosflashcoint/privacidad.html" target="_blank" rel="noopener noreferrer">Leer política de privacidad completa</a>
   <a class="action blue" href="mailto:julioangel170812@gmail.com">Contactar con soporte</a>
   <button id="dfcDeleteAccountBtn" type="button" class="action red">Solicitar eliminación de cuenta y datos</button>
  </div>
@@ -9064,7 +9064,7 @@ body.domino-spectating #dominoSpectatorBar{max-width:min(94%,490px)!important;fl
   <button id="dfcDeletionSubmit" type="button" class="action red">Enviar solicitud de eliminación</button>
   <p>También puedes solicitarla fuera de la aplicación, desde tu correo registrado:</p>
   <a id="dfcDeletionEmail" class="action dark" href="mailto:julioangel170812@gmail.com?subject=Eliminar%20mi%20cuenta%20de%20Domino%20Flash%20Coin">Solicitar por correo</a>
-  <a href="https://cakon170812-hub.github.io/marketflsh/privacidad.html" target="_blank" rel="noopener noreferrer">Consultar política de privacidad</a>
+  <a href="https://ruletaflashcoint.github.io/domunosflashcoint/privacidad.html" target="_blank" rel="noopener noreferrer">Consultar política de privacidad</a>
  </div>
 </div>
 <div id="dfcDeletionAdminPanel" class="overlay dfc-privacy-panel" role="dialog" aria-modal="true" aria-labelledby="dfcDeletionAdminTitle">
@@ -9082,7 +9082,7 @@ body.domino-spectating #dominoSpectatorBar{max-width:min(94%,490px)!important;fl
 (function(){
  'use strict';
  const byId=id=>document.getElementById(id);
- const privacyUrl='https://cakon170812-hub.github.io/marketflsh/privacidad.html';
+ const privacyUrl='https://ruletaflashcoint.github.io/domunosflashcoint/privacidad.html';
  const support='julioangel170812@gmail.com';
  let deletionReadSequence=0,adminReadSequence=0,privacyUserId=null;
  const statusText=s=>s==='in_review'?'En revisión':'Pendiente de atención';
@@ -9191,6 +9191,130 @@ body.domino-spectating #dominoSpectatorBar{max-width:min(94%,490px)!important;fl
   document.querySelectorAll('[data-dfc-support]').forEach(link=>{link.href='mailto:'+support});
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<!-- TEST 0.02 · Transferencia Regalo Flash Coin: acceso a usuarios, promotores y lider -->
+<style id="dfcGiftStyleV003">
+#dfcGiftPanel .panel{max-width:460px;max-height:87dvh;overflow:auto;text-align:left}
+#dfcGiftPanel .field{width:100%;margin:7px 0 12px}
+#dfcGiftPanel .gift-status{font-size:13px;line-height:1.5;white-space:pre-wrap;margin:10px 0;color:#cbd5e1}
+#dfcGiftPanel .gift-hist{border-top:1px solid rgba(255,215,90,.2);padding:9px 0;font-size:12px;line-height:1.5}
+#dfcGiftPanel .gift-fine{font-size:12px;color:#cbd5e1;line-height:1.5}
+#dfcGiftPanel .gift-title{font-weight:750;color:#ffdd65}
+</style>
+<div id="dfcGiftPanel" class="overlay" role="dialog" aria-modal="true" aria-label="Transferencia Regalo Flash Coin">
+  <div class="panel">
+    <button type="button" id="dfcGiftClose" class="close" aria-label="Cerrar">✕</button>
+    <h2>🎁 Transferencia Regalo Flash Coin</h2>
+    <p class="gift-fine">Gratuita para todos. Los Flash Coin son créditos virtuales de entretenimiento, sin dinero real, venta ni canje.</p>
+    <label class="tiny" for="dfcGiftPublicId">ID de 6 dígitos del destinatario</label>
+    <input class="field" id="dfcGiftPublicId" maxlength="6" inputmode="numeric" autocomplete="off" placeholder="000000">
+    <button class="action blue" type="button" id="dfcGiftLookup">Buscar destinatario</button>
+    <div id="dfcGiftTarget" class="gift-status" role="status" aria-live="polite"></div>
+    <label class="tiny" for="dfcGiftAmount">Cantidad en Flash Coin</label>
+    <input class="field" id="dfcGiftAmount" type="number" step="0.001" min="0.001" placeholder="0.001">
+    <button class="action green" id="dfcGiftSend" type="button" disabled>Confirmar transferencia regalo</button>
+    <div class="gift-status" id="dfcGiftResult" role="status" aria-live="polite"></div>
+    <h3>Historial de regalos</h3><button type="button" id="dfcGiftReload" class="action dark">Actualizar historial</button>
+    <div id="dfcGiftHistory" class="gift-status"></div>
+  </div>
+</div>
+<script id="dfcGiftControllerV003">
+(function(){
+  'use strict';
+  const el=(id)=>document.getElementById(id);
+  let target=null,nonce=null,busy=false;
+  function status(text){el('dfcGiftResult').textContent=String(text||'')}
+  function formatFC(v){return Number(v||0).toFixed(3)+' FC'}
+  function validSession(){return typeof me!=='undefined'&&me&&me.id&&typeof sb!=='undefined'}
+  function resetTarget(){target=null;nonce=null;el('dfcGiftSend').disabled=true;el('dfcGiftTarget').textContent='';status('')}
+  async function getHistory(){
+    if(!validSession())return;
+    const host=el('dfcGiftHistory');host.textContent='Cargando…';
+    try{
+      const {data,error}=await sb.rpc('dfc_gift_history_v003',{p_limit:20});
+      if(error)throw error;
+      host.replaceChildren();
+      if(!Array.isArray(data)||!data.length){host.textContent='Aún no hay regalos.';return}
+      for(const item of data){
+        const row=document.createElement('div');row.className='gift-hist';
+        const date=item.created_at?new Date(item.created_at).toLocaleString('es-DO'):'';
+        row.textContent=(item.direction==='sent'?'↗ Enviado a ID ':'↙ Recibido de ID ')+
+           String(item.other_public_id||'')+' · '+formatFC(item.amount)+' · '+date+' · Ref. '+String(item.reference||'');
+        host.appendChild(row);
+      }
+    }catch(e){host.textContent='No se pudo consultar el historial: '+String(e?.message||e)}
+  }
+  async function openGift(id){
+    if(!validSession()){alert('Inicia sesión para transferir Flash Coin.');return}
+    resetTarget();el('dfcGiftAmount').value='';
+    el('dfcGiftPublicId').value=/^\d{6}$/.test(String(id||''))?String(id):'';
+    el('dfcGiftPanel').classList.add('active');
+    getHistory().catch(()=>{});
+    if(el('dfcGiftPublicId').value)await lookup();
+  }
+  async function lookup(){
+    resetTarget();const id=el('dfcGiftPublicId').value.trim();
+    if(!/^\d{6}$/.test(id)){el('dfcGiftTarget').textContent='Introduce un ID válido de seis dígitos.';return}
+    el('dfcGiftTarget').textContent='Buscando…';
+    const {data,error}=await sb.rpc('dfc_gift_lookup_v003',{p_public_id:id});
+    if(error){el('dfcGiftTarget').textContent=String(error.message||error);return}
+    if(!data||!data.public_id){el('dfcGiftTarget').textContent='No existe ese ID.';return}
+    if(data.public_id===String(me?.public_id||'')){el('dfcGiftTarget').textContent='No puedes enviarte a ti mismo.';return}
+    target=data;
+    el('dfcGiftTarget').textContent='Destinatario: '+String(data.full_name||'Usuario')+' · ID '+data.public_id;
+    el('dfcGiftSend').disabled=false;
+  }
+  async function sendGift(){
+    if(busy||!target||!validSession())return;
+    const value=Number(el('dfcGiftAmount').value);
+    if(!Number.isFinite(value)||value<0.001||Math.abs(value-Math.round(value*1000)/1000)>0.0000001){status('La cantidad debe ser positiva y tener hasta 3 decimales.');return}
+    if(!confirm('¿Confirmas regalar '+formatFC(value)+' al ID '+target.public_id+'? No se puede deshacer.'))return;
+    busy=true;el('dfcGiftSend').disabled=true;status('Enviando regalo…');
+    nonce=nonce||(globalThis.crypto?.randomUUID?.()||null);
+    if(!nonce){status('Este navegador requiere una conexión HTTPS para transferir con seguridad.');busy=false;el('dfcGiftSend').disabled=false;return}
+    try{
+      const {data,error}=await sb.rpc('dfc_gift_send_v003',{p_public_id:target.public_id,p_amount:value,p_request_id:nonce});
+      if(error)throw error;
+      status('✓ Transferencia Regalo Flash Coin completada.\n'+formatFC(data.amount)+
+        ' para '+String(data.recipient_name||target.full_name)+' (ID '+target.public_id+')'+
+        '\nSaldo disponible: '+formatFC(data.sender_balance)+'\nReferencia: '+String(data.reference));
+      nonce=null;target=null;el('dfcGiftAmount').value='';el('dfcGiftTarget').textContent='Regalo enviado';
+      if(typeof loadMe==='function'){await loadMe();if(typeof renderMe==='function')renderMe()}
+      await getHistory();
+    }catch(e){status('No se completó: '+String(e?.message||e)+'\nPuedes reintentar el mismo envío sin duplicarlo.');}
+    finally{busy=false;el('dfcGiftSend').disabled=!target}
+  }
+  el('dfcGiftLookup').addEventListener('click',()=>lookup().catch(e=>status(e.message||String(e))));
+  el('dfcGiftSend').addEventListener('click',sendGift);
+  el('dfcGiftClose').addEventListener('click',()=>el('dfcGiftPanel').classList.remove('active'));
+  el('dfcGiftReload').addEventListener('click',getHistory);
+  el('dfcGiftPublicId').addEventListener('input',resetTarget);
+  el('dfcGiftAmount').addEventListener('input',()=>{nonce=null;status('')});
+  el('dfcGiftFromBalance').addEventListener('click',()=>openGift());
+  // Conectar los botones heredados al mismo envío gratuito y atómico.
+  const intercept=(id,getId)=>{const b=el(id);if(!b)return;
+    b.onclick=(e)=>{e?.preventDefault?.();openGift(getId()).catch(x=>status(x.message||String(x)))};
+    b.textContent='🎁 Transferencia Regalo Flash Coin';};
+  intercept('promSendBtn',()=>typeof selectedPromUser!=='undefined'?selectedPromUser?.public_id:el('promSearchId')?.value);
+  intercept('leaderSendFcBtn',()=>el('leaderTransferId')?.value);
+  intercept('leaderUsersSendBtn',()=>typeof selectedLeaderListUser!=='undefined'?selectedLeaderListUser?.public_id:el('leaderUsersSearch')?.value);
+  // Evitar mostrar solicitudes antiguas que ejecutarían RPC de débito de terceros.
+  ['promRequestBtn','leaderRequestFcBtn','leaderUsersRequestBtn'].forEach(id=>{const b=el(id);if(b){b.hidden=true;b.disabled=true}});
+  // Mostrar 'regalo' en el panel, no un concepto de venta o depósito.
+  for(const id of ['adminRechargeBtn','leaderUsersRechargeBtn']){
+    const b=el(id);if(b)b.textContent='🎁 Regalo gratuito del Líder';
+  }
+  const banner=document.createElement('div');
+  banner.id='dfcTestBanner';banner.textContent='🧪 VERSIÓN DE PRUEBAS · SIN DINERO REAL';
+  Object.assign(banner.style,{position:'fixed',bottom:'0',left:'0',right:'0',zIndex:'999',padding:'3px 5px',fontSize:'10px',textAlign:'center',background:'rgba(20,25,35,.85)',color:'#ffdd67',pointerEvents:'none'});
+  document.body.appendChild(banner);
+  if(SUPABASE_URL.includes('REEMPLAZAR-CON-TU-PROYECTO')){
+    const warn=document.createElement('div');warn.textContent='CONFIGURACIÓN PENDIENTE: conecta este HTML al Supabase NUEVO de pruebas. No uses las credenciales del proyecto original.';
+    Object.assign(warn.style,{position:'fixed',top:'0',left:'0',right:'0',zIndex:'9999',padding:'10px',background:'#801819',color:'white',fontSize:'13px',textAlign:'center'});
+    document.body.appendChild(warn);
+  }
 })();
 </script>
 
