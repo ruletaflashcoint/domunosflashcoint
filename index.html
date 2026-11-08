@@ -18432,6 +18432,133 @@ body.dfc-lab-visual #appView #dfcLabCarouselCount007{font-size:11px;color:#daeff
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
+<style id="dfc-laboratorio-visual-008">
+/* LAB 0.08 - solo portada. Mantiene intacta la mesa de juego real. */
+body.dfc-lab-visual:has(#appView:not(.hidden)) #appView .dfc09-shell{gap:3px!important;padding-block:2px!important;max-height:100dvh!important;overflow:hidden!important}
+body.dfc-lab-visual #appView .dfc09-header{background:linear-gradient(115deg,rgba(2,8,24,.96),rgba(3,25,58,.93) 52%,rgba(2,13,30,.96))!important;border:0!important;border-radius:16px!important;box-shadow:inset 0 1px 0 rgba(94,192,255,.25),0 3px 18px #0008!important;min-height:60px!important;max-height:72px!important;padding:2px 8px!important;gap:4px!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{background:linear-gradient(130deg,#07192c,#0e2e51)!important;border:0!important;border-bottom:2px solid #38cfff!important;box-shadow:0 0 9px #00aaff38!important;transform:scale(.92)!important;transform-origin:left center!important}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{background:#0b2c30!important;border-bottom:2px solid #4df6af!important;border-radius:8px!important;color:#a3ffd4!important;font-size:10px!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{background:none!important;border:0!important;box-shadow:none!important;transform:scale(1.07)!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-first,body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-last{font-size:clamp(15px,1.85vw,24px)!important;text-shadow:0 0 9px #49aaff8a,0 2px 3px #000!important}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn{background:rgba(4,33,62,.75)!important;border:0!important;border-bottom:2px solid #1bd8ff!important;border-radius:10px!important;box-shadow:0 0 10px #00cfff29!important;transform:scale(.92)!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{background:rgba(4,28,58,.25)!important;border:0!important;border-bottom:2px solid #55c6ff!important;border-radius:15px!important;transform:scale(.86)!important}
+body.dfc-lab-visual #appView #dfc-z9-home .dfc-lab-vip-badge006{top:53%!important}
+body.dfc-lab-visual #appView #dfc-z9-home .dfc-lab-vip-badge006::before{content:'👑';position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:20px;z-index:12;filter:drop-shadow(0 2px 2px #000)}
+body.dfc-lab-visual #appView #dfc-z9-open>.dfc-lab-crown{display:none!important}
+/* Tarjeta de regalo junto al saldo, con salto periódico SOLO cuando existe un regalo pendiente. */
+body.dfc-lab-visual #appView #dfcLabGiftCard008{order:1!important;display:inline-flex!important;align-items:center;justify-content:center;flex-direction:column;flex:0 0 auto;border:1px solid #e9c781!important;border-radius:7px!important;background:linear-gradient(145deg,#173e89,#071c44 65%,#09588a)!important;color:#ffe9a7!important;box-shadow:0 2px 0 #79633e,0 2px 10px #0008!important;width:53px!important;height:31px!important;padding:2px!important;position:relative;cursor:pointer;font-size:9px;font-weight:850}
+body.dfc-lab-visual #appView #dfcLabGiftCard008::before{content:'✦';position:absolute;top:1px;left:5px;color:#ffdc84;font-size:9px}
+body.dfc-lab-visual #appView #dfcLabGiftCard008[data-pending="1"]{animation:dfcLabCardJump008 3s ease-in-out infinite!important;box-shadow:0 0 13px #fbd16a8a!important}
+@keyframes dfcLabCardJump008{0%,82%,100%{transform:translateY(0)}87%{transform:translateY(-9px)}92%{transform:translateY(0)}96%{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){body.dfc-lab-visual #appView #dfcLabGiftCard008{animation:none!important}}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools{gap:3px!important}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{order:3!important}
+/* Título con efecto tipográfico graffiti sin cargar fuentes externas. */
+body.dfc-lab-visual #appView #dfc09RoomsHeading{font-family:Impact,'Arial Black',system-ui,sans-serif!important;font-size:clamp(17px,2.5vw,29px)!important;font-weight:950!important;font-style:italic!important;text-transform:uppercase!important;letter-spacing:.6px!important;transform:skew(-7deg) rotate(-1deg);background:linear-gradient(120deg,#faffff 3%,#62dfff 38%,#ffde6a 75%,#ff6baf)!important;color:transparent!important;background-clip:text!important;-webkit-background-clip:text!important;filter:drop-shadow(2px 2px 0 #05235e) drop-shadow(0 0 4px #18a4ff88);line-height:1.05!important}
+body.dfc-lab-visual #appView .dfc09-rooms .dfc09-section-heading{margin-bottom:0!important;padding:0 3px!important;min-height:25px!important}
+body.dfc-lab-visual #appView #dfcLabStage004{gap:4px!important;align-items:start!important;max-height:calc(100dvh - 78px)!important}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{padding-top:0!important;overflow:hidden!important}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc-lab-carousel-head007{padding:0 3px!important;height:23px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes{padding-top:8px!important;padding-bottom:9px!important;gap:clamp(9px,1.5vw,18px)!important}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){flex-basis:clamp(188px,26vw,240px)!important;width:clamp(188px,26vw,240px)!important;min-width:188px!important;max-width:240px!important;min-height:123px!important;gap:4px!important;padding:9px!important;background-image:linear-gradient(180deg,rgba(1,17,42,.38),rgba(0,8,24,.76)),var(--dfc-lab-wallpaper007,linear-gradient(145deg,#16476d,#06182d))!important;background-position:center!important;background-size:cover!important}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){transform:scale(1.025)!important}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta,body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price,body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{font-size:9px!important;padding:2px!important;gap:2px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-play,body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-join-mode{min-height:27px!important;font-size:10px!important;padding:3px!important;margin:0!important}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{transform:none!important}
+/* Modal raspable / administración; no muestra cifras inventadas. */
+#dfcLabGiftOverlay008[hidden]{display:none!important}
+#dfcLabGiftOverlay008{position:fixed;inset:0;z-index:2147483400;background:rgba(1,9,24,.85);display:grid;place-items:center;padding:14px;overflow-y:auto}
+#dfcLabGiftOverlay008 .dfc-lab-gift-sheet{width:min(94vw,440px);max-height:92dvh;overflow:auto;box-sizing:border-box;background:linear-gradient(145deg,#102d5a,#061427 80%);border:1px solid #65cfff;border-radius:18px;padding:17px;color:#e6f6ff;font-family:system-ui,sans-serif;box-shadow:0 15px 50px #000c}
+#dfcLabGiftOverlay008 button{cursor:pointer}
+#dfcLabGiftOverlay008 .dfc-lab-gift-top{display:flex;align-items:center;justify-content:space-between;gap:9px}
+#dfcLabGiftOverlay008 .dfc-lab-gift-close{border:1px solid #5f9bbb;background:#0d4167;color:#fff;border-radius:9px;padding:6px 10px;font-size:17px}
+#dfcLabGiftOverlay008 .dfc-lab-gift-scratch{position:relative;width:100%;height:145px;overflow:hidden;border-radius:14px;margin:12px 0;background:radial-gradient(circle at center,#18539e,#071a40);border:1px solid #d9bb75;display:grid;place-items:center;text-align:center}
+#dfcLabGiftOverlay008 #dfcLabScratch008{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+#dfcLabGiftOverlay008 .dfc-lab-gift-value{font-size:28px;color:#ffdf90;font-weight:950}
+#dfcLabGiftOverlay008 .dfc-lab-gift-action{width:100%;border:0;border-radius:10px;background:linear-gradient(#1bc8f6,#065caa);padding:11px;color:white;font-weight:850;margin:6px 0}
+#dfcLabGiftOverlay008 .dfc-lab-gift-action:disabled{opacity:.45;cursor:default}
+#dfcLabGiftOverlay008 input,#dfcLabGiftOverlay008 select{box-sizing:border-box;width:100%;padding:9px;margin:4px 0 10px;border:1px solid #689ab7;border-radius:8px;background:#f7fbff;color:#102438}
+#dfcLabGiftOverlay008 label{display:block;font-size:12px}
+#dfcLabGiftOverlay008 .dfc-lab-gift-muted{color:#afcbe3;font-size:12px}
+@media(max-height:550px) and (orientation:landscape){body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{max-height:calc(100dvh - 81px)!important}body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){min-height:106px!important;padding:6px!important}body.dfc-lab-visual #appView #dfc09RoomsHeading{font-size:19px!important}}
+</style>
+<script id="dfc-laboratorio-visual-js-008">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ const getSB=()=>window.dfcSupabase||window.sb;
+ let card=null,current=null,readyToClaim=false,painting=false,lastPoint=null,strokes=0;
+ function toast(message){const e=$('dfcLabGiftStatus008');if(e)e.textContent=message;}
+ function makeUI(){
+  const app=$('appView'),tools=app?.querySelector('.dfc09-head-tools');if(!tools)return;
+  if(!$('dfcLabGiftCard008')){
+   card=document.createElement('button');card.type='button';card.id='dfcLabGiftCard008';card.title='Tarjetas de regalo Flash Coin';
+   card.innerHTML='<span>🎁</span><small style="font-size:7px">REGALO</small>';card.dataset.pending='0';
+   tools.insertBefore(card,$('onlineUsersBtn')||null);card.addEventListener('click',()=>openGift(false));
+  }else card=$('dfcLabGiftCard008');
+  if(!$('dfcLabGiftOverlay008')){
+   const overlay=document.createElement('div');overlay.id='dfcLabGiftOverlay008';overlay.hidden=true;
+   overlay.innerHTML='<div class="dfc-lab-gift-sheet" role="dialog" aria-modal="true" aria-label="Regalo Flash Coin"><div class="dfc-lab-gift-top"><strong>🎁 TARJETA FLASH COIN</strong><button class="dfc-lab-gift-close" type="button" aria-label="Regresar">←</button></div><p id="dfcLabGiftStatus008" class="dfc-lab-gift-muted">Consultando regalos...</p><div id="dfcLabGiftUser008"></div><div id="dfcLabGiftAdmin008" hidden><h3>Administración · Regalo programado</h3><label>ID de usuario <input id="dfcLabGiftRecipient008" placeholder="UUID del usuario" autocomplete="off"></label><label>Cantidad FC <input id="dfcLabGiftAmount008" type="number" min="0.001" step="0.001" placeholder="0.200"></label><label>Disponible desde <input id="dfcLabGiftStart008" type="datetime-local"></label><label>Válido hasta <input id="dfcLabGiftEnd008" type="datetime-local"></label><button class="dfc-lab-gift-action" id="dfcLabGiftIssue008" type="button">Crear tarjeta</button></div></div>';
+   document.body.append(overlay);
+   overlay.querySelector('.dfc-lab-gift-close').onclick=()=>{overlay.hidden=true;current=null};
+   overlay.onclick=e=>{if(e.target===overlay){overlay.hidden=true;current=null}};
+   $('dfcLabGiftIssue008').onclick=issue;
+  }
+  const heading=$('dfc09RoomsHeading');if(heading)heading.textContent='MESAS DISPONIBLES';
+  // El engranaje y el menú líder mantienen permisos originales; el botón administrativo adicional es discreto.
+  if(!$('dfcLabGiftAdminLaunch008')){
+   const leader=$('leaderBtn');if(leader){const b=document.createElement('button');b.id='dfcLabGiftAdminLaunch008';b.className='action dark';b.type='button';b.textContent='🎁 Tarjetas Flash Coin';b.hidden=true;leader.insertAdjacentElement('afterend',b);b.onclick=()=>openGift(true);
+    const sync=()=>{b.hidden=leader.classList.contains('hidden')||leader.hidden||getComputedStyle(leader).display==='none'};
+    sync();new MutationObserver(sync).observe(leader,{attributes:true,attributeFilter:['class','hidden','style']});
+   }
+  }
+ }
+ async function rpc(name,args){const client=getSB();if(!client?.rpc)throw Error('Sin conexión a Supabase');const {data,error}=await client.rpc(name,args||{});if(error)throw Error(error.message||String(error));return data}
+ async function refresh(){
+  if(!card)return;
+  try{const rows=await rpc('dfc_lab_gift_pending_v008');const list=Array.isArray(rows)?rows:[];
+   current=list.find(x=>x?.gift_id)||null;card.dataset.pending=current?'1':'0';card.setAttribute('aria-label',current?'Tienes una tarjeta de regalo pendiente':'Tarjetas de regalo Flash Coin');
+  }catch(_){current=null;card.dataset.pending='0';card.title='Regalos pendientes: requiere SQL LAB 0.08';}
+ }
+ async function openGift(admin=false){
+  makeUI();const ov=$('dfcLabGiftOverlay008');ov.hidden=false;readyToClaim=false;
+  $('dfcLabGiftAdmin008').hidden=!admin;$('dfcLabGiftUser008').replaceChildren();toast(admin?'Solo administradores autorizados pueden crear tarjetas.':'Comprobando tarjeta disponible...');
+  if(admin)return;
+  await refresh();if(ov.hidden)return;
+  if(!current){toast('No tienes una tarjeta disponible o el sistema de regalos aún no está habilitado.');return}
+  const root=$('dfcLabGiftUser008');root.innerHTML='<div class="dfc-lab-gift-scratch"><div><small>REGALO FLASH COIN</small><div class="dfc-lab-gift-value" id="dfcLabGiftValue008"></div></div><canvas id="dfcLabScratch008" aria-label="Raspa para descubrir el regalo"></canvas></div><button type="button" class="dfc-lab-gift-action" id="dfcLabRedeem008" disabled>Raspa para reclamar</button>';
+  $('dfcLabGiftValue008').textContent=Number(current.amount).toFixed(3)+' FC';
+  $('dfcLabRedeem008').onclick=redeem;
+  toast('Desliza el dedo sobre la tarjeta plateada para revelar tu regalo.');setupScratch($('dfcLabScratch008'));
+ }
+ function setupScratch(canvas){
+  const rect=canvas.getBoundingClientRect(),ratio=Math.min(window.devicePixelRatio||1,2);
+  canvas.width=Math.max(1,Math.floor(rect.width*ratio));canvas.height=Math.max(1,Math.floor(rect.height*ratio));
+  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);ctx.fillStyle='#a6b5c7';ctx.fillRect(0,0,rect.width,rect.height);
+  const grad=ctx.createLinearGradient(0,0,rect.width,rect.height);grad.addColorStop(0,'#d5dce8');grad.addColorStop(.5,'#8296b5');grad.addColorStop(1,'#c9d4e5');ctx.fillStyle=grad;ctx.fillRect(0,0,rect.width,rect.height);
+  ctx.fillStyle='#183a60';ctx.font='bold 15px system-ui';ctx.textAlign='center';ctx.fillText('✦ RASPA AQUÍ ✦',rect.width/2,rect.height/2);
+  const point=e=>{const r=canvas.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top}};
+  canvas.onpointerdown=e=>{painting=true;lastPoint=point(e);canvas.setPointerCapture(e.pointerId)};
+  canvas.onpointermove=e=>{if(!painting||readyToClaim)return;const p=point(e);ctx.globalCompositeOperation='destination-out';ctx.lineWidth=30;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(lastPoint.x,lastPoint.y);ctx.lineTo(p.x,p.y);ctx.stroke();lastPoint=p;strokes++;
+   if(strokes>12){readyToClaim=true;canvas.style.opacity='.08';canvas.style.pointerEvents='none';const b=$('dfcLabRedeem008');if(b){b.disabled=false;b.textContent='Reclamar regalo'}toast('Importe revelado. Confirma para solicitar la acreditación al servidor.');}
+  };
+  canvas.onpointerup=canvas.onpointercancel=()=>{painting=false};strokes=0;
+ }
+ async function redeem(){if(!current||!readyToClaim)return;const b=$('dfcLabRedeem008');b.disabled=true;
+  try{const result=await rpc('dfc_lab_gift_redeem_v008',{p_gift_id:current.gift_id});toast(result?.message||'Reclamo confirmado por el servidor.');card.dataset.pending='0';current=null;await refresh();}
+  catch(e){toast('No se acreditó: '+e.message);b.disabled=false}
+ }
+ async function issue(){const b=$('dfcLabGiftIssue008');b.disabled=true;
+  try{const amount=Number($('dfcLabGiftAmount008').value);if(!Number.isFinite(amount)||amount<=0)throw Error('Introduce un importe válido');
+   const recipient=$('dfcLabGiftRecipient008').value.trim();if(!/^[0-9a-f-]{36}$/i.test(recipient))throw Error('Escribe el UUID del usuario');
+   const from=$('dfcLabGiftStart008').value,until=$('dfcLabGiftEnd008').value;if(!from||!until)throw Error('Indica inicio y vencimiento');
+   await rpc('dfc_lab_gift_issue_v008',{p_recipient:recipient,p_amount:amount,p_available_at:new Date(from).toISOString(),p_expires_at:new Date(until).toISOString()});
+   toast('Tarjeta programada en Supabase.');
+  }catch(e){toast('No se creó la tarjeta: '+e.message)}finally{b.disabled=false}
+ }
+ function init(){makeUI();refresh();document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
 </body>
 
 </html>
