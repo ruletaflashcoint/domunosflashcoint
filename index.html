@@ -18200,6 +18200,238 @@ body.dfc-lab-visual #appView #dominoLobbyModes .dfc-lab-expanded006 .dfc-lab-clo
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
+<style id="dfc-laboratorio-visual-007">
+/* 0.07: cabecera flotante sin franja continua; no modifica la lógica. */
+body.dfc-lab-visual #appView .dfc09-header{
+ background:transparent!important;border:0!important;box-shadow:none!important;
+ border-radius:0!important;min-height:90px!important;gap:8px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{
+ background:linear-gradient(90deg,rgba(9,47,75,.68),rgba(5,25,47,.25))!important;
+ border:0!important;border-left:3px solid #49caff!important;border-radius:14px!important;
+ padding:6px 10px!important;box-shadow:0 0 13px #04b9ff28!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{
+ border:0!important;border-bottom:2px solid #6cf7b4!important;border-radius:7px!important;
+ background:rgba(6,48,52,.58)!important;box-shadow:0 3px 12px #2fe6a544!important
+}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{
+ background:transparent!important;border:0!important;box-shadow:none!important;justify-self:center!important;
+ filter:drop-shadow(0 1px 4px rgba(0,0,0,.9))!important
+}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-first,
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-last{
+ font-size:clamp(18px,2.25vw,29px)!important;font-weight:950!important;
+ text-shadow:0 2px 2px #000b,0 0 12px #17b9ff55!important
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn{
+ border:0!important;border-bottom:3px solid #f6d16e!important;border-radius:10px!important;
+ background:linear-gradient(0deg,#caa04519,transparent)!important;
+ box-shadow:0 6px 14px #d2ac4025!important;padding:6px 9px!important
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{
+ background:transparent!important;border:0!important;border-bottom:3px solid #72ddff!important;
+ border-radius:12px!important;box-shadow:0 7px 14px #38baff22!important
+}
+/* Esferas de acceso: figura arriba, rótulo abajo. Se conservan IDs/eventos reales. */
+body.dfc-lab-visual #appView #dfcLabStage004{
+ grid-template-columns:clamp(115px,15vw,174px) minmax(0,1fr)!important;gap:8px!important
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{
+ align-items:center!important;justify-content:center!important;gap:10px!important;
+ padding:0 3px!important;overflow:visible!important
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool:not(#dfcGiftOpen004){
+ flex-direction:column!important;justify-content:center!important;align-items:center!important;
+ width:100%!important;max-width:135px!important;min-height:0!important;height:auto!important;
+ padding:2px 5px 4px!important;gap:4px!important;background:transparent!important;
+ border:0!important;box-shadow:none!important;border-radius:14px!important;
+ animation:none!important;text-shadow:0 1px 4px #000!important
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool:not(#dfcGiftOpen004) .dfc09-tool-icon{
+ width:clamp(45px,5.8vw,72px)!important;height:clamp(45px,5.8vw,72px)!important;
+ min-width:45px!important;flex:0 0 auto!important;border:1.5px solid #b9e8ffbd!important;
+ border-radius:50%!important;display:grid!important;place-items:center!important;
+ font-size:clamp(24px,3vw,34px)!important;
+ background:radial-gradient(circle at 26% 21%,#bfeaff7a,transparent 40%),linear-gradient(150deg,#258de6,#073676)!important;
+ box-shadow:inset 0 2px 5px #ffffff85,0 5px 0 #051a38,0 0 16px #2dbeffb0!important;
+ animation:dfc007Pulse 3s ease-in-out infinite alternate!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools #promotersInfoBtn .dfc09-tool-icon{
+ background:radial-gradient(circle at 28% 21%,#caffea8c,transparent 40%),linear-gradient(160deg,#279d79,#073d38)!important;
+ border-color:#a4ffdb!important;box-shadow:inset 0 2px 5px #ffffff85,0 5px 0 #063a2c,0 0 16px #2dffc2a0!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools #groupBtn .dfc09-tool-icon{
+ background:radial-gradient(circle at 28% 21%,#d4ffd497,transparent 40%),linear-gradient(160deg,#2cde6a,#078741)!important;
+ border-color:#b6ffd1!important;box-shadow:inset 0 2px 5px #ffffff85,0 5px 0 #044327,0 0 16px #2eff7ca0!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool:not(#dfcGiftOpen004) .dfc-lab-tool-label007{
+ display:block!important;white-space:normal!important;text-align:center!important;font-size:clamp(10px,1vw,12px)!important;
+ line-height:1.13!important;font-weight:900!important;color:#f7faff!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool:not(#dfcGiftOpen004):active .dfc09-tool-icon{transform:translateY(3px) scale(.96)!important}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool-icon svg{height:55%;width:55%;display:block;filter:drop-shadow(0 1px 2px #00371e)}
+@keyframes dfc007Pulse{from{filter:brightness(.84);transform:scale(.98)}to{filter:brightness(1.18);transform:scale(1.03)}}
+@media(prefers-reduced-motion:reduce){body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool-icon{animation:none!important}}
+/* Carrusel con enfoque al centro: los hijos son tarjetas originales con datos y botones. */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{overflow:visible!important;max-height:100%!important;padding:3px 0!important}
+body.dfc-lab-visual #appView #dominoLobbyModes{
+ display:flex!important;flex-flow:row nowrap!important;align-items:center!important;
+ gap:clamp(10px,2vw,26px)!important;width:100%!important;max-width:100%!important;
+ overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;
+ scroll-padding-inline:calc(50% - 140px)!important;padding:18px max(15px,calc(50% - 140px)) 24px!important;
+ overscroll-behavior-x:contain!important;touch-action:pan-x!important;scrollbar-width:none!important;
+ -webkit-overflow-scrolling:touch!important;box-sizing:border-box!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes::-webkit-scrollbar{display:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006){
+ flex:0 0 clamp(215px,28vw,280px)!important;width:clamp(215px,28vw,280px)!important;
+ min-width:215px!important;max-width:280px!important;min-height:150px!important;
+ scroll-snap-align:center!important;position:relative!important;display:flex!important;
+ flex-direction:column!important;justify-content:space-between!important;gap:7px!important;
+ padding:14px 13px!important;border:1px solid #8fbbdd73!important;border-radius:18px!important;
+ color:#fff!important;box-shadow:0 7px 20px #0009!important;
+ background-image:linear-gradient(180deg,#081f3799,#031323aa),var(--dfc-lab-wallpaper007,linear-gradient(145deg,#16476d,#06182d))!important;
+ background-size:cover!important;background-position:center!important;
+ transform:scale(.83)!important;opacity:.76!important;
+ transition:transform .3s ease,opacity .3s ease,border-color .3s ease,box-shadow .3s ease!important;
+ overflow:hidden!important;cursor:pointer!important
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){
+ transform:scale(1.08)!important;opacity:1!important;border:2px solid #71ddff!important;
+ box-shadow:0 0 22px #3bb9ff91,0 10px 26px #000c!important;z-index:2!important
+}
+/* Se elimina la imagen superior antigua; la ilustración original pasa al fondo de toda la tarjeta. */
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-scene,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-visual{display:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head{
+ order:0!important;text-align:center!important;margin:0!important;padding:0!important
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head small,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head p{
+ display:block!important;color:#d7eaff!important;font-size:10px!important
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{
+ display:flex!important;flex-wrap:wrap!important;gap:4px!important;justify-content:space-around!important;
+ width:100%!important;box-sizing:border-box!important;padding:5px!important;
+ font-size:11px!important;background:rgba(3,20,38,.25)!important;border:0!important;
+ color:#f6f7ff!important;text-shadow:0 1px 3px black!important
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-join-mode{
+ display:block!important;min-height:34px!important;width:100%!important;margin-top:3px!important;
+ font-size:12px!important;border-radius:11px!important;background:linear-gradient(180deg,#18adeb,#095795)!important;
+ box-shadow:0 0 11px #38caff69!important
+}
+/* Detalles originales se abren como panel; no cambian acciones ni valores. */
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006{
+ background:linear-gradient(180deg,#0c263cdf,#071425eb),var(--dfc-lab-wallpaper007,linear-gradient(#174977,#06192e))!important;
+ background-size:cover!important;opacity:1!important;overflow-y:auto!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-scene,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .domino-premium-card-visual{display:none!important}
+/* Flechas laterales flotantes y contador. */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc-lab-carousel-head007{
+ display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:0 6px 3px;
+}
+body.dfc-lab-visual #appView .dfc-lab-carousel-head007 button{
+ background:rgba(5,48,77,.82);border:1px solid #73caff8a;color:#edffff;
+ border-radius:50%;height:29px;width:29px;cursor:pointer;font-size:19px;line-height:1;
+}
+body.dfc-lab-visual #appView #dfcLabCarouselCount007{font-size:11px;color:#daefff;min-width:47px;text-align:center}
+@media(max-height:520px) and (orientation:landscape){
+ body.dfc-lab-visual #appView .dfc09-header{min-height:69px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes{padding-block:10px 12px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006){min-height:120px!important;padding:9px!important}
+ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{gap:3px!important}
+ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool-icon{width:42px!important;height:42px!important;min-width:42px!important}
+}
+@media(max-width:680px){
+ body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-first,
+ body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-last{font-size:clamp(14px,3vw,19px)!important}
+ body.dfc-lab-visual #appView #dfcLabStage004{grid-template-columns:98px minmax(0,1fr)!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes{scroll-padding-inline:calc(50% - 108px)!important;padding-inline:max(6px,calc(50% - 108px))!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006){flex-basis:215px!important;width:215px!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-007">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ const cardSelector=':scope > .dfc28-room, :scope > .domino-choice-card';
+ const whatsapp='<svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#fff" d="M32 6C17.6 6 6 17.4 6 31.5c0 4.7 1.3 9.2 3.6 13L6 58l13.8-3.5a26.6 26.6 0 0012.2 3C46.3 57.5 58 45.8 58 31.5S46.3 6 32 6zm0 46c-4 0-7.9-1.1-11.2-3.2L13 51l2.1-7.5a20.3 20.3 0 01-3.7-12C11.4 20.1 20.7 11 32 11c11.5 0 20.7 9.2 20.7 20.5C52.7 42.8 43.5 52 32 52z"/><path fill="#fff" d="M22 20c-1.5 0-3 2.4-3 5.3 0 3 1.6 6.1 5.8 10.2 4.3 4.1 8.4 6.2 11.9 6.5 3.3.3 6-1.4 6.8-3.5.3-.9.3-1.8-.4-2.1l-5.3-2.5c-.7-.3-1.2-.4-1.7.4l-2.1 2.6c-.4.5-.9.6-1.6.2-3.6-1.8-6.1-4.4-7.7-7.6-.4-.7 0-1.1.3-1.5l1.7-2c.3-.4.5-.9.3-1.4l-2.3-5.5c-.4-.9-.8-1.1-1.8-1.1z"/></svg>';
+ function init(){
+  const host=$('dominoLobbyModes'),rooms=document.querySelector('#appView .dfc09-rooms');
+  const tools=document.querySelector('#appView #dfcLabStage004 .dfc09-tools');
+  if(tools){
+   const specs=[['inviteBtn','Invitar','✉'],['promotersInfoBtn','Promotores','🧑‍💼'],['groupBtn','Grupo WhatsApp',whatsapp]];
+   specs.forEach(([id,label,art])=>{
+    const btn=$(id),icon=btn?.querySelector('.dfc09-tool-icon'),name=btn?.querySelector('.dfc09-tool-icon + span');
+    if(!btn||!icon||!name)return;
+    if(id==='groupBtn')icon.innerHTML=art;else icon.textContent=art;
+    name.classList.add('dfc-lab-tool-label007');name.textContent=label;
+    btn.setAttribute('aria-label',label);
+   });
+  }
+  if(!host||!rooms)return;
+  if(typeof window.dfcZ27Wallpaper==='string'&&window.dfcZ27Wallpaper.startsWith('data:image/')){
+   host.style.setProperty('--dfc-lab-wallpaper007','url("'+window.dfcZ27Wallpaper+'")');
+  }
+  let active=0,scrolling=false,frame=0,initialized=false;
+  const cards=()=>Array.from(host.querySelectorAll(cardSelector));
+  const controls=document.createElement('div');controls.className='dfc-lab-carousel-head007';
+  controls.innerHTML='<button type="button" aria-label="Mesa anterior">‹</button><span id="dfcLabCarouselCount007">0 / 0</span><button type="button" aria-label="Mesa siguiente">›</button>';
+  rooms.insertBefore(controls,host);
+  const [prev,count,next]=controls.children;
+  function paint(){
+   const list=cards();active=Math.max(0,Math.min(active,list.length-1));
+   list.forEach((c,i)=>c.classList.toggle('dfc-lab-focused007',i===active));
+   count.textContent=list.length?(active+1)+' / '+list.length:'0 / 0';
+   prev.disabled=active===0;next.disabled=active>=list.length-1;
+  }
+  function go(i,smooth=true){
+   const list=cards();if(!list.length){active=0;paint();return}
+   active=Math.max(0,Math.min(i,list.length-1));paint();
+   const el=list[active],box=host.getBoundingClientRect(),r=el.getBoundingClientRect();
+   const target=host.scrollLeft+(r.left-box.left)-(host.clientWidth-el.offsetWidth)/2;
+   host.scrollTo({left:Math.max(0,target),behavior:smooth?'smooth':'auto'});
+  }
+  function nearest(){
+   const list=cards();if(!list.length)return;
+   const center=host.getBoundingClientRect().left+host.clientWidth/2;
+   let best=0,distance=Infinity;
+   list.forEach((el,i)=>{const r=el.getBoundingClientRect();const d=Math.abs((r.left+r.right)/2-center);if(d<distance){distance=d;best=i}});
+   active=best;paint();
+  }
+  prev.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
+  host.addEventListener('scroll',()=>{
+   cancelAnimationFrame(frame);frame=requestAnimationFrame(nearest);
+  },{passive:true});
+  // El primer toque en una mesa lateral la enfoca; solo la central abre detalles.
+  host.addEventListener('click',ev=>{
+   const card=ev.target.closest('.dfc28-room,.domino-choice-card');
+   if(!card||!host.contains(card)||card.classList.contains('dfc-lab-expanded006'))return;
+   const index=cards().indexOf(card);
+   if(index>=0&&index!==active){ev.preventDefault();ev.stopPropagation();go(index)}
+  },true);
+  const observer=new MutationObserver(()=>{
+   const list=cards();if(!initialized&&list.length){initialized=true;requestAnimationFrame(()=>go(0,false))}
+   else if(list.length){paint()}
+   else {active=0;initialized=false;paint()}
+  });
+  observer.observe(host,{childList:true});
+  if(cards().length){initialized=true;requestAnimationFrame(()=>go(0,false))}else paint();
+  window.addEventListener('resize',()=>go(active,false),{passive:true});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
 </body>
 
 </html>
