@@ -1,3 +1,4 @@
+<!-- DOMINÓ FLASH COIN LAB VISUAL 0.05 · horizontal / carrusel de mesas / menú limpio; conserva versión oficial Android y SQL -->
 <!-- DOMINÓ FLASH COIN · Paquete HTML Z30 · conexión Supabase compartida · sin alterar reglas ni saldos -->
 <!-- DFC Z29 - integración web y puente Android; preparación sin publicación automática. -->
 <!-- Restauración visual de mesa original 0.12Z.16. Sin modificación de funciones SQL ni actualización Android. -->
@@ -17827,6 +17828,140 @@ body.dfc-lab-visual:has(#dominoTablePanel.active) #dfcLabFloatingTables004{displ
   }
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup,{once:true});else setup();
+})();
+</script>
+<style id="dfc-laboratorio-visual-005">
+/* DOMINÓ FLASH COIN · LAB VISUAL 0.05. Solo navegación, diseño y orientación de la interfaz. */
+body.dfc-lab-visual #appView .dfc09-header{grid-template-columns:minmax(165px,1fr) auto minmax(120px,1fr) 118px!important}
+/* El perfil mantiene el acceso al menú, pero el contador online es un botón independiente. */
+body.dfc-lab-visual #appView #dfc161Profile{overflow:visible!important;padding-top:18px!important}
+body.dfc-lab-visual #appView #dfc161Profile #onlineUsersBtn{
+  position:absolute!important;top:-4px!important;left:5px!important;right:auto!important;
+ z-index:18!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ min-width:0!important;width:auto!important;height:17px!important;min-height:17px!important;
+ padding:0 5px!important;margin:0!important;gap:4px!important;border-radius:8px!important;
+ background:rgba(5,25,39,.48)!important;border:0!important;box-shadow:none!important;
+ font-size:10px!important;line-height:1!important;color:#b8ffd8!important;cursor:pointer!important;
+}
+body.dfc-lab-visual #appView #dfc161Profile #onlineUsersBtn .online-dot{width:6px!important;height:6px!important;flex:0 0 6px!important}
+body.dfc-lab-visual #appView #dfc161Profile #onlineUsersBtn .dfc09-online-suffix{display:inline!important;font-size:9px!important}
+/* Aumentar moneda oficial al lado del balance, sin insertar monedas duplicadas. */
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{width:35px!important;height:35px!important;min-width:35px!important;flex-basis:35px!important}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn #balanceTop:before{content:none!important;display:none!important}
+/* La configuración superior se conserva en DOM, pero se abre solamente desde el perfil. */
+body.dfc-lab-visual #appView .dfc09-header #settingsBtn{display:none!important}
+body.dfc-lab-visual #appView #dfcLabMenuButton{display:none!important}
+/* El menú contextual del perfil conserva exclusivamente Ajustes. */
+body.dfc-lab-visual .dfc-app-nav > button:not(#dfcLabMenuClose):not([data-dfc-open="settingsBtn"]){display:none!important}
+body.dfc-lab-visual .dfc-app-nav > button[data-dfc-open="settingsBtn"]{display:flex!important}
+body.dfc-lab-visual .dfc-app-nav{padding-top:65px!important}
+body.dfc-lab-visual #dfcLabMenuClose{right:12px!important;top:12px!important;border:0!important;background:rgba(18,43,68,.85)!important}
+/* Carrusel real, una sola fila y scroll independiente del resto de la portada. */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{min-width:0!important;overflow:hidden!important}
+body.dfc-lab-visual #appView #dominoLobbyModes{
+ display:flex!important;flex-flow:row nowrap!important;align-items:stretch!important;justify-content:flex-start!important;
+ gap:12px!important;width:100%!important;max-width:100%!important;min-width:0!important;
+ overflow-x:auto!important;overflow-y:hidden!important;overscroll-behavior-inline:contain!important;
+ scroll-snap-type:x mandatory!important;scroll-padding-inline:4px!important;
+ -webkit-overflow-scrolling:touch!important;touch-action:pan-x!important;padding:6px 4px 12px!important;
+ scrollbar-width:thin!important;scrollbar-color:rgba(196,225,240,.55) transparent!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card{
+ flex:0 0 clamp(170px,21vw,210px)!important;width:clamp(170px,21vw,210px)!important;
+ min-width:170px!important;max-width:210px!important;scroll-snap-align:start!important;
+ padding:3px!important;background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:nth-child(n),
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:nth-child(n){border:0!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room:hover,
+body.dfc-lab-visual #appView #dominoLobbyModes .domino-choice-card:hover{box-shadow:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-scene{height:72px!important;min-height:72px!important;max-height:72px!important;border-radius:18px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-price{background:transparent!important;border:0!important;box-shadow:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-play{margin-top:5px!important}
+/* Un carrusel de mesas, no una pantalla que se desplace de lado a lado. */
+body.dfc-lab-visual #appView{overflow-x:hidden!important}
+body.dfc-lab-visual #appView .dfc09-shell{max-width:100%!important;overflow-x:clip!important}
+/* Flecha superior derecha en los paneles. Conserva el evento de cierre original. */
+body .overlay .panel > .close,
+body .overlay .panel > button.close{
+ position:absolute!important;right:12px!important;left:auto!important;top:10px!important;z-index:40!important;
+ display:grid!important;place-items:center!important;width:36px!important;height:36px!important;
+ margin:0!important;padding:0!important;border-radius:50%!important;
+}
+body .overlay .panel{position:relative}
+/* Aviso para navegadores donde la orientación horizontal no se puede imponer desde HTML. */
+#dfcLabLandscapeGuard005{display:none;position:fixed;inset:0;z-index:2147483540;background:#071324;color:#f9f6e9;align-items:center;justify-content:center;padding:24px;text-align:center;font:600 16px/1.4 system-ui,sans-serif}
+#dfcLabLandscapeGuard005 .inner{max-width:320px}
+#dfcLabLandscapeGuard005 strong{display:block;margin:10px 0;font-size:19px}
+#dfcLabLandscapeGuard005 p{margin:5px 0;font-size:13px;font-weight:400;color:#c7d7e9}
+@media (orientation:portrait) and (pointer:coarse){#dfcLabLandscapeGuard005{display:flex!important}}
+@media (orientation:portrait) and (max-width:700px){
+ body.dfc-lab-visual #appView #dominoLobbyModes{flex-flow:row nowrap!important;grid-template-columns:none!important}
+}
+@media (orientation:landscape) and (max-height:540px){
+ body.dfc-lab-visual #appView .dfc09-header{min-height:72px!important}
+ body.dfc-lab-visual #appView #dfc161Profile{padding-top:14px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room,
+ body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card{flex-basis:172px!important;width:172px!important}
+}
+@media (max-width:720px){
+ body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{width:26px!important;height:26px!important;min-width:26px!important;flex-basis:26px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room,
+ body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card{flex-basis:172px!important;width:172px!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-005">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ function init(){
+  const app=$('appView');if(!app)return;
+  const profile=$('dfc161Profile');const online=$('onlineUsersBtn');
+  if(profile&&online&&online.parentElement!==profile){
+   profile.insertBefore(online,profile.firstChild);
+   // Al pulsar el contador no debe abrirse accidentalmente el menú de perfil.
+   online.addEventListener('click',e=>e.stopPropagation());
+   online.addEventListener('keydown',e=>e.stopPropagation());
+  }
+  // Menú de perfil: usa el mismo panel nativo de ajustes sin clonar sus acciones.
+  const nav=document.querySelector('.dfc-app-nav');
+  const menu=$('dfcLabMenuButton');
+  if(nav&&profile&&menu){
+   const open=()=>{menu.click();};
+   if(!profile.dataset.labProfileMenu005){
+    profile.dataset.labProfileMenu005='1';
+    // El manejador original de LAB 0.03 continúa funcionando. No duplicamos el clic.
+    profile.setAttribute('aria-label','Mi perfil: abrir Ajustes');
+   }
+   const settings=nav.querySelector('[data-dfc-open="settingsBtn"]');
+   if(settings)settings.setAttribute('aria-label','Abrir configuración desde mi perfil');
+  }
+  // Convertir solo los controles de cierre en flechas, manteniendo sus eventos y data-close.
+  document.querySelectorAll('.overlay .panel > button.close').forEach(button=>{
+    if(button.dataset.labBack005)return;
+    button.dataset.labBack005='1';button.textContent='←';
+    button.setAttribute('aria-label','Volver a la pantalla anterior');
+    button.title='Volver';
+  });
+  if(!document.getElementById('dfcLabLandscapeGuard005')){
+   const guard=document.createElement('div');guard.id='dfcLabLandscapeGuard005';
+   guard.setAttribute('role','status');
+   guard.innerHTML='<div class="inner"><div style="font-size:42px" aria-hidden="true">📱↻</div><strong>Gira el teléfono para continuar</strong><p>DOMINÓ FLASH COIN funciona en formato horizontal.</p></div>';
+   document.body.appendChild(guard);
+  }
+  // Un HTML no puede bloquear universalmente la orientación del teléfono antes de abrirse.
+  // Solicitar landscape a Capacitor/Android si el contenedor nativo dispone de esa función.
+  const tryLock=()=>{
+   try{window.Capacitor?.Plugins?.ScreenOrientation?.lock?.({orientation:'landscape'})?.catch?.(()=>{});}catch(_){ }
+   try{window.AndroidOrientation?.lock?.('landscape');}catch(_){ }
+   try{const lock=screen.orientation?.lock?.('landscape');lock?.catch?.(()=>{});}catch(_){ }
+  };
+  tryLock();
+  document.addEventListener('pointerdown',tryLock,{once:true,passive:true});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)tryLock()});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
 </body>
