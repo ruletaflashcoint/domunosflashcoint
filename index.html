@@ -18927,6 +18927,216 @@ body.dfc-lab-visual #appView #dfcLabStage004 .dfc-lab-carousel-head007{
  else boot();
 })();
 </script>
+<style id="dfc-laboratorio-visual-011">
+/* LAB 0.11: emojis como tarjetas completas, moneda ampliada, tarjeta regalo permanente.
+   Exclusivamente interfaz: no modifica balances, funciones RPC ni condiciones de acceso. */
+body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  gap:clamp(3px,.6vw,9px)!important;overflow:visible!important;
+}
+/* Balance sobre una línea azul, sin fondo ni cápsula. */
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  flex:0 0 auto!important;gap:5px!important;margin:0!important;
+  padding:0 4px 5px!important;min-height:55px!important;height:auto!important;
+  background:transparent!important;background-image:none!important;
+  border:0!important;border-bottom:3px solid #21baff!important;border-radius:0!important;
+  box-shadow:none!important;filter:none!important;transform:none!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  overflow:visible!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{
+  width:clamp(42px,4.3vw,58px)!important;height:clamp(42px,4.3vw,58px)!important;
+  min-width:clamp(42px,4.3vw,58px)!important;flex:0 0 auto!important;
+  margin:0!important;border:0!important;background-size:cover!important;
+  box-shadow:0 0 12px #ffc84b55!important;cursor:pointer!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn strong,
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn #balanceTop{
+  font-size:clamp(13px,1.55vw,19px)!important;line-height:1.12!important;
+  color:#ffe8aa!important;text-shadow:0 1px 3px #000!important;
+  white-space:nowrap!important;text-align:center!important;
+}
+/* La tarjeta real de regalo está siempre visible, con brinco periódico incluso sin premio pendiente. */
+body.dfc-lab-visual #appView #dfcLabGiftCard008{
+  display:inline-flex!important;visibility:visible!important;flex:0 0 auto!important;
+  width:63px!important;min-width:63px!important;height:42px!important;
+  padding:3px!important;margin:0 3px!important;
+  border-radius:8px!important;position:relative!important;
+  animation:dfcLabCardJump011 3s ease-in-out infinite!important;
+  transform-origin:50% 90%!important;cursor:pointer!important;
+  background:linear-gradient(130deg,#2466be,#091b4b 65%,#0d4788)!important;
+  border:1px solid #e5c17f!important;box-shadow:0 2px 10px #0009!important;
+}
+@keyframes dfcLabCardJump011{
+  0%,76%,100%{transform:translateY(0) rotate(0deg)}
+  82%{transform:translateY(-8px) rotate(-2deg)}
+  88%{transform:translateY(0) rotate(0deg)}
+  93%{transform:translateY(-3px)}
+}
+body.dfc-lab-visual #appView #dfcLabGiftCard008[data-pending="1"]{
+  box-shadow:0 0 12px #f8d573b3!important;
+}
+/* Tarro y moneda comparten protagonismo vertical sin alterar la corona VIP. */
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{
+  align-self:center!important;min-height:78px!important;height:78px!important;
+  border-bottom:3px solid #21baff!important;
+}
+/* WhatsApp: esfera verde con teléfono blanco, texto debajo (el SVG original se conserva). */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools #groupBtn .dfc09-tool-icon{
+  width:clamp(45px,5vw,62px)!important;height:clamp(45px,5vw,62px)!important;
+  min-width:clamp(45px,5vw,62px)!important;min-height:clamp(45px,5vw,62px)!important;
+  display:grid!important;place-items:center!important;
+  border-radius:50%!important;border:2px solid #b6ffca!important;
+  background:radial-gradient(circle at 30% 18%,#5af59c,#16bc5f 58%,#07863d)!important;
+  box-shadow:inset 0 1px 3px #fff8,0 3px 13px #00dd6e77!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools #groupBtn .dfc09-tool-icon svg{
+  display:block!important;width:65%!important;height:65%!important;filter:none!important;
+}
+/* Emoji es la tarjeta misma, sin círculo añadido detrás. Los elementos reales se superponen. */
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006){
+  flex:0 0 clamp(164px,20vw,214px)!important;
+  width:clamp(164px,20vw,214px)!important;
+  min-width:164px!important;max-width:214px!important;
+  aspect-ratio:1/1!important;height:auto!important;min-height:164px!important;
+  padding:15px 12px 12px!important;margin:0!important;box-sizing:border-box!important;
+  display:flex!important;position:relative!important;isolation:isolate!important;
+  justify-content:center!important;align-items:center!important;
+  flex-flow:column nowrap!important;gap:4px!important;
+  background:transparent!important;background-image:none!important;
+  border:0!important;border-radius:50%!important;box-shadow:none!important;
+  overflow:hidden!important;opacity:.7!important;
+  transform:scale(.63)!important;transform-origin:center!important;
+  transition:transform .3s ease,opacity .3s ease,filter .3s ease!important;
+  scroll-snap-align:center!important;
+  color:#fff!important;text-shadow:0 1px 4px #000,0 0 3px #000!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006)::before,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006)::before{
+  content:attr(data-dfc-lab-emoji011)!important;
+  position:absolute!important;inset:0!important;z-index:-2!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif!important;
+  font-size:clamp(138px,18vw,203px)!important;line-height:1!important;
+  color:initial!important;text-shadow:none!important;opacity:1!important;
+  transform:scale(1.05)!important;pointer-events:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006)::after,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006)::after{
+  content:''!important;position:absolute!important;inset:10% 8%!important;z-index:-1!important;
+  background:radial-gradient(ellipse at center,rgba(1,12,27,.78) 0%,rgba(1,15,30,.45) 53%,transparent 76%)!important;
+  border:0!important;pointer-events:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){
+  opacity:1!important;transform:scale(1.18)!important;z-index:4!important;
+  border:0!important;filter:drop-shadow(0 0 9px #3afbd377)!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) > *,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) > *{
+  position:relative!important;z-index:2!important;max-width:100%!important;
+  flex-shrink:1!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head{
+  text-align:center!important;padding:0!important;margin:0!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head strong,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head h3{
+  display:block!important;font-size:clamp(11px,1.3vw,15px)!important;line-height:1.13!important;
+  color:#fff9df!important;text-shadow:0 2px 3px #001421!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head small,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head p{
+  font-size:9px!important;line-height:1.1!important;color:#eafffb!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{
+  font-size:9px!important;line-height:1.12!important;gap:2px!important;
+  padding:1px!important;margin:0!important;text-align:center!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  color:#fff!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006) .domino-join-mode{
+  width:auto!important;max-width:90%!important;min-height:25px!important;
+  font-size:10px!important;padding:3px 9px!important;margin:3px auto 0!important;
+  border-radius:999px!important;background:linear-gradient(#19baf3,#065e9a)!important;
+  border:1px solid #80eaff!important;box-shadow:0 2px 6px #0009!important;
+  white-space:nowrap!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes{
+  gap:clamp(5px,1.3vw,13px)!important;align-items:center!important;
+  overflow-y:hidden!important;touch-action:pan-x!important;
+  padding-top:21px!important;padding-bottom:23px!important;
+}
+/* La vista ampliada conserva los detalles y botones originales. */
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006{
+  aspect-ratio:auto!important;border-radius:16px!important;overflow-y:auto!important;
+  transform:none!important;opacity:1!important;filter:none!important;
+}
+@media (max-width:720px){
+  body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{
+    width:40px!important;min-width:40px!important;height:40px!important;
+  }
+  body.dfc-lab-visual #appView .dfc09-header #balanceBtn{min-height:45px!important}
+  body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006),
+  body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006){
+    flex-basis:172px!important;width:172px!important;min-width:172px!important;max-width:172px!important;
+    min-height:172px!important;
+  }
+  body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006)::before,
+  body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006)::before{
+    font-size:158px!important;
+  }
+}
+@media(orientation:landscape) and (max-height:500px){
+  body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{
+    width:38px!important;min-width:38px!important;height:38px!important;
+  }
+  body.dfc-lab-visual #appView #dominoLobbyModes{padding-block:10px 12px!important}
+  body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006),
+  body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006){
+    flex-basis:148px!important;width:148px!important;min-width:148px!important;max-width:148px!important;
+    min-height:148px!important;
+  }
+  body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room:not(.dfc-lab-expanded006)::before,
+  body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card:not(.dfc-lab-expanded006)::before{font-size:137px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body.dfc-lab-visual #appView #dfcLabGiftCard008{animation:none!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-011">
+(function(){'use strict';
+  const EMOJIS=['😎','🤑','🤩','🔥','👑','😀','🎯','💎','🥳','⭐','🚀','🏆'];
+  const selector=':scope > .dfc28-room, :scope > .domino-choice-card';
+  function init(){
+    const host=document.getElementById('dominoLobbyModes');
+    if(!host)return;
+    function assign(){
+      const cards=Array.from(host.querySelectorAll(selector));
+      cards.forEach((card,index)=>{
+        const emoji=EMOJIS[index%EMOJIS.length];
+        if(card.dataset.dfcLabEmoji011!==emoji)card.dataset.dfcLabEmoji011=emoji;
+        // La selección y la apertura permanecen a cargo del controlador original.
+      });
+    }
+    assign();
+    new MutationObserver(assign).observe(host,{childList:true});
+    const gift=document.getElementById('dfcLabGiftCard008');
+    if(gift){
+      gift.hidden=false;
+      gift.title='Tarjetas de regalo Flash Coin';
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})();
+</script>
 </body>
 
 </html>
