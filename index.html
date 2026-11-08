@@ -19137,6 +19137,275 @@ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006{
   else init();
 })();
 </script>
+<style id="dfc-laboratorio-visual-012">
+/* LAB VISUAL 0.12 - SOLO DISEÑO Y NAVEGACIÓN DEL SELECTOR.
+   Mantener sin cambios RPC, autentificación y economía en Supabase. */
+body.dfc-lab-visual #appView .dfc09-header{
+  min-height:61px!important;height:61px!important;max-height:61px!important;
+  padding:2px 7px 2px!important;gap:clamp(2px,.55vw,7px)!important;
+  grid-template-columns:minmax(97px,1fr) minmax(140px,1.1fr) minmax(165px,1.5fr) 59px!important;
+  grid-template-rows:1fr!important;
+  border-bottom:2px solid #16aefa!important;
+  background:linear-gradient(100deg,#05142ced,#082b56ee 50%,#041329ef)!important;
+  box-shadow:0 2px 11px #0013236b!important;
+  overflow:visible!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{
+  min-height:36px!important;max-height:43px!important;margin:0!important;padding:1px 2px!important;
+  align-self:center!important;justify-self:start!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{
+  width:35px!important;min-width:35px!important;height:35px!important;max-height:35px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{
+  display:flex!important;grid-column:2!important;grid-row:1!important;
+  flex-direction:row!important;align-items:center!important;justify-self:center!important;
+  align-self:end!important;margin:0 0 4px!important;
+  transform:scale(.91)!important;transform-origin:center bottom!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{
+  position:absolute!important;top:1px!important;left:50%!important;right:auto!important;
+  transform:translateX(-50%)!important;z-index:35!important;
+  grid-row:auto!important;grid-column:auto!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  height:16px!important;min-height:16px!important;width:max-content!important;
+  max-width:190px!important;margin:0!important;padding:0 6px!important;
+  color:#99ffbf!important;font-size:9px!important;line-height:1!important;
+  border:0!important;border-radius:9px!important;background:rgba(0,19,25,.34)!important;
+  box-shadow:none!important;white-space:nowrap!important;
+}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools{
+  display:flex!important;grid-column:3!important;grid-row:1!important;
+  flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;
+  gap:4px!important;min-width:0!important;overflow:visible!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn{
+  height:42px!important;min-height:42px!important;padding:0 3px 3px!important;
+  margin:0!important;gap:3px!important;border-bottom:2px solid #1cb8ff!important;
+  background:none!important;box-shadow:none!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{
+  width:30px!important;min-width:30px!important;height:30px!important;
+  box-shadow:0 0 7px #ffdb6d55!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn strong,
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn #balanceTop{
+  font-size:clamp(10px,1.15vw,14px)!important;line-height:1.06!important;
+}
+/* El regalo es visible SIEMPRE, incluso sin tarjeta emitida por administración. */
+body.dfc-lab-visual #appView .dfc09-header #dfcLabGiftCard008{
+  display:inline-flex!important;visibility:visible!important;
+  align-items:center!important;justify-content:center!important;flex-direction:column!important;
+  order:1!important;flex:0 0 50px!important;
+  position:relative!important;width:50px!important;min-width:50px!important;
+  height:33px!important;min-height:33px!important;margin:0 2px!important;padding:2px!important;
+  border-radius:6px!important;
+  background:linear-gradient(135deg,#3478cd,#081e55 69%,#1767a4)!important;
+  border:1px solid #f4d08b!important;
+  color:#fff4cc!important;
+  box-shadow:inset 0 1px 0 #fff7,0 2px 6px #001a37!important;
+  animation:dfcLabCardJump011 3s ease-in-out infinite!important;
+  cursor:pointer!important;z-index:22!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfcLabGiftCard008 small{
+  font-size:7px!important;line-height:1!important;font-weight:800!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfcLabGiftCard008 span{line-height:1!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{
+  grid-column:4!important;grid-row:1!important;align-self:center!important;justify-self:center!important;
+  width:59px!important;min-width:59px!important;height:49px!important;min-height:49px!important;
+  border-bottom:2px solid #21baff!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-open{
+  width:59px!important;height:49px!important;min-height:49px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header .dfc-lab-crown{
+  font-size:21px!important;line-height:21px!important;top:-9px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home .dfc-z9-jar{
+  width:33px!important;min-width:33px!important;height:30px!important;flex-basis:30px!important;
+  margin-top:6px!important;border-radius:10px 10px 12px 12px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-total{
+  font-size:10px!important;line-height:11px!important;min-width:44px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home .dfc-lab-vip-badge006{
+  transform:translate(-50%,-50%) scale(.68)!important;
+}
+/* Dar al carrusel la altura recuperada y evitar su recorte visual. */
+body.dfc-lab-visual #appView #dfcLabStage004{
+  margin-top:-8px!important;max-height:calc(100dvh - 65px)!important;
+  overflow:visible!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{
+  max-height:calc(100dvh - 63px)!important;
+  overflow:visible!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes{
+  display:flex!important;align-items:center!important;flex-wrap:nowrap!important;
+  overflow-x:auto!important;overflow-y:hidden!important;
+  width:100%!important;box-sizing:border-box!important;
+  padding:10px max(6px,calc(50% - 120px)) 19px!important;
+  scroll-padding-inline:calc(50% - 120px)!important;
+  gap:clamp(3px,.7vw,9px)!important;
+  scroll-snap-type:x mandatory!important;touch-action:pan-x!important;
+  scrollbar-width:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes::-webkit-scrollbar{display:none!important}
+/* El emoji ocupa la ficha: sin un círculo negro encima ni una imagen duplicada. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex:0 0 clamp(192px,22vw,240px)!important;width:clamp(192px,22vw,240px)!important;
+  min-width:192px!important;max-width:240px!important;
+  height:clamp(192px,22vw,240px)!important;min-height:192px!important;
+  padding:27px 16px 16px!important;gap:4px!important;
+  transform:scale(.46)!important;opacity:.68!important;
+  border:0!important;border-radius:50%!important;
+  background:none!important;box-shadow:none!important;overflow:visible!important;
+  cursor:pointer!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){
+  transform:scale(1.18)!important;opacity:1!important;
+  filter:drop-shadow(0 1px 9px #28e6b466)!important;z-index:4!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)::before,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)::before{
+  font-size:clamp(188px,22vw,242px)!important;
+  transform:scale(1.13)!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)::after,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)::after{
+  background:radial-gradient(ellipse at center,rgba(0,14,27,.50),rgba(0,16,28,.21) 55%,transparent 75%)!important;
+  inset:14% 8%!important;
+}
+/* En emoji: exclusivamente nombre de mesa y entrada mínima real. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-scene,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-visual,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-join-mode{
+  display:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head small,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head p{
+  display:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head strong,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head h3{
+  font-size:clamp(12px,1.55vw,17px)!important;line-height:1.13!important;
+  text-align:center!important;color:#fff!important;
+  text-shadow:0 2px 4px #000,1px 0 3px #000!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{
+  display:block!important;padding:0!important;margin:0!important;
+  max-width:190px!important;max-height:38px!important;
+  overflow:hidden!important;font-size:11px!important;line-height:1.22!important;
+  text-align:center!important;color:#d8ffe5!important;
+  background:none!important;border:0!important;box-shadow:none!important;
+}
+/* Ocultar leyendas auxiliares creadas únicamente para la miniatura. */
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc-lab-emoji-extra012{display:none!important}
+/* Ficha expandida: dejar libres todos sus datos, botones y restricciones originales. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006{
+  transform:none!important;opacity:1!important;filter:none!important;
+  min-width:min(340px,92vw)!important;max-width:min(430px,95vw)!important;
+  height:auto!important;max-height:82dvh!important;overflow:auto!important;
+}
+@media(max-width:740px){
+ body.dfc-lab-visual #appView .dfc09-header{
+   grid-template-columns:minmax(72px,1fr) minmax(108px,1fr) minmax(143px,1.3fr) 49px!important;
+   min-height:55px!important;height:55px!important;max-height:55px!important;padding-inline:3px!important;
+ }
+ body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{transform:scale(.76)!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{width:30px!important;min-width:30px!important;height:30px!important}
+ body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{width:23px!important;min-width:23px!important;height:23px!important}
+ body.dfc-lab-visual #appView .dfc09-header #balanceBtn strong{font-size:10px!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfcLabGiftCard008{width:44px!important;min-width:44px!important;flex-basis:44px!important;height:29px!important;min-height:29px!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home,
+ body.dfc-lab-visual #appView .dfc09-header #dfc-z9-open{width:49px!important;min-width:49px!important;height:44px!important;min-height:44px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes{padding-inline:max(5px,calc(50% - 101px))!important;scroll-padding-inline:calc(50% - 101px)!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex-basis:202px!important;width:202px!important;min-width:202px!important;max-width:202px!important;height:202px!important;min-height:202px!important
+ }
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)::before,
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)::before{font-size:202px!important}
+}
+@media(orientation:landscape) and (max-height:460px){
+ body.dfc-lab-visual #appView .dfc09-header{min-height:49px!important;height:49px!important;max-height:49px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes{padding-top:3px!important;padding-bottom:6px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex-basis:170px!important;width:170px!important;min-width:170px!important;max-width:170px!important;height:170px!important;min-height:170px!important
+ }
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)::before,
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)::before{font-size:173px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body.dfc-lab-visual #appView .dfc09-header #dfcLabGiftCard008{animation:none!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-012">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ const cardsSelector=':scope > .dfc28-room, :scope > .domino-choice-card';
+ function boot(){
+   const app=$('appView');if(!app)return;
+   const header=app.querySelector('.dfc09-header');
+   const tools=header?.querySelector('.dfc09-head-tools');
+   const online=$('onlineUsersBtn');
+   if(!header||!tools)return;
+   // No clonamos cifras ni botones: mover sus nodos conserva eventos y valores reales.
+   if(online&&online.parentElement!==header)header.appendChild(online);
+   const gift=$('dfcLabGiftCard008');
+   const balance=$('balanceBtn');
+   if(gift&&balance){
+     gift.hidden=false;gift.removeAttribute('hidden');
+     gift.setAttribute('aria-label',gift.dataset.pending==='1'?'Abrir regalo Flash Coin pendiente':'Consultar tarjetas de regalo Flash Coin');
+     if(gift.parentElement!==tools||balance.nextElementSibling!==gift)balance.insertAdjacentElement('afterend',gift);
+   }
+   // Algunos elementos se crean después de cargar la sesión: reubicar sin recrearlos.
+   if(!header.dataset.labWatch012){
+     header.dataset.labWatch012='1';
+     const watcher=new MutationObserver(()=>{
+       const b=$('balanceBtn'),g=$('dfcLabGiftCard008'),o=$('onlineUsersBtn');
+       if(o&&o.parentElement!==header)header.appendChild(o);
+       if(b&&g&&g.parentElement===tools&&b.nextElementSibling!==g)b.insertAdjacentElement('afterend',g);
+       if(b&&g&&g.parentElement!==tools){g.hidden=false;g.removeAttribute('hidden');b.insertAdjacentElement('afterend',g)}
+     });
+     watcher.observe(header,{childList:true,subtree:true});
+   }
+   const host=$('dominoLobbyModes');
+   if(!host||host.dataset.labOpen012)return;
+   host.dataset.labOpen012='1';
+   // El panel de compra original ya incluye "Ver mesa" y "Confirmar y sentarme".
+   // Nunca sentar directamente ni ejecutar cobros desde este controlador visual.
+   host.addEventListener('click',ev=>{
+     if(ev.target.closest('button,a,input,select,textarea'))return;
+     const card=ev.target.closest('.dfc28-room,.domino-choice-card');
+     if(!card||card.parentElement!==host||card.classList.contains('dfc-lab-expanded006'))return;
+     if(!card.classList.contains('dfc-lab-focused007'))return; // La mesa lateral solo se centra.
+     const original=card.querySelector('.dfc28-room-play,.domino-join-mode');
+     if(!original)return; // Si no hay acción real, conservar detalles originales del laboratorio.
+     ev.preventDefault();ev.stopImmediatePropagation();
+     original.click(); // Abre el flujo existente, con ambas acciones y validación del servidor.
+   },true);
+   const mark=()=>{
+     for(const c of host.querySelectorAll(cardsSelector)){
+       if(c.dataset.labTitle012)continue;
+       c.dataset.labTitle012='1';
+       c.setAttribute('title','Toca para ver nombre, entrada mínima y opciones de la mesa');
+       // El controlador original conserva los datos, estado y acciones en el DOM.
+     }
+   };
+   mark();
+   new MutationObserver(mark).observe(host,{childList:true});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
+</script>
 </body>
 
 </html>
