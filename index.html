@@ -17465,6 +17465,119 @@ body.dfc-lab-visual .dfc-app-nav button.dfc09-active{background:linear-gradient(
 }
 @media (prefers-reduced-motion:reduce){body.dfc-lab-visual #appView .dfc09-tool,body.dfc-lab-visual #appView .dfc28-room-play,body.dfc-lab-visual #appView .domino-choice-card{transition:none!important}}
 </style>
+<style id="dfc-laboratorio-visual-003">
+/* LAB VISUAL 0.03 — compactación REAL, sin duplicar saldos ni tocar lógica. */
+body.dfc-lab-visual #appView .dfc09-shell{display:flex!important;flex-direction:column!important;gap:5px!important;padding:5px 10px 16px!important;max-width:1480px!important}
+body.dfc-lab-visual #appView .dfc09-header{display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:center!important;gap:8px!important;width:100%!important;min-height:46px!important;padding:3px 6px!important;margin:0!important;background:linear-gradient(180deg,rgba(12,16,27,.86),rgba(8,13,21,.65))!important;border:1px solid rgba(218,181,109,.25)!important;border-radius:13px!important;box-shadow:0 4px 14px rgba(0,0,0,.28)!important}
+/* El perfil ya no es una tira horizontal a lo largo del cuerpo. */
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{grid-column:1!important;grid-row:1!important;display:flex!important;align-items:center!important;justify-self:start!important;gap:5px!important;position:relative!important;min-width:0!important;width:auto!important;max-width:100%!important;height:auto!important;min-height:38px!important;max-height:48px!important;margin:0!important;padding:1px 5px 1px 1px!important;background:transparent!important;border:0!important;border-radius:9px!important;box-shadow:none!important;cursor:pointer!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile:hover{background:rgba(236,197,117,.13)!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{width:34px!important;height:34px!important;min-width:34px!important;max-height:34px!important;margin:0!important;line-height:34px!important;font-size:21px!important;border-radius:50%!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc161-profile-meta{display:flex!important;flex-direction:column!important;gap:1px!important;min-width:0!important;margin:0!important;padding:0!important;line-height:1.12!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Name{font-size:clamp(10px,1.23vw,13px)!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;max-width:clamp(65px,13vw,180px)!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc161-profile-meta>span{font-size:clamp(9px,1vw,11px)!important;white-space:nowrap!important;color:#d9e3ed!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc161-vip{display:inline-flex!important;font-size:10px!important;padding:2px 4px!important;white-space:nowrap!important;margin:0!important;flex-shrink:0!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc-lab-copy-id{display:inline-grid!important;place-items:center!important;flex-shrink:0!important;width:24px!important;height:24px!important;min-height:24px!important;margin:0!important;padding:0!important;border:1px solid #af9360!important;border-radius:6px!important;background:linear-gradient(#34373b,#1b1f27)!important;color:#fff0d7!important;cursor:pointer!important;font-size:12px!important}
+/* Marca original centrada, sin botón de tres rayas arriba. */
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{grid-column:2!important;grid-row:1!important;position:relative!important;left:auto!important;top:auto!important;transform:none!important;display:flex!important;justify-self:center!important;justify-content:center!important;align-items:center!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:0!important;white-space:nowrap!important;pointer-events:none!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block .dfc09-logo{width:28px!important;height:28px!important;min-width:28px!important;font-size:20px!important}
+body.dfc-lab-visual #appView .dfc09-brand-first,body.dfc-lab-visual #appView .dfc09-brand-last{font-size:clamp(11px,1.48vw,17px)!important;line-height:1!important;letter-spacing:.01em!important}
+body.dfc-lab-visual #appView #dfcLabMenuButton{display:none!important}
+/* Contador + moneda y número + diamante y número: SIN tarjetas gigantes. */
+body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools{grid-column:3!important;grid-row:1!important;display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-end!important;justify-self:end!important;gap:clamp(2px,.7vw,10px)!important;margin:0!important;padding:0!important;min-width:0!important;width:auto!important;background:none!important;border:0!important;box-shadow:none!important}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn,body.dfc-lab-visual #appView .dfc09-header #balanceBtn,body.dfc-lab-visual #appView .dfc09-header .dfc13-gem-note{display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;width:auto!important;max-width:none!important;min-width:0!important;min-height:28px!important;height:28px!important;margin:0!important;padding:2px 3px!important;background:none!important;border:0!important;border-radius:6px!important;box-shadow:none!important;white-space:nowrap!important;color:#fff!important;font-size:clamp(10px,1.17vw,13px)!important;line-height:1!important}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{color:#b1ffc9!important}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-wallet-chevron{display:none!important}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{width:22px!important;height:22px!important;min-width:22px!important;margin:0 3px 0 0!important}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn strong{font-size:clamp(10px,1.17vw,13px)!important;color:#ffe5a4!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc13-gem-note{gap:3px!important;color:#b1edff!important;cursor:pointer!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc13GemMirror{font-size:clamp(10px,1.17vw,13px)!important;max-width:90px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-live{display:none!important}
+body.dfc-lab-visual #appView .dfc09-header #settingsBtn{width:26px!important;height:27px!important;min-width:26px!important;min-height:27px!important;padding:0!important;font-size:16px!important;border:0!important;background:transparent!important;box-shadow:none!important}
+/* Cartera original mantiene elementos lógicos, ya sin banda visible. */
+body.dfc-lab-visual #appView .dfc09-wallet{display:none!important;min-height:0!important;margin:0!important;padding:0!important}
+body.dfc-lab-visual #appView #dfc012x-vip-home{display:none!important}
+/* El detalle VIP sigue siendo accesible tocando el número superior (JS). */
+body.dfc-lab-visual #appView .dfc161-launchers{display:none!important}
+/* Herramientas alineadas, sin cajas anchas vacías. */
+body.dfc-lab-visual #appView .dfc09-tools{display:flex!important;flex-flow:row nowrap!important;justify-content:center!important;align-items:center!important;align-self:center!important;gap:clamp(4px,.8vw,10px)!important;width:100%!important;margin:2px 0 4px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;min-height:33px!important}
+body.dfc-lab-visual #appView .dfc09-tools .dfc09-tool{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;height:33px!important;min-height:33px!important;padding:3px clamp(7px,1vw,13px)!important;border-radius:9px!important;font-size:clamp(10px,1.04vw,12px)!important;line-height:1.08!important;white-space:nowrap!important}
+body.dfc-lab-visual #appView .dfc09-tools .dfc09-tool span:last-child{white-space:nowrap!important}
+body.dfc-lab-visual #appView .dfc09-tools .dfc09-tool br{display:none!important}
+body.dfc-lab-visual #appView .dfc09-tools .dfc09-tool-icon{font-size:15px!important}
+body.dfc-lab-visual #appView .dfc09-promoter-zone{margin:0!important;padding:0!important;min-height:0!important}
+body.dfc-lab-visual #appView .dfc09-rooms{margin:0!important;padding:9px 11px!important;border-color:rgba(211,168,99,.35)!important;border-radius:12px!important;background:rgba(9,13,21,.75)!important}
+body.dfc-lab-visual #appView .dfc09-rooms .dfc09-section-heading{margin-bottom:5px!important}
+body.dfc-lab-visual #appView .dfc09-rooms .dfc09-section-heading h2{font-size:17px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes{gap:6px!important}
+/* Evitar franja VIP que el controlador inserta dinámicamente. */
+body.dfc-lab-visual #appView [id="dfc012x-vip-home"]{display:none!important}
+@media (orientation:landscape) and (max-height:550px){
+ body.dfc-lab-visual #appView .dfc09-header{min-height:39px!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{width:29px!important;height:29px!important;min-width:29px!important}
+ body.dfc-lab-visual #appView .dfc09-tools .dfc09-tool{height:30px!important;min-height:30px!important;padding:2px 8px!important}
+}
+@media (max-width:740px){
+ body.dfc-lab-visual #appView .dfc09-header{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;gap:3px!important;padding:2px 3px!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{width:26px!important;height:26px!important;min-width:26px!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfc161Name{max-width:85px!important;font-size:10px!important}
+ body.dfc-lab-visual #appView .dfc09-header .dfc161-vip{font-size:8px!important;padding:1px!important}
+ body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn .dfc09-online-suffix{display:none!important}
+ body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{width:17px!important;height:17px!important;min-width:17px!important}
+ body.dfc-lab-visual #appView .dfc09-header .dfc13-gem-note,body.dfc-lab-visual #appView .dfc09-header #balanceBtn,body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{font-size:10px!important;padding:0!important}
+ body.dfc-lab-visual #appView .dfc09-tools{flex-wrap:wrap!important}
+ body.dfc-lab-visual #appView .dfc09-brand-first,body.dfc-lab-visual #appView .dfc09-brand-last{font-size:11px!important}
+}
+@media (orientation:portrait) and (max-width:600px){
+ body.dfc-lab-visual #appView .dfc09-header{grid-template-columns:1fr auto!important;grid-template-rows:auto auto!important}
+ body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{grid-column:2!important;grid-row:1!important}
+ body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools{grid-column:1/-1!important;grid-row:2!important;justify-self:center!important;width:100%!important;justify-content:center!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-003">
+(function(){'use strict';
+ function init(){
+  const $=id=>document.getElementById(id);
+  const header=document.querySelector('#appView .dfc09-header');
+  const tools=header?.querySelector('.dfc09-head-tools');
+  const profile=$('dfc161Profile');
+  const brand=header?.querySelector('.dfc09-brand-block');
+  const coin=$('balanceBtn');
+  const gem=document.querySelector('#appView .dfc13-gem-note');
+  if(!header||!tools||!profile||!brand||!coin||!gem)return;
+  /* Mover los nodos originales preserva sus ID, referencias y escuchas. */
+  if(profile.parentElement!==header)header.insertBefore(profile,brand);
+  if(coin.parentElement!==tools)tools.insertBefore(coin,tools.querySelector('.dfc09-live'));
+  if(gem.parentElement!==tools)tools.insertBefore(gem,tools.querySelector('.dfc09-live'));
+  /* El botón copiar original sigue siendo la fuente de la acción. */
+  if(!$('dfcLabCopyID003')){
+   const b=document.createElement('button');b.id='dfcLabCopyID003';b.type='button';b.className='dfc-lab-copy-id';b.textContent='⧉';b.setAttribute('aria-label','Copiar mi ID');b.title='Copiar mi ID';
+   b.onclick=(e)=>{e.stopPropagation();$('copyMyIdBtn')?.click()};profile.appendChild(b);
+  }
+  /* El perfil abre ahora el mismo menú: eliminamos el icono de rayas sin perder navegación. */
+  if(!profile.dataset.labHeader003){profile.dataset.labHeader003='1';profile.setAttribute('role','button');profile.tabIndex=0;profile.setAttribute('aria-label','Abrir menú desde mi perfil');
+   profile.addEventListener('click',(e)=>{if(e.target.closest('.dfc-lab-copy-id'))return;$('dfcLabMenuButton')?.click()});
+   profile.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('dfcLabMenuButton')?.click()}});
+  }
+  /* Texto mínimo: icono diamante + número, sin rótulo ni panel. */
+  for(const n of gem.childNodes){if(n.nodeType===3 && n.textContent.includes('Diamantes VIP')){n.textContent='💎 ';break}}
+  /* Mantener nivel VIP real sincronizado con el tarro cuando esté disponible. */
+  const badge=profile.querySelector('.dfc161-vip');
+  const syncVip=()=>{const level=document.querySelector('#dfc012x-vip-home .level');if(badge&&level){const v=(level.textContent||'').trim();if(v&&v!=='SIN VIP')badge.textContent='👑 '+v;else if(v==='SIN VIP')badge.textContent='👑 VIP 0'}};
+  syncVip();const vipHome=document.getElementById('dfc012x-vip-home');if(vipHome){new MutationObserver(syncVip).observe(vipHome,{childList:true,characterData:true,subtree:true})}
+  if(!gem.dataset.labVip003){gem.dataset.labVip003='1';gem.setAttribute('role','button');gem.tabIndex=0;gem.title='Consultar diamantes VIP';
+   const openVip=()=>{const b=document.querySelector('#dfc012x-vip-home .dfc012x-vip-toggle');if(b)b.click()};
+   gem.addEventListener('click',openVip);gem.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openVip()}});
+  }
+  /* Espejo de ID basado en el valor real del perfil; sin inventar datos. */
+  const src=$('myPublicId'),dest=$('dfc161PlayerId');if(src&&dest){
+    const copy=()=>{const v=src.textContent?.trim();if(v&&v!=='———'&&v!=='—')dest.textContent=v};
+    copy();new MutationObserver(copy).observe(src,{childList:true,characterData:true,subtree:true});
+  }
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
 </body>
 
 </html>
