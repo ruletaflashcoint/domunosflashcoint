@@ -17896,7 +17896,7 @@ body .overlay .panel{position:relative}
 #dfcLabLandscapeGuard005 .inner{max-width:320px}
 #dfcLabLandscapeGuard005 strong{display:block;margin:10px 0;font-size:19px}
 #dfcLabLandscapeGuard005 p{margin:5px 0;font-size:13px;font-weight:400;color:#c7d7e9}
-@media (orientation:portrait) and (pointer:coarse){#dfcLabLandscapeGuard005{display:flex!important}}
+@media (orientation:portrait) and (pointer:coarse){#dfcLabLandscapeGuard005{display:none!important}}
 @media (orientation:portrait) and (max-width:700px){
  body.dfc-lab-visual #appView #dominoLobbyModes{flex-flow:row nowrap!important;grid-template-columns:none!important}
 }
@@ -17960,6 +17960,242 @@ body .overlay .panel{position:relative}
   tryLock();
   document.addEventListener('pointerdown',tryLock,{once:true,passive:true});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)tryLock()});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+<style id="dfc-laboratorio-visual-006">
+/* LAB VISUAL 0.06: presentación exclusivamente, sin cambios en saldo ni RPC. */
+#dfcLabLandscapeGuard005{display:none!important;visibility:hidden!important;pointer-events:none!important}
+@media (orientation:portrait) and (pointer:coarse){#dfcLabLandscapeGuard005{display:none!important}}
+/* En la portada se elimina el desplazamiento vertical; los paneles internos conservan scroll. */
+body.dfc-lab-visual:has(#appView:not(.hidden)) {overflow:hidden!important}
+body.dfc-lab-visual #appView:not(.hidden){height:100dvh!important;max-height:100dvh!important;overflow:hidden!important}
+body.dfc-lab-visual #appView .dfc09-shell{height:100%!important;max-height:100%!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;padding:3px 9px 4px!important;gap:3px!important}
+body.dfc-lab-visual #appView .dfc09-footer-meta{display:none!important}
+body.dfc-lab-visual #appView .dfc09-rooms .dfc09-room-note{display:none!important}
+body.dfc-lab-visual #appView #dfcLabStage004{flex:1 1 auto!important;min-height:0!important;max-height:calc(100dvh - 98px)!important;align-items:start!important;overflow:hidden!important;gap:8px!important}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{min-height:0!important;max-height:100%!important;overflow:hidden!important}
+/* Espacio exclusivo para En línea arriba y perfil más abajo. */
+body.dfc-lab-visual #appView .dfc09-header{min-height:86px!important;flex:0 0 auto!important;grid-template-columns:minmax(170px,1fr) auto minmax(110px,1fr) 118px!important;padding:2px 8px!important}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{
+ position:relative!important;align-self:end!important;margin-top:11px!important;margin-bottom:2px!important;
+ padding-top:8px!important;min-height:40px!important;overflow:visible!important
+}
+body.dfc-lab-visual #appView #dfc161Profile #onlineUsersBtn{
+ top:-23px!important;left:2px!important;padding:1px 4px!important;z-index:25!important;
+ background:rgba(0,27,41,.7)!important;font-size:10px!important
+}
+/* Botones principales luminosos, centrados y con animación discreta de pulso. */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{align-items:stretch!important;justify-content:flex-start!important;gap:9px!important;padding:4px 0!important}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool{
+ display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;
+ text-align:center!important;gap:6px!important;white-space:normal!important;font-weight:900!important;
+ min-height:44px!important;height:44px!important;padding:5px!important;
+ border:1px solid rgba(153,235,255,.9)!important;border-radius:12px!important;
+ background:linear-gradient(180deg,#229bff,#0751a9 52%,#032e6e)!important;
+ box-shadow:inset 0 1px 0 #fff8,0 3px 0 #03204b,0 0 12px rgba(42,168,255,.52)!important;
+ color:white!important;text-shadow:0 1px 2px #001b37!important;
+ animation:dfcLab006Glow 3.2s ease-in-out infinite alternate!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool:nth-child(2){
+ background:linear-gradient(180deg,#18d9a0,#087754 55%,#074336)!important;border-color:#b7ffe1!important;
+ box-shadow:inset 0 1px 0 #fff8,0 3px 0 #063b2a,0 0 12px #32e4aa90!important;animation-delay:.65s!important
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool:nth-child(3){
+ background:linear-gradient(180deg,#c477ff,#7238c3 54%,#3d1b80)!important;border-color:#f5c5ff!important;
+ box-shadow:inset 0 1px 0 #fff8,0 3px 0 #261252,0 0 12px #ad71ff90!important;animation-delay:1.3s!important
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool .dfc09-tool-icon{
+ min-width:22px!important;width:22px!important;height:22px!important;font-size:15px!important;flex:0 0 22px!important
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool span:last-child{white-space:normal!important;text-align:center!important}
+@keyframes dfcLab006Glow{from{filter:brightness(.82) saturate(.95)}to{filter:brightness(1.15) saturate(1.17)}}
+@media (prefers-reduced-motion:reduce){body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool{animation:none!important}}
+/* Tarro: badge diamante interior, nivel tomado del dato VIP real (dfc-z9-vip). */
+body.dfc-lab-visual #appView #dfc-z9-home .dfc-z9-jar{position:relative!important}
+body.dfc-lab-visual #appView #dfc-z9-home .dfc-lab-vip-badge006{
+ position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+ width:42px;height:42px;display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#f4fcff,#48d7ff 28%,#126aca 58%,#9deaff 80%,#e8ffff);
+ clip-path:polygon(50% 0,85% 17%,100% 43%,50% 100%,0 43%,15% 17%);
+ filter:drop-shadow(0 0 4px #3cbcff);z-index:8;pointer-events:none
+}
+body.dfc-lab-visual #appView #dfc-z9-home .dfc-lab-vip-badge006 span{
+ color:#fff!important;font-size:10px!important;font-weight:950!important;line-height:1!important;
+ text-shadow:0 1px 2px #052653,0 0 3px #004fa6;white-space:nowrap!important;margin-top:-2px
+}
+/* Foto y acceso directo dentro del menú del perfil, no en la pantalla principal. */
+body.dfc-lab-visual #dfcLabEditProfile006{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:40px;margin:8px 0;padding:8px 12px;border-radius:12px;background:linear-gradient(155deg,#27a3e5,#07538b);border:1px solid #85dcff;color:#fff;font-weight:800;cursor:pointer}
+#editProfilePanel #dfcLabPhotoRow006{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:13px 0 16px}
+#editProfilePanel #dfcLabPhotoPreview006{width:68px;height:68px;border-radius:50%;object-fit:cover;border:2px solid #6bd5ff;background:#10395c;color:#fff;display:grid;place-items:center;overflow:hidden}
+#editProfilePanel #dfcLabPhotoPick006{border-radius:10px;padding:10px 12px;border:1px solid #68d4ff;background:#0a71b0;color:white;cursor:pointer;font-weight:700}
+/* Mesas-icono compactas. Solo imagen y nombre; detalles se muestran al tocar. */
+body.dfc-lab-visual #appView #dominoLobbyModes{align-items:flex-start!important;gap:10px!important;padding:3px 4px 8px!important;max-height:100%!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card{
+ flex:0 0 112px!important;width:112px!important;min-width:112px!important;max-width:112px!important;
+ min-height:0!important;cursor:pointer!important;scroll-snap-align:start!important;
+ background:transparent!important;border:0!important;box-shadow:none!important;padding:2px!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-head,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-head{
+ order:2!important;margin:3px 0 0!important;padding:0!important;text-align:center!important
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-head strong,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-head h3{font-size:11px!important;line-height:1.1!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-head small,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-head p{display:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-scene,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-visual{
+ order:1!important;height:84px!important;min-height:84px!important;max-height:84px!important;
+ border:1px solid rgba(129,206,255,.52)!important;border-radius:15px!important;
+ box-shadow:0 4px 10px #0007!important;background-size:cover!important;background-position:center!important;
+ padding:0!important;margin:0!important;overflow:hidden!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-scene > *,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-visual > *{display:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-body,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-join-mode{display:none!important}
+/* Panel detallado usa la tarjeta ORIGINAL y sus mismos eventos, no copias. */
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room.dfc-lab-expanded006,
+body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card.dfc-lab-expanded006{
+ display:flex!important;flex-direction:column!important;position:fixed!important;top:50%!important;left:50%!important;
+ transform:translate(-50%,-50%)!important;z-index:2147482502!important;
+ width:min(92vw,440px)!important;max-width:440px!important;min-width:260px!important;
+ padding:16px!important;background:linear-gradient(160deg,#0b2140,#061221)!important;
+ border:1px solid #5fcfff!important;border-radius:20px!important;box-shadow:0 18px 50px #000e!important;
+ max-height:88dvh!important;overflow-y:auto!important;cursor:default!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .domino-premium-card-body,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .domino-join-mode{display:flex!important;visibility:visible!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-head small,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .domino-premium-card-head p{display:block!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-scene,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .domino-premium-card-visual{height:115px!important;min-height:115px!important;max-height:115px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .dfc28-room-scene > *,
+body.dfc-lab-visual #appView #dominoLobbyModes > .dfc-lab-expanded006 .domino-premium-card-visual > *{display:initial!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc-lab-expanded006 .dfc-lab-close006:not([hidden]){display:block!important;align-self:flex-end!important;margin:-7px -4px 5px!important;background:#1a4666!important;color:white;border:0;border-radius:10px;padding:7px 12px;font-weight:800;cursor:pointer}
+#dfcLabBackdrop006{position:fixed;inset:0;z-index:2147482501;background:rgba(0,8,22,.79);display:none}
+#dfcLabBackdrop006.visible{display:block}
+@media (orientation:landscape) and (max-height:550px){
+ body.dfc-lab-visual #appView .dfc09-header{min-height:69px!important}
+ body.dfc-lab-visual #appView #dfcLabStage004{max-height:calc(100dvh - 76px)!important}
+ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool{height:36px!important;min-height:36px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room,
+ body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card{flex-basis:96px!important;width:96px!important;min-width:96px!important;max-width:96px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes > .dfc28-room .dfc28-room-scene,
+ body.dfc-lab-visual #appView #dominoLobbyModes > .domino-choice-card .domino-premium-card-visual{height:67px!important;min-height:67px!important;max-height:67px!important}
+}
+@media (max-width:720px){
+ body.dfc-lab-visual #appView .dfc09-header{grid-template-columns:minmax(130px,1fr) auto minmax(80px,1fr) 90px!important}
+ body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{margin-top:13px!important}
+ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool{font-size:10px!important}
+}
+</style>
+<style id="dfc-laboratorio-visual-006-fix">body.dfc-lab-visual #appView #dominoLobbyModes .dfc-lab-close006[hidden]{display:none!important}</style>
+<script id="dfc-laboratorio-visual-js-006">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ function init(){
+  // Eliminar aviso intrusivo 0.05; los intentos de bloqueo nativo de orientación siguen activos.
+  $('dfcLabLandscapeGuard005')?.remove();
+  const app=$('appView');if(!app)return;
+  // Solo en pantalla principal, no modificar la pantalla de juego ni los saldos.
+  // Mostrar el nivel real que ya suministra el sistema de diamantes.
+  function ensureVip(){
+   const jar=app.querySelector('#dfc-z9-home .dfc-z9-jar');
+   const source=$('dfc-z9-vip');if(!jar||!source)return false;
+   let badge=jar.querySelector('.dfc-lab-vip-badge006');
+   if(!badge){badge=document.createElement('span');badge.className='dfc-lab-vip-badge006';
+    badge.setAttribute('aria-hidden','true');badge.innerHTML='<span>VIP 0</span>';jar.appendChild(badge)}
+   const sync=()=>{const match=(source.textContent||'').match(/\bVIP\s*(\d+)/i);
+    const level=match?match[1]:'0';badge.querySelector('span').textContent='VIP '+level;
+    jar.setAttribute('aria-label','Nivel VIP '+level);
+   };
+   if(!source.dataset.dfcLabVipWatch006){source.dataset.dfcLabVipWatch006='1';new MutationObserver(sync).observe(source,{childList:true,characterData:true,subtree:true})}
+   sync();return true;
+  }
+  if(!ensureVip()){const watch=new MutationObserver(()=>{if(ensureVip())watch.disconnect()});watch.observe(app,{childList:true,subtree:true})}
+  const nav=document.querySelector('.dfc-app-nav');
+  if(nav&&!$('dfcLabEditProfile006')){
+   const btn=document.createElement('button');btn.id='dfcLabEditProfile006';btn.type='button';btn.textContent='✎ Editar perfil';
+   btn.addEventListener('click',()=>{
+    const native=$('editProfileBtn');if(native)native.click();
+    else $('editProfilePanel')?.classList.add('active');
+    document.body.classList.remove('dfc-lab-menu-open');
+   });
+   const settings=nav.querySelector('[data-dfc-open="settingsBtn"]');
+   if(settings)settings.insertAdjacentElement('afterend',btn);else nav.appendChild(btn);
+  }
+  // Reutilizar cargador nativo: almacenamiento y política de permisos existentes.
+  const edit=$('editProfilePanel')?.querySelector('.panel');
+  if(edit&&!$('dfcLabPhotoRow006')){
+   const row=document.createElement('div');row.id='dfcLabPhotoRow006';
+   const preview=document.createElement('span');preview.id='dfcLabPhotoPreview006';preview.textContent='👤';
+   const pick=document.createElement('button');pick.type='button';pick.id='dfcLabPhotoPick006';pick.textContent='📷 Elegir foto de perfil';
+   pick.addEventListener('click',()=>{const file=$('dominoAvatarFile');if(file){file.value='';file.click()}else alert('La carga de fotos no está disponible en esta versión.')});
+   row.append(preview,pick);edit.querySelector('h2')?.insertAdjacentElement('afterend',row);
+   const syncPhoto=()=>{
+    let url='';try{url=typeof me!=='undefined'&&me?.avatar_url?String(me.avatar_url):''}catch(_){}
+    preview.replaceChildren();
+    if(url&&/^https:\/\//i.test(url)){
+     const img=document.createElement('img');img.src=url;img.alt='Foto actual de perfil';img.style.cssText='width:100%;height:100%;object-fit:cover';
+     img.onerror=()=>{preview.textContent='👤'};preview.appendChild(img);
+    }else preview.textContent='👤';
+   };
+   pick.addEventListener('click',()=>setTimeout(syncPhoto,1500));
+   $('editProfileBtn')?.addEventListener('click',syncPhoto);
+   syncPhoto();
+  }
+  // Miniaturas reutilizan la imagen ORIGINAL incorporada en el HTML de la app.
+  const host=$('dominoLobbyModes');
+  if(host){
+   let expanded=null;
+   let back=$('dfcLabBackdrop006');
+   if(!back){back=document.createElement('div');back.id='dfcLabBackdrop006';document.body.appendChild(back)}
+   function close(){if(expanded){expanded.querySelector('.dfc-lab-close006')?.setAttribute('hidden','');expanded.classList.remove('dfc-lab-expanded006');expanded=null}back.classList.remove('visible')}
+   back.addEventListener('click',close);
+   document.addEventListener('keydown',ev=>{if(ev.key==='Escape')close()});
+   function prepare(card){
+    if(card.dataset.dfcLabIcon006)return;
+    card.dataset.dfcLabIcon006='1';card.tabIndex=0;card.setAttribute('role','button');
+    card.setAttribute('aria-label','Ver detalles de '+(card.querySelector('strong,h3')?.textContent||'mesa'));
+    const photo=card.querySelector('.dfc28-room-scene,.domino-premium-card-visual');
+    if(photo&&typeof window.dfcZ27Wallpaper==='string'&&window.dfcZ27Wallpaper.startsWith('data:image/')){
+     photo.style.setProperty('background-image','url("'+window.dfcZ27Wallpaper+'")','important');
+     photo.style.setProperty('background-position','center','important');
+     photo.style.setProperty('background-size','cover','important');
+    }
+    let closeBtn=card.querySelector('.dfc-lab-close006');
+    if(!closeBtn){closeBtn=document.createElement('button');closeBtn.type='button';closeBtn.className='dfc-lab-close006';closeBtn.textContent='← Volver';closeBtn.hidden=true;
+     closeBtn.addEventListener('click',ev=>{ev.stopPropagation();close()});card.prepend(closeBtn)}
+   }
+   function open(card){if(expanded&&expanded!==card)close();expanded=card;card.classList.add('dfc-lab-expanded006');
+    card.querySelector('.dfc-lab-close006').hidden=false;back.classList.add('visible')}
+   function resetButton(card){const b=card?.querySelector('.dfc-lab-close006');if(b)b.hidden=true}
+   host.addEventListener('click',ev=>{
+    const card=ev.target.closest('.dfc28-room,.domino-choice-card');if(!card||!host.contains(card))return;
+    if(ev.target.closest('button,a,input,select'))return;
+    if(!card.classList.contains('dfc-lab-expanded006')){ev.preventDefault();open(card)}
+   });
+   host.addEventListener('keydown',ev=>{
+    if(ev.target!==ev.target.closest('.dfc28-room,.domino-choice-card'))return;
+    if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();open(ev.target)}
+   });
+   new MutationObserver(()=>{host.querySelectorAll('.dfc28-room,.domino-choice-card').forEach(prepare);
+    if(expanded&&!expanded.isConnected){expanded=null;back.classList.remove('visible')}
+   }).observe(host,{childList:true,subtree:false});
+   host.querySelectorAll('.dfc28-room,.domino-choice-card').forEach(prepare);
+   // Cerrar detalles al pulsar el botón de acción y dejar que su evento original entre a la mesa.
+   host.addEventListener('click',ev=>{if(ev.target.closest('.dfc28-room-play,.domino-join-mode')){back.classList.remove('visible')}},true);
+  }
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
