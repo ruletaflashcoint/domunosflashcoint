@@ -18559,6 +18559,148 @@ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{transform:none!importa
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
+<style id="dfc-laboratorio-visual-009">
+/* LABORATORIO VISUAL 0.09. Ajustes exclusivamente de portada: sin operaciones SQL ni cambio de eventos. */
+/* Cabecera azul oscura, con acciones independientes y sin paneles de cristal. */
+body.dfc-lab-visual #appView .dfc09-header{
+  background:linear-gradient(112deg,rgba(2,12,32,.95),rgba(3,31,68,.94) 57%,rgba(2,12,34,.96))!important;
+  border:0!important;box-shadow:inset 0 -1px 0 rgba(42,171,255,.4)!important;
+  padding:2px 8px!important;min-height:69px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile{
+  background:transparent!important;border:0!important;border-bottom:2px solid #38cfff!important;
+  border-radius:0!important;box-shadow:none!important;transform:none!important;
+  padding:2px 6px!important;cursor:pointer!important;min-height:52px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{
+  width:43px!important;min-width:43px!important;height:43px!important;max-height:43px!important;
+  font-size:26px!important;line-height:43px!important;object-fit:cover!important;border-radius:50%!important;
+  box-shadow:0 0 8px rgba(46,194,255,.24)!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;
+  background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  border:0!important;border-bottom:2px solid #31cfff!important;border-radius:0!important;
+  box-shadow:none!important;transform:none!important;padding:2px 3px!important;
+  cursor:pointer!important;min-height:34px!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn .dfc09-coin{
+  width:31px!important;min-width:31px!important;height:31px!important;
+  background-color:transparent!important;box-shadow:0 0 9px rgba(255,196,70,.35)!important;
+  cursor:pointer!important;pointer-events:auto!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn strong{
+  background:transparent!important;box-shadow:none!important;border:0!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home,
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-open{
+  background:transparent!important;background-image:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  border:0!important;box-shadow:none!important;border-radius:0!important;
+  cursor:pointer!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{
+  border-bottom:2px solid #43baff!important;transform:none!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home .dfc-z9-jar{
+  cursor:pointer!important;
+}
+/* Conservar el fondo de la aplicación visible, sin cajas pegadas detrás de cada mesa. */
+body.dfc-lab-visual #appView #dfcLabStage004{
+  position:relative!important;gap:2px!important;margin-top:-4px!important;
+  max-height:calc(100dvh - 68px)!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{
+  position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  padding:0!important;margin:0!important;max-height:calc(100dvh - 70px)!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms::before{
+  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(100deg,rgba(3,17,39,.16),rgba(15,70,119,.13),rgba(3,17,39,.16)),var(--dfc-lab-wallpaper009,none);
+  background-size:cover;background-position:center;
+  filter:saturate(1.13) contrast(1.07);opacity:.85;
+}
+body.dfc-lab-visual #appView .dfc09-rooms .dfc09-section-heading{
+  margin:0!important;padding:0 3px!important;min-height:21px!important;
+}
+body.dfc-lab-visual #appView #dfc09RoomsHeading{font-size:clamp(16px,2.1vw,24px)!important;line-height:1!important}
+/* Las flechas y el contador ya no ocupan sitio; el carrusel conserva scroll táctil y enfoque automático. */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc-lab-carousel-head007{display:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes{
+  margin-top:0!important;padding-top:2px!important;padding-bottom:5px!important;
+  gap:clamp(8px,1.4vw,18px)!important;align-items:center!important;
+  overflow-x:auto!important;overflow-y:hidden!important;touch-action:pan-x!important;
+  scroll-snap-type:x mandatory!important;scrollbar-width:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex-basis:clamp(190px,24vw,225px)!important;width:clamp(190px,24vw,225px)!important;
+  min-width:190px!important;max-width:225px!important;min-height:130px!important;
+  padding:7px 8px!important;gap:3px!important;
+  background:transparent!important;background-image:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#fff!important;opacity:.77!important;transform:scale(.89)!important;
+  text-shadow:0 1px 4px #000,0 0 7px #001a3c!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){
+  transform:scale(1.04)!important;opacity:1!important;border:0!important;
+  box-shadow:none!important;filter:drop-shadow(0 0 6px rgba(52,193,255,.65))!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{
+ background:transparent!important;background-image:none!important;border:0!important;
+ box-shadow:none!important;padding:1px!important;margin:0!important;
+ color:#effaff!important;font-size:10px!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head{
+ background:transparent!important;box-shadow:none!important;
+}
+/* Mantener los botones de entrar visibles y accesibles sin recuadros para las tarjetas. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-join-mode{
+ min-height:28px!important;font-size:10px!important;padding:4px 8px!important;
+ border:1px solid rgba(103,219,255,.58)!important;border-radius:9px!important;
+ background:linear-gradient(180deg,#0787cd,#074676)!important;
+}
+/* Pequeño control para recargar la lista, conservando su evento. */
+body.dfc-lab-visual #appView #dfcLabRefresh{
+ min-height:24px!important;height:24px!important;padding:2px 7px!important;
+ font-size:10px!important;line-height:1!important;border-radius:7px!important;
+ border:1px solid #68c4ff85!important;
+ background:rgba(8,52,86,.4)!important;box-shadow:none!important;
+}
+@media(max-width:720px){
+ body.dfc-lab-visual #appView .dfc09-header #dfc161Avatar{width:36px!important;min-width:36px!important;height:36px!important;max-height:36px!important;line-height:36px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){flex-basis:188px!important;width:188px!important;min-width:188px!important}
+}
+@media(max-height:500px) and (orientation:landscape){
+ body.dfc-lab-visual #appView .dfc09-header{min-height:60px!important;max-height:66px!important}
+ body.dfc-lab-visual #appView #dfcLabStage004{max-height:calc(100dvh - 63px)!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){min-height:105px!important;padding:5px!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-009">
+(function(){'use strict';
+ function updateWallpaper(){
+   const rooms=document.querySelector('body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms');
+   if(!rooms)return;
+   const wallpaper=window.dfcZ27Wallpaper;
+   if(typeof wallpaper==='string'&&wallpaper.startsWith('data:image/')){
+     // Misma fotografía embebida en la versión base; no depende de archivos nuevos.
+     rooms.style.setProperty('--dfc-lab-wallpaper009','url("'+wallpaper+'")');
+   }
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateWallpaper,{once:true});
+ else updateWallpaper();
+})();
+</script>
 </body>
 
 </html>
