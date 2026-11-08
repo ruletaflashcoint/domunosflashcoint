@@ -17378,6 +17378,93 @@ body.dfc-lab-visual #dominoLobbyPanel.active{display:none!important;pointer-even
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
+<style id="dfc-lab-premium-buttons-002">
+/* DOMINÓ FLASH COIN · LAB 0.02 · diseño de botones físicos (solo CSS)
+   No modifica IDs, RPC, sesiones ni economía. */
+body.dfc-lab-visual{--lab-gold:#f5c76b;--lab-edge:#bd9252;--lab-green:#18d497;--lab-ink:#0b1019;--lab-steel:#242b36;--lab-white:#f4f5f8}
+body.dfc-lab-visual #appView .dfc09-shell{row-gap:9px!important;column-gap:10px!important}
+body.dfc-lab-visual #appView .dfc09-header{background:linear-gradient(180deg,rgba(22,27,38,.91),rgba(9,13,22,.95))!important;border:1px solid rgba(240,206,146,.37)!important;border-radius:15px!important;box-shadow:inset 0 1px 0 #ffffff29,0 5px 15px #0008!important}
+/* Los saldos dejan de parecer paneles azules largos: pequeñas pastillas de app. */
+body.dfc-lab-visual #appView .dfc161-profile,body.dfc-lab-visual #appView .dfc09-wallet{background:linear-gradient(175deg,rgba(32,38,49,.96),rgba(10,14,22,.98))!important;border:1px solid rgba(245,199,107,.48)!important;box-shadow:inset 0 1px 0 #ffffff27,inset 0 -2px 0 #0009,0 4px 10px #0009!important;border-radius:14px!important}
+body.dfc-lab-visual #appView .dfc161-profile{padding:5px 10px!important;min-height:42px!important}
+body.dfc-lab-visual #appView .dfc09-wallet{padding:5px 8px!important;min-height:42px!important}
+body.dfc-lab-visual #appView .dfc09-wallet-copy{display:flex!important;align-items:center!important;justify-content:space-around!important;gap:5px!important;flex-wrap:nowrap!important}
+body.dfc-lab-visual #appView .dfc13-gem-note{font-size:11px!important;flex:0 1 auto!important;min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;color:#e6f4ff!important}
+body.dfc-lab-visual #appView #dfc13GemMirror{color:#a3e9ff!important;font-weight:900!important}
+body.dfc-lab-visual #appView .balance-chip{background:linear-gradient(180deg,#49505b 0%,#28313e 45%,#151b25 52%,#1a2530 100%)!important;border:1px solid #e3b65f!important;color:#fff5db!important;border-radius:999px!important;box-shadow:inset 0 1px 0 #ffffff62,inset 0 -3px 1px #060a12ad,0 3px 8px #000a!important;white-space:nowrap!important;flex:0 0 auto!important;min-height:30px!important;padding:3px 10px!important}
+/* Acciones: acabado metálico, bisel exterior, relieve y pulsación táctil. */
+body.dfc-lab-visual #appView .dfc09-tools{gap:7px!important;min-height:42px!important}
+body.dfc-lab-visual #appView .dfc09-tool,
+body.dfc-lab-visual #appView .dfc09-link,
+body.dfc-lab-visual #appView .dfc28-room-play,
+body.dfc-lab-visual #appView .domino-join-mode,
+body.dfc-lab-visual #appView #dfcLabRefresh,
+body.dfc-lab-visual .dfc-app-nav button,
+body.dfc-lab-visual #dfcLabMenuButton{
+ appearance:none!important;-webkit-appearance:none!important;position:relative!important;isolation:isolate!important;
+ background:linear-gradient(180deg,#444c59 0%,#2b3441 43%,#171f2a 48%,#202a36 100%)!important;
+ border:1px solid #a7aeb7!important;border-bottom:2px solid #0a1019!important;
+ border-radius:12px!important;color:#f8fafc!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.6),0 4px 0 #070c13,0 6px 12px #0008!important;
+ text-shadow:0 1px 1px #000c!important;letter-spacing:.01em!important;
+ transition:transform .14s ease,filter .14s ease,box-shadow .14s ease!important;
+ cursor:pointer!important;touch-action:manipulation!important;
+}
+body.dfc-lab-visual #appView .dfc09-tool{min-height:37px!important;height:37px!important;padding:3px 12px!important;font-weight:800!important}
+body.dfc-lab-visual #appView .dfc09-tool-icon{filter:drop-shadow(0 2px 1px #000b)!important}
+body.dfc-lab-visual #appView #inviteBtn{background:linear-gradient(180deg,#7358a2 0%,#50377f 45%,#2d224e 51%,#392d62 100%)!important;border-color:#bc9ee7!important}
+body.dfc-lab-visual #appView #promotersInfoBtn{background:linear-gradient(180deg,#466d88 0%,#315675 45%,#1b344b 51%,#24475d 100%)!important;border-color:#9fc8dc!important}
+body.dfc-lab-visual #appView #dfcGiftOpen004{background:linear-gradient(180deg,#198c9b 0%,#137887 45%,#084550 51%,#0d6372 100%)!important;border-color:#74e4e5!important}
+body.dfc-lab-visual #appView #groupBtn{background:linear-gradient(180deg,#448f70 0%,#257351 45%,#104630 51%,#155c41 100%)!important;border-color:#83dfaa!important}
+body.dfc-lab-visual #appView .dfc09-tool:hover,body.dfc-lab-visual #appView .dfc09-link:hover,body.dfc-lab-visual #appView .dfc28-room-play:hover,body.dfc-lab-visual #appView .domino-join-mode:hover,body.dfc-lab-visual .dfc-app-nav button:hover{filter:brightness(1.13)!important}
+body.dfc-lab-visual #appView .dfc09-tool:active,body.dfc-lab-visual #appView .dfc09-link:active,body.dfc-lab-visual #appView .dfc28-room-play:active,body.dfc-lab-visual #appView .domino-join-mode:active,body.dfc-lab-visual .dfc-app-nav button:active{transform:translateY(3px)!important;box-shadow:inset 0 2px 4px #0009,0 1px 0 #080b11!important}
+body.dfc-lab-visual button:focus-visible{outline:2px solid #f9d482!important;outline-offset:3px!important}
+body.dfc-lab-visual #dfcLabMenuButton{background:linear-gradient(180deg,#56515a,#1e222b)!important;border-color:var(--lab-gold)!important;box-shadow:inset 0 1px 0 #fff7,0 3px 0 #080b11,0 6px 10px #000a!important}
+/* En lugar de un rectángulo azul gigante: un marco de cristal ahumado y tarjetas independientes. */
+body.dfc-lab-visual #appView .dfc09-rooms{background:linear-gradient(145deg,rgba(14,17,24,.88),rgba(23,24,29,.82))!important;border:1px solid rgba(234,191,120,.43)!important;box-shadow:inset 0 1px 0 #ffffff30,inset 0 0 24px #0005,0 8px 25px #0009!important;border-radius:16px!important;padding:11px!important}
+body.dfc-lab-visual #appView .dfc09-section-heading h2{color:#ffefd3!important;text-shadow:0 2px 4px #000!important}
+body.dfc-lab-visual #appView .dfc09-flare{color:#eebc5f!important}
+body.dfc-lab-visual #appView .dfc09-link{padding:7px 12px!important;font-size:11px!important;font-weight:800!important;min-height:32px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes{gap:9px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room,
+body.dfc-lab-visual #appView #dominoLobbyModes .domino-choice-card{
+ background:linear-gradient(155deg,rgba(36,41,47,.97),rgba(12,17,25,.98))!important;
+ border:1px solid #b58b4f!important;border-bottom:3px solid #5f482d!important;
+ border-radius:15px!important;box-shadow:inset 0 1px 0 #ffffff45,inset 0 -3px 0 #07090c,0 5px 10px #000b!important;
+ padding:9px!important;transition:transform .18s ease,box-shadow .18s ease!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room:nth-child(3n+2),body.dfc-lab-visual #appView #dominoLobbyModes .domino-choice-card:nth-child(3n+2){border-color:#a99b86!important;border-bottom-color:#615c52!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room:nth-child(3n+3),body.dfc-lab-visual #appView #dominoLobbyModes .domino-choice-card:nth-child(3n+3){border-color:#beab77!important;border-bottom-color:#68522e!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room:hover,body.dfc-lab-visual #appView #dominoLobbyModes .domino-choice-card:hover{transform:translateY(-2px)!important;box-shadow:inset 0 1px 0 #ffffff55,0 9px 17px #000b!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-head{background:transparent!important;color:#fff1ce!important;text-shadow:0 1px 2px #000e!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-scene{border-radius:9px!important;border:1px solid #c6a36c88!important;background:linear-gradient(160deg,#164d39,#0a2c24)!important;box-shadow:inset 0 2px 6px #0008,0 1px 0 #ffffff24!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-meta,body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-price{color:#ede3d3!important;background:linear-gradient(170deg,#252b32,#141a20)!important;border:1px solid #9e8b6b77!important;border-radius:8px!important;margin:4px 0!important;padding:4px 6px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .table-stat{background:linear-gradient(170deg,#282e35,#12161c)!important;border:1px solid rgba(217,184,127,.27)!important;border-radius:8px!important;color:#e9dfd0!important;box-shadow:inset 0 1px 0 #fff1!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room-play,body.dfc-lab-visual #appView #dominoLobbyModes .domino-join-mode{background:linear-gradient(180deg,#54db8d 0%,#159959 45%,#066637 51%,#137f4b 100%)!important;border:1px solid #b9ffc7!important;border-bottom:2px solid #064a2a!important;color:white!important;box-shadow:inset 0 1px 0 #ffffff7c,inset 0 -2px 0 #004123,0 3px 0 #062815,0 5px 8px #0009!important;font-weight:900!important}
+/* Botones de acción en las tarjetas premium existentes, sin modificar sus eventos. */
+body.dfc-lab-visual #appView #dominoLobbyModes button{font-weight:800!important}
+body.dfc-lab-visual #appView #dominoLobbyModes button:not(.dfc28-room-play):not(.domino-join-mode){border-radius:11px!important;box-shadow:inset 0 1px 0 #ffffff50,0 3px 0 #09111b,0 5px 8px #0009!important}
+body.dfc-lab-visual #appView #dominoLobbyModes button:active{transform:translateY(2px)!important}
+/* VIP compacto, sin ocupar una banda azul excesiva de la portada. */
+body.dfc-lab-visual #appView #dfc012x-vip-home{max-width:100%!important;margin:4px 0!important;background:transparent!important;box-shadow:none!important}
+body.dfc-lab-visual #appView #dfc012x-vip-home .dfc012x-vip-toggle{background:linear-gradient(180deg,rgba(39,43,50,.96),rgba(12,17,24,.96))!important;border:1px solid rgba(246,203,128,.57)!important;border-radius:12px!important;box-shadow:inset 0 1px 0 #ffffff3d,0 3px 0 #070b11,0 6px 12px #0009!important;padding:6px 10px!important}
+body.dfc-lab-visual #appView #dfc012x-vip-home .dfc012x-vip-toggle h3{font-size:11px!important;margin:0!important}
+body.dfc-lab-visual #appView #dfc012x-vip-home .dfc012x-vip-toggle .count{font-size:13px!important}
+body.dfc-lab-visual .dfc-app-nav{background:linear-gradient(160deg,#262b34fa,#0d1118fc)!important;border-color:#b99a63!important}
+body.dfc-lab-visual .dfc-app-nav button{min-height:43px!important;background:linear-gradient(180deg,#353b45,#1b222c)!important}
+body.dfc-lab-visual .dfc-app-nav button.dfc09-active{background:linear-gradient(180deg,#947344,#634a29)!important;border-color:#f7cb78!important}
+@media (orientation:landscape) and (max-height:600px){
+ body.dfc-lab-visual #appView .dfc09-tools{min-height:34px!important}
+ body.dfc-lab-visual #appView .dfc09-tool{height:32px!important;min-height:32px!important;padding:2px 8px!important;font-size:10px!important}
+ body.dfc-lab-visual #appView .dfc09-rooms{padding:8px!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes .dfc28-room,body.dfc-lab-visual #appView #dominoLobbyModes .domino-choice-card{padding:7px!important}
+}
+@media (max-width:650px) and (orientation:portrait){
+ body.dfc-lab-visual #appView .dfc09-wallet-copy{flex-wrap:wrap!important;justify-content:flex-start!important}
+ body.dfc-lab-visual #appView .dfc09-tool{flex-shrink:0!important}
+}
+@media (prefers-reduced-motion:reduce){body.dfc-lab-visual #appView .dfc09-tool,body.dfc-lab-visual #appView .dfc28-room-play,body.dfc-lab-visual #appView .domino-choice-card{transition:none!important}}
+</style>
 </body>
 
 </html>
