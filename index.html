@@ -18701,6 +18701,232 @@ body.dfc-lab-visual #appView #dfcLabRefresh{
  else updateWallpaper();
 })();
 </script>
+
+<style id="dfc-laboratorio-visual-010">
+/* LAB VISUAL 0.10: ajustes de portada únicamente.
+   No altera tablas, saldos, RPC de juego ni eventos de acceso. */
+body.dfc-lab-visual #appView .dfc09-header{
+  min-height:84px!important;
+  max-height:none!important;
+  padding:5px 11px 7px!important;
+  background:linear-gradient(110deg,rgba(1,13,38,.97) 0%,rgba(2,42,91,.96) 48%,rgba(1,14,40,.97) 100%)!important;
+  border:0!important;
+  border-bottom:4px solid #19baff!important;
+  box-shadow:inset 0 -1px 0 #a0efff77,0 0 15px #00aaff38!important;
+  overflow:visible!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc161Profile,
+body.dfc-lab-visual #appView .dfc09-header #balanceBtn,
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{
+  position:relative!important;
+  z-index:2!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #dfc-z9-home{
+  min-height:77px!important;
+  height:77px!important;
+  overflow:visible!important;
+}
+body.dfc-lab-visual #appView .dfc09-header .dfc09-brand-block{
+  align-self:center!important;
+}
+/* Reducir altura de espacios vacíos para ganar campo visual al carrusel. */
+body.dfc-lab-visual #appView .dfc09-shell{
+  gap:2px!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004{
+  margin-top:-13px!important;
+  row-gap:0!important;
+  align-items:start!important;
+  max-height:calc(100dvh - 65px)!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{
+  padding:0 2px 4px!important;
+  margin:0!important;
+  background:transparent!important;
+  min-height:0!important;
+  max-height:calc(100dvh - 70px)!important;
+  overflow:hidden!important;
+  position:relative!important;
+}
+/* El título se centra sobre toda la zona de mesas, en verde con contorno negro. */
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-section-heading{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:38px!important;
+  margin:0!important;
+  padding:0 8px!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-section-heading > div{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  width:100%!important;
+  margin:0!important;
+  text-align:center!important;
+}
+body.dfc-lab-visual #appView #dfc09RoomsHeading{
+  display:block!important;
+  margin:0!important;
+  font-family:Impact,'Arial Black',system-ui,sans-serif!important;
+  font-size:clamp(23px,3.1vw,39px)!important;
+  font-weight:950!important;
+  line-height:1.05!important;
+  letter-spacing:.9px!important;
+  color:#3df78b!important;
+  -webkit-text-stroke:.7px #061b0d!important;
+  text-shadow:2px 2px 0 #01170a,-1px -1px 0 #01170a,0 0 12px #25ff8888!important;
+  transform:none!important;
+  text-align:center!important;
+}
+body.dfc-lab-visual #appView .dfc09-section-heading .dfc09-flare{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:17px!important;
+  line-height:1!important;
+  color:#25ed75!important;
+  text-shadow:0 0 9px #17ff7899!important;
+}
+/* Sin letrero de laboratorio; mostrar solo avisos útiles de error o ausencia. */
+body.dfc-lab-visual #appView #dfcLabStatus:not(.dfc-lab-important010){
+  display:none!important;
+}
+body.dfc-lab-visual #appView #dfcLabStatus.dfc-lab-important010{
+  display:block!important;
+  color:#e8f7ff!important;
+  font-size:11px!important;
+  padding:3px 7px!important;
+  margin:0!important;
+  background:rgba(3,26,50,.62)!important;
+  border-radius:8px!important;
+}
+/* Botón Actualizar mesas más abajo y pequeño, conservando onclick original. */
+body.dfc-lab-visual #appView #dfcLabStage004 #dfcLabRefresh{
+  position:absolute!important;
+  right:8px!important;
+  bottom:2px!important;
+  z-index:20!important;
+  margin:0!important;
+  min-height:23px!important;
+  height:23px!important;
+  width:auto!important;
+  font-size:10px!important;
+  padding:2px 7px!important;
+  background:#092e48cc!important;
+  border:1px solid #2de58b99!important;
+  border-radius:8px!important;
+  box-shadow:0 2px 8px #0008!important;
+}
+/* Mesa central más dominante y mesas laterales notablemente más pequeñas. */
+body.dfc-lab-visual #appView #dominoLobbyModes{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  touch-action:pan-x!important;
+  scroll-snap-type:x mandatory!important;
+  scroll-padding-inline:calc(50% - 112px)!important;
+  padding:14px max(7px,calc(50% - 112px)) 19px!important;
+  margin:-3px 0 0!important;
+  gap:clamp(4px,1vw,12px)!important;
+  min-height:0!important;
+  scrollbar-width:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes::-webkit-scrollbar{display:none!important}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex:0 0 clamp(175px,23vw,224px)!important;
+  width:clamp(175px,23vw,224px)!important;
+  min-width:175px!important;
+  max-width:224px!important;
+  min-height:125px!important;
+  transform:scale(.64)!important;
+  transform-origin:center center!important;
+  opacity:.6!important;
+  filter:saturate(.76)!important;
+  transition:transform .28s ease,opacity .28s ease,filter .28s ease!important;
+  scroll-snap-align:center!important;
+  position:relative!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){
+  transform:scale(1.18)!important;
+  opacity:1!important;
+  filter:drop-shadow(0 0 11px #2ae7b699)!important;
+  z-index:3!important;
+}
+/* La expansión con los detalles conserva su escala natural y botones de entrada. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006{
+  transform:none!important;
+  opacity:1!important;
+  filter:none!important;
+  z-index:5!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc-lab-carousel-head007{
+  display:none!important;
+}
+@media(max-width:720px){
+  body.dfc-lab-visual #appView .dfc09-header{min-height:75px!important;padding:3px 5px 6px!important}
+  body.dfc-lab-visual #appView #dfcLabStage004{margin-top:-9px!important}
+  body.dfc-lab-visual #appView #dfc09RoomsHeading{font-size:clamp(21px,4vw,29px)!important}
+  body.dfc-lab-visual #appView #dominoLobbyModes{padding-inline:max(6px,calc(50% - 91px))!important;scroll-padding-inline:calc(50% - 91px)!important}
+  body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+  body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+    flex-basis:182px!important;width:182px!important;min-width:182px!important;max-width:182px!important
+  }
+}
+@media(orientation:landscape) and (max-height:500px){
+  body.dfc-lab-visual #appView .dfc09-header{min-height:66px!important}
+  body.dfc-lab-visual #appView #dfcLabStage004{margin-top:-12px!important}
+  body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-section-heading{min-height:30px!important}
+  body.dfc-lab-visual #appView #dfc09RoomsHeading{font-size:clamp(19px,2.8vw,28px)!important}
+  body.dfc-lab-visual #appView #dominoLobbyModes{
+    padding-top:10px!important;
+    padding-bottom:13px!important;
+  }
+  body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+  body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+    min-height:102px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room,
+  body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card{
+    transition:none!important;
+  }
+}
+</style>
+
+<script id="dfc-laboratorio-visual-js-010">
+(function(){'use strict';
+ function boot(){
+   const app=document.getElementById('appView');
+   if(!app)return;
+   const heading=document.getElementById('dfc09RoomsHeading');
+   if(heading)heading.textContent='MESAS DISPONIBLES';
+   const status=document.getElementById('dfcLabStatus');
+   if(!status)return;
+   const clean=()=>{
+     const raw=(status.textContent||'').trim();
+     const isError=/error|no hay mesas|sin mesas|no se pudo/i.test(raw);
+     status.classList.toggle('dfc-lab-important010',isError);
+     if(isError && /laboratorio/i.test(raw)){
+       status.textContent=raw.replace(/del laboratorio|de laboratorio/gi,'').replace(/\s{2,}/g,' ').trim();
+     }
+   };
+   clean();
+   new MutationObserver(clean).observe(status,{childList:true,characterData:true,subtree:true});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});
+ else boot();
+})();
+</script>
 </body>
 
 </html>
