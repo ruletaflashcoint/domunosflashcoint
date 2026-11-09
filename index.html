@@ -20017,6 +20017,170 @@ body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools #dfcLabGiftCard008{
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
 </script>
+<style id="dfc-laboratorio-visual-016">
+/* LAB VISUAL 0.16 | solo presentación: tarjeta regalo siempre presente, perfil y logotipo. */
+/* La tarjeta se estiliza por su identificador, sin depender de su contenedor anterior.
+   Está inmediatamente después de #balanceBtn en las herramientas de la cabecera. */
+body.dfc-lab-visual #appView #dfcLabGiftCard008,
+body.dfc-lab-visual #appView .dfc09-header #dfcLabGiftCard008{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;
+  align-items:center!important;justify-content:center!important;flex-flow:column nowrap!important;
+  flex:0 0 49px!important;width:49px!important;min-width:49px!important;
+  height:34px!important;min-height:34px!important;max-height:34px!important;
+  margin:0 3px!important;padding:2px!important;box-sizing:border-box!important;
+  border:1px solid #91e1ff!important;border-radius:7px!important;
+  background:linear-gradient(135deg,#1257a8,#08224d 65%,#12728c)!important;
+  color:#fff4c8!important;box-shadow:0 1px 5px #003a6399!important;
+  position:relative!important;z-index:90!important;order:0!important;
+  cursor:pointer!important;pointer-events:auto!important;
+  animation:dfcLabGiftBounce016 3s ease-in-out infinite!important;
+}
+body.dfc-lab-visual #appView #dfcLabGiftCard008 span{font-size:14px!important;line-height:16px!important}
+body.dfc-lab-visual #appView #dfcLabGiftCard008 small{font-size:7px!important;line-height:9px!important;color:#fff!important}
+body.dfc-lab-visual #appView .dfc09-head-tools{
+  overflow:visible!important;min-width:0!important;align-items:center!important;
+}
+body.dfc-lab-visual #appView .dfc09-head-tools #balanceBtn{
+  flex-shrink:0!important;order:0!important;
+}
+@keyframes dfcLabGiftBounce016{
+  0%,78%,100%{transform:translateY(0)}
+  84%{transform:translateY(-7px)}
+  90%{transform:translateY(0)}
+  95%{transform:translateY(-2px)}
+}
+/* Alinear contador y marca como una sola columna ligeramente a la izquierda. */
+body.dfc-lab-visual #appView .dfc09-header>.dfc09-brand-block{
+  left:calc(50% - 9px)!important;
+  transform:translate(-50%,-50%)!important;
+}
+body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{
+  left:calc(50% - 9px)!important;
+  transform:translateX(-50%)!important;
+}
+/* Menú de acceso al panel original de perfil/configuración. */
+#dfcLabProfileOverlay016[hidden]{display:none!important}
+#dfcLabProfileOverlay016{
+  position:fixed;inset:0;z-index:2147483200;
+  display:flex;align-items:flex-start;justify-content:flex-start;
+  padding:max(66px,env(safe-area-inset-top,0px)) 12px 12px;
+  box-sizing:border-box;background:rgba(2,12,28,.70);
+  overflow-y:auto;
+}
+#dfcLabProfileOverlay016 .dfc16-profile-panel{
+  box-sizing:border-box;width:min(340px,calc(100vw - 24px));max-height:calc(100dvh - 90px);
+  overflow-y:auto;background:linear-gradient(145deg,#0e335b,#07182b);
+  border:1px solid #46bce9;border-radius:16px;padding:14px;
+  box-shadow:0 15px 40px #000a;color:#e9f6ff;
+}
+#dfcLabProfileOverlay016 .dfc16-profile-head{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+#dfcLabProfileOverlay016 .dfc16-profile-head strong{font-size:17px}
+#dfcLabProfileOverlay016 .dfc16-profile-summary{margin:9px 0 13px;color:#b7e7ff;font-size:13px;overflow-wrap:anywhere}
+#dfcLabProfileOverlay016 .dfc16-profile-action{
+  width:100%;display:flex;justify-content:center;align-items:center;gap:7px;
+  min-height:44px;margin:8px 0;border-radius:11px;
+  border:1px solid #49bff3;background:#105b95;color:white;
+  font:750 14px system-ui;cursor:pointer;
+}
+#dfcLabProfileOverlay016 .dfc16-profile-action-secondary{background:#0d334c;border-color:#477b9c}
+#dfcLabProfileOverlay016 .dfc16-profile-close{
+  background:transparent;border:0;color:#d8eeff;font-size:24px;cursor:pointer;padding:2px 8px;
+}
+@media(orientation:portrait) and (max-width:600px){
+ body.dfc-lab-visual #appView .dfc09-header>.dfc09-brand-block,
+ body.dfc-lab-visual #appView .dfc09-header #onlineUsersBtn{left:calc(50% - 5px)!important}
+ body.dfc-lab-visual #appView #dfcLabGiftCard008{width:44px!important;min-width:44px!important;flex-basis:44px!important}
+}
+@media (prefers-reduced-motion:reduce){
+ body.dfc-lab-visual #appView #dfcLabGiftCard008{animation:none!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-016">
+(function(){'use strict';
+const $=id=>document.getElementById(id);
+function init(){
+  const app=$('appView');
+  const header=app?.querySelector('.dfc09-header');
+  const tools=header?.querySelector('.dfc09-head-tools');
+  const profile=$('dfc161Profile');
+  if(!app||!header||!tools||!profile)return;
+  /* La integración de regalos de LAB 0.08 conserva el clic, la consulta RPC y el panel.
+     Aquí se fija su presentación sin crear tarjetas ni recompensas ficticias. */
+  function placeGift(){
+    if(!$('dfcLabGiftCard008')&&typeof window.dfcLabEnsureGift008==='function'){
+      window.dfcLabEnsureGift008();
+    }
+    const gift=$('dfcLabGiftCard008');
+    const balance=$('balanceBtn');
+    if(!gift)return;
+    gift.hidden=false;
+    gift.removeAttribute('hidden');
+    gift.setAttribute('aria-label','Abrir tarjetas de regalo Flash Coin');
+    gift.title='Consultar tarjetas de regalo Flash Coin';
+    if(balance&&balance.parentElement===tools){
+      if(gift.parentElement!==tools||balance.nextElementSibling!==gift){
+        balance.insertAdjacentElement('afterend',gift);
+      }
+    }else if(gift.parentElement!==tools){tools.appendChild(gift);}
+  }
+  placeGift();
+  /* Supervisión controlada: reubicar solo cuando cambia la cabecera; sin crear duplicados. */
+  let scheduled=false;
+  new MutationObserver(function(){
+    if(scheduled)return;
+    scheduled=true;
+    requestAnimationFrame(function(){scheduled=false;placeGift();});
+  }).observe(header,{childList:true,subtree:true});
+
+  /* El perfil muestra acciones que invocan los manejadores originales, nunca copias
+     de funciones de ajustes, ni accesos que el servidor no autorice. */
+  const overlay=document.createElement('div');
+  overlay.id='dfcLabProfileOverlay016';overlay.hidden=true;
+  overlay.innerHTML='<section class="dfc16-profile-panel" role="dialog" aria-modal="true" aria-label="Perfil y configuración"><div class="dfc16-profile-head"><strong>👤 Mi perfil</strong><button type="button" class="dfc16-profile-close" aria-label="Cerrar perfil">×</button></div><div class="dfc16-profile-summary" id="dfcLabProfileSummary016"></div><button type="button" class="dfc16-profile-action" id="dfcLabOpenSettings016">⚙️ Configuración</button><button type="button" class="dfc16-profile-action dfc16-profile-action-secondary" id="dfcLabEditProfile016">✎ Editar perfil</button></section>';
+  document.body.appendChild(overlay);
+  let priorFocus=null;
+  function close(){overlay.hidden=true;document.removeEventListener('keydown',onKey);priorFocus?.focus?.();}
+  function onKey(e){if(e.key==='Escape'){e.preventDefault();close();}}
+  function open(){
+    priorFocus=document.activeElement;
+    const summary=$('dfcLabProfileSummary016');
+    const name=($('dfc161Name')?.textContent||'Jugador').trim();
+    const id=($('dfc161PlayerId')?.textContent||'—').trim();
+    if(summary)summary.textContent=name+' · ID: '+id;
+    overlay.hidden=false;
+    document.addEventListener('keydown',onKey);
+    overlay.querySelector('.dfc16-profile-close')?.focus();
+  }
+  overlay.querySelector('.dfc16-profile-close').onclick=close;
+  overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
+  overlay.querySelector('#dfcLabOpenSettings016').onclick=()=>{
+    close();
+    // Control original con loadReferralStats y apertura de settingsPanel.
+    $('settingsBtn')?.click();
+  };
+  overlay.querySelector('#dfcLabEditProfile016').onclick=()=>{
+    close();
+    // Abrir primero los ajustes originales y desde allí la edición existente.
+    const native=$('editProfileBtn');
+    if(native)native.click();
+    else $('settingsBtn')?.click();
+  };
+  profile.setAttribute('role','button');profile.tabIndex=0;
+  profile.setAttribute('aria-label','Abrir perfil y configuración');
+  profile.addEventListener('click',function(e){
+    if(e.target.closest('#onlineUsersBtn,.dfc-lab-copy-id'))return;
+    e.preventDefault();e.stopImmediatePropagation();open();
+  },true);
+  profile.addEventListener('keydown',function(e){
+    if(e.target.closest('#onlineUsersBtn,.dfc-lab-copy-id'))return;
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopImmediatePropagation();open();}
+  },true);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
 </body>
 
 </html>
