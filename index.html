@@ -3000,7 +3000,10 @@ html.dfc-z29-boot-pending #authView:not(.hidden) {visibility:hidden!important;po
 <button data-dfc161-action="settingsBtn" type="button"><span>⚙</span><b>Ajustes</b></button>
 </section>
 <div aria-label="Accesos de la aplicación" class="dfc09-tools">
+<div class="dfc-lab-invite-column017" id="dfcLabInviteColumn017" aria-label="Regalos e invitaciones">
+<button id="dfcLabGiftCard008" class="dfc-lab-gift-permanent017" type="button" aria-label="Consultar tarjetas de regalo Flash Coin" title="Tarjetas de regalo Flash Coin"><span aria-hidden="true">🎁</span><small>REGALO FC</small></button>
 <button class="icon-btn invite-btn dfc09-tool" id="inviteBtn" type="button"><span aria-hidden="true" class="dfc09-tool-icon purple">🔗</span><span>Invitar</span></button>
+</div>
 <button class="icon-btn info-chip dfc09-tool" id="promotersInfoBtn" type="button"><span aria-hidden="true" class="dfc09-tool-icon sky">♟</span><span>Promotores<br/>Info</span></button>
 <button class="action blue dfc-open-send dfc09-tool dfc09-tool-send" id="dfcGiftOpen004" type="button"><span aria-hidden="true" class="dfc09-tool-icon aqua">➤</span><span>Enviar<br/>Flash Coin</span></button>
 <button class="icon-btn group-btn dfc09-tool" id="groupBtn" type="button"><span aria-hidden="true" class="dfc09-tool-icon indigo">◉</span><span>Grupo<br/>WhatsApp</span></button>
@@ -18489,12 +18492,21 @@ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{transform:none!importa
  let card=null,current=null,readyToClaim=false,painting=false,lastPoint=null,strokes=0;
  function toast(message){const e=$('dfcLabGiftStatus008');if(e)e.textContent=message;}
  function makeUI(){
-  const app=$('appView'),tools=app?.querySelector('.dfc09-head-tools');if(!tools)return;
+  const app=$('appView'),tools=app?.querySelector('.dfc09-head-tools');if(!app)return;
+  const invite=$('inviteBtn');
   if(!$('dfcLabGiftCard008')){
    card=document.createElement('button');card.type='button';card.id='dfcLabGiftCard008';card.title='Tarjetas de regalo Flash Coin';
    card.innerHTML='<span>🎁</span><small style="font-size:7px">REGALO</small>';card.dataset.pending='0';
-   tools.insertBefore(card,$('onlineUsersBtn')||null);card.addEventListener('click',()=>openGift(false));
-  }else card=$('dfcLabGiftCard008');
+   if(invite?.parentElement)invite.insertAdjacentElement('beforebegin',card);
+   else if(tools)tools.appendChild(card);
+   else app.appendChild(card);
+   card.addEventListener('click',()=>openGift(false));card.dataset.dfcGiftBound008='1';
+  }else {
+   card=$('dfcLabGiftCard008');
+   if(card.dataset.dfcGiftBound008!=='1'){
+     card.addEventListener('click',()=>openGift(false));card.dataset.dfcGiftBound008='1';
+   }
+  }
   if(!$('dfcLabGiftOverlay008')){
    const overlay=document.createElement('div');overlay.id='dfcLabGiftOverlay008';overlay.hidden=true;
    overlay.innerHTML='<div class="dfc-lab-gift-sheet" role="dialog" aria-modal="true" aria-label="Regalo Flash Coin"><div class="dfc-lab-gift-top"><strong>🎁 TARJETA FLASH COIN</strong><button class="dfc-lab-gift-close" type="button" aria-label="Regresar">←</button></div><p id="dfcLabGiftStatus008" class="dfc-lab-gift-muted">Consultando regalos...</p><div id="dfcLabGiftUser008"></div><div id="dfcLabGiftAdmin008" hidden><h3>Administración · Regalo programado</h3><label>ID de usuario <input id="dfcLabGiftRecipient008" placeholder="UUID del usuario" autocomplete="off"></label><label>Cantidad FC <input id="dfcLabGiftAmount008" type="number" min="0.001" step="0.001" placeholder="0.200"></label><label>Disponible desde <input id="dfcLabGiftStart008" type="datetime-local"></label><label>Válido hasta <input id="dfcLabGiftEnd008" type="datetime-local"></label><button class="dfc-lab-gift-action" id="dfcLabGiftIssue008" type="button">Crear tarjeta</button></div></div>';
@@ -20003,8 +20015,8 @@ body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools #dfcLabGiftCard008{
      if(gift){
        gift.hidden=false;gift.removeAttribute('hidden');
        gift.setAttribute('aria-label','Consultar tarjetas de regalo Flash Coin');
-       if(balance&&gift.previousElementSibling!==balance)balance.insertAdjacentElement('afterend',gift);
-       else if(!balance&&gift.parentElement!==tools)tools.prepend(gift);
+       // LAB 0.17: la tarjeta tiene un único lugar, sobre Invitar; no mover al saldo.
+       void balance;
      }
    }
    ensureGift();
@@ -20119,11 +20131,8 @@ function init(){
     gift.removeAttribute('hidden');
     gift.setAttribute('aria-label','Abrir tarjetas de regalo Flash Coin');
     gift.title='Consultar tarjetas de regalo Flash Coin';
-    if(balance&&balance.parentElement===tools){
-      if(gift.parentElement!==tools||balance.nextElementSibling!==gift){
-        balance.insertAdjacentElement('afterend',gift);
-      }
-    }else if(gift.parentElement!==tools){tools.appendChild(gift);}
+    // LAB 0.17: anclaje exclusivamente encima de Invitar; no volver a cabecera.
+    void balance;
   }
   placeGift();
   /* Supervisión controlada: reubicar solo cuando cambia la cabecera; sin crear duplicados. */
@@ -20179,6 +20188,107 @@ function init(){
   },true);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script>
+
+<style id="dfc-laboratorio-visual-017">
+/* LAB 0.17: tarjeta regalo permanentemente visible SOBRE Invitar.
+   No depende del saldo, de permisos de regalo, ni de la conexión a Supabase. */
+body.dfc-lab-visual #appView #dfcLabInviteColumn017{
+  display:flex!important;flex-flow:column nowrap!important;align-items:center!important;
+  justify-content:flex-start!important;gap:8px!important;min-width:0!important;
+  width:100%!important;max-width:140px!important;box-sizing:border-box!important;
+  position:relative!important;z-index:8!important;
+  overflow:visible!important;flex-shrink:0!important;
+}
+body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008{
+  display:flex!important;visibility:visible!important;opacity:1!important;
+  position:relative!important;inset:auto!important;float:none!important;
+  order:0!important;flex:0 0 auto!important;width:clamp(80px,10vw,112px)!important;
+  min-width:80px!important;max-width:112px!important;height:60px!important;
+  min-height:60px!important;max-height:none!important;
+  margin:0!important;padding:8px 6px!important;box-sizing:border-box!important;
+  align-items:center!important;justify-content:center!important;flex-flow:column nowrap!important;
+  gap:2px!important;text-align:center!important;cursor:pointer!important;
+  color:#f4faff!important;border-radius:12px!important;
+  border:1.5px solid #7addff!important;
+  background:linear-gradient(135deg,#144a89 0%,#082449 62%,#126287 100%)!important;
+  box-shadow:inset 0 1px 0 #ffffff50,0 4px 12px #001c40ba!important;
+  pointer-events:auto!important;z-index:11!important;
+  animation:dfcLabGiftBounce017 3s ease-in-out infinite!important;
+}
+body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008 span{
+  display:block!important;font-size:25px!important;line-height:28px!important;
+}
+body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008 small{
+  display:block!important;font-size:10px!important;font-weight:900!important;
+  line-height:12px!important;letter-spacing:.35px!important;color:#f1f9ff!important;
+}
+body.dfc-lab-visual #appView #dfcLabInviteColumn017 #inviteBtn{
+  order:1!important;position:relative!important;inset:auto!important;
+  margin:0!important;width:100%!important;min-width:0!important;
+  align-self:stretch!important;flex:0 0 auto!important;
+}
+@keyframes dfcLabGiftBounce017{
+  0%,76%,100%{transform:translateY(0)}
+  82%{transform:translateY(-8px)}
+  89%{transform:translateY(0)}
+  94%{transform:translateY(-2px)}
+}
+@media (orientation:portrait){
+  body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{
+    height:auto!important;align-items:start!important;
+  }
+  body.dfc-lab-visual #appView #dfcLabInviteColumn017{
+    width:100%!important;max-width:none!important;justify-self:center!important;
+  }
+  body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008{
+    width:min(100%,105px)!important;min-width:0!important;height:55px!important;min-height:55px!important;
+  }
+}
+@media (orientation:landscape) and (max-height:470px){
+  body.dfc-lab-visual #appView #dfcLabInviteColumn017{gap:4px!important}
+  body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008{
+    height:46px!important;min-height:46px!important;padding:3px!important;
+  }
+  body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008 span{
+    font-size:21px!important;line-height:23px!important;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+ body.dfc-lab-visual #appView #dfcLabInviteColumn017 #dfcLabGiftCard008{animation:none!important}
+}
+</style>
+
+<script id="dfc-laboratorio-visual-js-017">
+(function(){'use strict';
+ function ensurePermanentLocation(){
+  const invite=document.getElementById('inviteBtn');
+  const column=document.getElementById('dfcLabInviteColumn017');
+  const gift=document.getElementById('dfcLabGiftCard008');
+  if(!invite||!column||!gift)return;
+  if(gift.parentElement!==column)column.insertBefore(gift,invite);
+  gift.hidden=false;gift.removeAttribute('hidden');
+  gift.setAttribute('aria-label','Consultar tarjetas de regalo Flash Coin');
+  gift.title='Tarjetas de regalo Flash Coin';
+  // El módulo 0.08 instala el manejador original de apertura del panel.
+  if(typeof window.dfcLabEnsureGift008==='function'&&gift.dataset.dfcGiftBound008!=='1'){
+   window.dfcLabEnsureGift008();
+  }
+ }
+ function boot(){
+  ensurePermanentLocation();
+  // Observación limitada al contenedor: sin competir con observadores de la cabecera.
+  const col=document.getElementById('dfcLabInviteColumn017');
+  if(!col)return;
+  let scheduled=false;
+  new MutationObserver(()=>{
+    if(scheduled)return;scheduled=true;
+    requestAnimationFrame(()=>{scheduled=false;ensurePermanentLocation();});
+  }).observe(col,{childList:true});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});
+ else boot();
 })();
 </script>
 </body>
