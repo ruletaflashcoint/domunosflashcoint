@@ -18555,7 +18555,8 @@ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{transform:none!importa
    toast('Tarjeta programada en Supabase.');
   }catch(e){toast('No se creó la tarjeta: '+e.message)}finally{b.disabled=false}
  }
- function init(){makeUI();refresh();document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});}
+ window.dfcLabEnsureGift008=makeUI;window.dfcLabOpenGift008=function(){openGift(false)};
+  function init(){makeUI();refresh();document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
@@ -19868,6 +19869,152 @@ body.dfc-lab-visual #appView #groupBtn .dfc012x-wa-logo{
     // Conservar nodos, eventos de saldo, mesas y WhatsApp, sin reemplazarlos.
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
+</script>
+
+<style id="dfc-laboratorio-visual-015">
+/* LAB VISUAL 0.15 · presentación, sin cambios en RPC, aportes o balances. */
+/* Las acciones siempre tienen una franja reservada, también en las mesas con texto largo. */
+body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006){
+  box-sizing:border-box!important;
+  justify-content:flex-start!important;
+  padding:clamp(8px,1.5vh,15px) clamp(9px,1.3vw,18px) 66px!important;
+  gap:clamp(2px,.65vh,6px)!important;
+  overflow:hidden!important;
+  min-height:min(225px,100%)!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006) .dfc13-actions{
+  position:absolute!important;left:9px!important;right:9px!important;bottom:10px!important;
+  width:auto!important;max-width:none!important;
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:7px!important;margin:0!important;padding:0!important;
+  z-index:100!important;opacity:1!important;visibility:visible!important;
+  transform:none!important;filter:none!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006) .dfc13-actions button{
+  display:flex!important;min-width:0!important;min-height:36px!important;height:auto!important;
+  padding:6px 3px!important;font-size:clamp(10px,1.2vw,13px)!important;
+  white-space:normal!important;line-height:1.1!important;text-align:center!important;
+  pointer-events:auto!important;opacity:1!important;visibility:visible!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006) :is(.dfc28-room-head,.dfc28-room-meta,.dfc28-room-price,.domino-premium-card-head,.domino-premium-card-body){
+  flex:0 1 auto!important;min-height:0!important;max-height:none!important;
+}
+/* Panel ampliado: botones visibles al final de todos los datos. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006 .dfc13-actions{
+  position:sticky!important;bottom:0!important;left:auto!important;right:auto!important;
+  width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important;
+  margin-top:auto!important;padding:7px 0!important;z-index:100!important;
+  background:linear-gradient(transparent,#061a30e8 35%)!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006 .dfc13-actions button{
+  display:flex!important;opacity:1!important;visibility:visible!important;min-height:39px!important;
+}
+/* Ubicación inferior segura: la versión queda casi pegada al borde sin cortar el texto. */
+#dfcZ161Version{
+  bottom:calc(1px + env(safe-area-inset-bottom,0px))!important;
+  padding:1px 8px!important;
+  max-width:70vw!important;
+  line-height:1.1!important;
+  font-size:9px!important;
+}
+/* Botón independiente Ver mesas más abajo, por encima de la versión web. */
+body.dfc-lab-visual #dfcLabFloatingTables004,
+body.dfc-lab-visual:has(#appView:not(.hidden)) #dfcLabFloatingTables004{
+  bottom:calc(19px + env(safe-area-inset-bottom,0px))!important;
+  top:auto!important;transform:none!important;
+  right:max(6px,env(safe-area-inset-right,0px))!important;
+  z-index:140!important;
+}
+/* Tarjeta de regalos: SIEMPRE visible junto al saldo, aunque no existan regalos. */
+body.dfc-lab-visual #appView .dfc09-header .dfc09-head-tools #dfcLabGiftCard008{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;
+  flex:0 0 50px!important;width:50px!important;min-width:50px!important;
+  height:33px!important;min-height:33px!important;
+  position:relative!important;order:1!important;margin:0 2px!important;
+  align-items:center!important;justify-content:center!important;flex-direction:column!important;
+  background:linear-gradient(145deg,#217cbd,#102858 65%,#11558b)!important;
+  border:1px solid #9ed7ff!important;border-radius:7px!important;
+  color:#fff!important;cursor:pointer!important;z-index:25!important;
+  animation:dfcLabGiftBounce015 3s ease-in-out infinite!important;
+}
+@keyframes dfcLabGiftBounce015{
+  0%,76%,100%{transform:translateY(0)}82%{transform:translateY(-7px)}89%{transform:translateY(0)}94%{transform:translateY(-2px)}
+}
+@media (orientation:landscape) and (max-height:470px){
+  body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006){
+    min-height:min(185px,100%)!important;padding:5px 8px 48px!important;
+  }
+  body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006) .dfc13-actions{
+    left:6px!important;right:6px!important;bottom:6px!important;gap:5px!important;
+  }
+  body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006) .dfc13-actions button{
+    min-height:30px!important;font-size:10px!important;padding:3px 2px!important;
+  }
+}
+@media(orientation:portrait){
+  body.dfc-lab-visual #appView #dominoLobbyModes > :is(.dfc28-room,.domino-choice-card):not(.dfc-lab-expanded006){
+    min-height:270px!important;padding:12px 12px 65px!important;
+  }
+  body.dfc-lab-visual #dfcLabFloatingTables004,
+  body.dfc-lab-visual:has(#appView:not(.hidden)) #dfcLabFloatingTables004{
+    bottom:calc(21px + env(safe-area-inset-bottom,0px))!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+ body.dfc-lab-visual #appView #dfcLabGiftCard008{animation:none!important}
+}
+</style>
+
+<script id="dfc-laboratorio-visual-js-015">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ function boot(){
+   const app=$('appView');if(!app)return;
+   const host=$('dominoLobbyModes');
+   if(host){
+     // Cuando las tarjetas cambian dinámicamente, añadir la misma pareja de controles.
+     // No se altera el evento existente: el LAB 0.13 delega los clics al control nativo.
+     const repair=()=>{
+       for(const card of host.querySelectorAll(':scope > .dfc28-room, :scope > .domino-choice-card')){
+         const native=card.querySelector('.dfc28-room-play,.domino-join-mode');
+         if(!native)continue;
+         let actions=card.querySelector('.dfc13-actions');
+         if(!actions){
+           actions=document.createElement('div');actions.className='dfc13-actions';
+           actions.innerHTML='<button type="button" class="dfc13-view" aria-label="Ver mesa como espectador">👁 Ver mesa</button><button type="button" class="dfc13-seat" aria-label="Abrir confirmación para sentarse">🪑 Sentarse</button>';
+           card.append(actions);
+         }
+       }
+     };
+     repair();
+     new MutationObserver(repair).observe(host,{childList:true,subtree:false});
+   }
+   const header=app.querySelector('.dfc09-header');
+   const tools=header?.querySelector('.dfc09-head-tools');
+   if(!header||!tools)return;
+   // Usar la tarjeta y el panel reales del LAB 0.08; no crear premio ni saldo ficticios.
+   function ensureGift(){
+     let gift=$('dfcLabGiftCard008');
+     if(!gift&&typeof window.dfcLabEnsureGift008==='function'){
+       window.dfcLabEnsureGift008();gift=$('dfcLabGiftCard008');
+     }
+     const balance=$('balanceBtn');
+     if(gift){
+       gift.hidden=false;gift.removeAttribute('hidden');
+       gift.setAttribute('aria-label','Consultar tarjetas de regalo Flash Coin');
+       if(balance&&gift.previousElementSibling!==balance)balance.insertAdjacentElement('afterend',gift);
+       else if(!balance&&gift.parentElement!==tools)tools.prepend(gift);
+     }
+   }
+   ensureGift();
+   let scheduled=false;
+   new MutationObserver(()=>{
+     if(scheduled)return;scheduled=true;
+     requestAnimationFrame(()=>{scheduled=false;ensureGift()});
+   }).observe(header,{childList:true,subtree:true});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
 </script>
 </body>
