@@ -3001,7 +3001,7 @@ html.dfc-z29-boot-pending #authView:not(.hidden) {visibility:hidden!important;po
 </section>
 <div aria-label="Accesos de la aplicación" class="dfc09-tools">
 <div class="dfc-lab-invite-column017" id="dfcLabInviteColumn017" aria-label="Regalos e invitaciones">
-<button id="dfcLabGiftCard008" class="dfc-lab-gift-permanent017" type="button" aria-label="Consultar tarjetas de regalo Flash Coin" title="Tarjetas de regalo Flash Coin"><span aria-hidden="true">🎁</span><small>REGALO FC</small></button>
+<button id="dfcLabGiftCard018" class="dfc-lab-gift-permanent018" type="button" aria-label="Consultar tarjetas de regalo Flash Coin" title="Tarjetas de regalo Flash Coin"><span aria-hidden="true">🎁</span><small>REGALO FC</small></button>
 <button class="icon-btn invite-btn dfc09-tool" id="inviteBtn" type="button"><span aria-hidden="true" class="dfc09-tool-icon purple">🔗</span><span>Invitar</span></button>
 </div>
 <button class="icon-btn info-chip dfc09-tool" id="promotersInfoBtn" type="button"><span aria-hidden="true" class="dfc09-tool-icon sky">♟</span><span>Promotores<br/>Info</span></button>
@@ -20287,8 +20287,83 @@ body.dfc-lab-visual #appView #dfcLabInviteColumn017 #inviteBtn{
     requestAnimationFrame(()=>{scheduled=false;ensurePermanentLocation();});
   }).observe(col,{childList:true});
  }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});
- else boot();
+ // LAB 0.18: controlador de posición 0.17 desactivado; ya no se mueve el botón histórico.
+})();
+</script>
+<style id="dfc-laboratorio-visual-018">
+/* Interfaz nueva, sin reutilizar el id que manipulan 0.08/0.12/0.15/0.16.
+   El botón histórico se conserva para panel/consultas pero no se muestra duplicado. */
+body #appView #dfcLabGiftCard008{display:none!important}
+body #dfcLabGiftCard018{
+  display:flex!important;visibility:visible!important;opacity:1!important;
+  align-items:center!important;justify-content:center!important;
+  flex-direction:column!important;gap:2px!important;
+  box-sizing:border-box!important;position:fixed!important;
+  z-index:2147483200!important;
+  width:clamp(82px,10vw,116px)!important;height:58px!important;
+  padding:6px!important;margin:0!important;
+  background:linear-gradient(132deg,#1467ab,#082953 63%,#115f90)!important;
+  border:1.5px solid #89e6ff!important;border-radius:13px!important;
+  color:#f4faff!important;box-shadow:0 5px 13px #0008,inset 0 1px 0 #ffffff55!important;
+  cursor:pointer!important;pointer-events:auto!important;
+  animation:dfcLabGiftBounce018 3s ease-in-out infinite!important;
+}
+body #dfcLabGiftCard018[hidden]{display:none!important}
+body #dfcLabGiftCard018 span{font-size:26px!important;line-height:27px!important}
+body #dfcLabGiftCard018 small{font-size:10px!important;line-height:12px!important;font-weight:900!important;color:#fff!important}
+@keyframes dfcLabGiftBounce018{0%,76%,100%{transform:translateY(0)}83%{transform:translateY(-7px)}91%{transform:translateY(0)}}
+@media(max-height:510px){body #dfcLabGiftCard018{height:44px!important;padding:2px!important}body #dfcLabGiftCard018 span{font-size:20px!important;line-height:21px!important}}
+@media(prefers-reduced-motion:reduce){body #dfcLabGiftCard018{animation:none!important}}
+/* Dejar margen superior para la tarjeta en el bloque de invitaciones, manteniendo los otros controles. */
+body.dfc-lab-visual #appView #dfcLabInviteColumn017{overflow:visible!important}
+</style>
+<script id="dfc-laboratorio-visual-js-018">
+(function(){'use strict';
+  const $=id=>document.getElementById(id);
+  const b=$('dfcLabGiftCard018');
+  if(!b)return;
+  // Portalar únicamente el botón visible fuera de contenedores del carrusel que recortan por overflow.
+  // El botón original de LAB 0.08 mantiene las funciones RPC y de panel intactas.
+  document.body.appendChild(b);
+  let previous=null;
+  function locate(){
+    const invite=$('inviteBtn');
+    const app=$('appView');
+    const hiddenApp=!app||app.hidden||app.classList.contains('hidden')||getComputedStyle(app).display==='none';
+    if(hiddenApp||!invite||!invite.getClientRects().length){b.hidden=true;return;}
+    const r=invite.getBoundingClientRect();
+    if(r.width<8||r.height<8||r.bottom<0||r.top>innerHeight){b.hidden=true;return;}
+    b.hidden=false;
+    const w=Math.min(116,Math.max(82,Math.round(r.width)));
+    const h=innerHeight<=510?44:58;
+    let left=r.left+(r.width-w)/2;
+    let top=r.top-h-7;
+    left=Math.max(4,Math.min(innerWidth-w-4,left));
+    // Si la cabecera deja poco espacio, mantenemos el botón accesible evitando sacarlo del viewport.
+    top=Math.max(4,Math.min(innerHeight-h-4,top));
+    const pos=[left,top,w].map(Math.round).join(':');
+    if(previous!==pos){b.style.left=left+'px';b.style.top=top+'px';b.style.width=w+'px';previous=pos;}
+  }
+  b.addEventListener('click',function(e){
+    e.preventDefault();e.stopPropagation();
+    if(typeof window.dfcLabOpenGift008==='function'){
+      window.dfcLabOpenGift008();
+    }else{
+      const overlay=$('dfcLabGiftOverlay008');
+      if(overlay){overlay.hidden=false;}
+      else alert('El panel de regalos todavía no está disponible. Vuelve a iniciar sesión.');
+    }
+  });
+  // Controlador independiente: no traslada la tarjeta histórica ni modifica saldos.
+  const observer=new MutationObserver(locate);
+  const app=$('appView');
+  if(app)observer.observe(app,{attributes:true,attributeFilter:['class','hidden']});
+  addEventListener('resize',locate,{passive:true});
+  addEventListener('orientationchange',locate,{passive:true});
+  addEventListener('scroll',locate,{capture:true,passive:true});
+  if('ResizeObserver' in window){const invite=$('inviteBtn');if(invite)new ResizeObserver(locate).observe(invite);}
+  setInterval(locate,1000);
+  locate();
 })();
 </script>
 </body>
