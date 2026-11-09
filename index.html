@@ -19382,16 +19382,7 @@ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006{
    host.dataset.labOpen012='1';
    // El panel de compra original ya incluye "Ver mesa" y "Confirmar y sentarme".
    // Nunca sentar directamente ni ejecutar cobros desde este controlador visual.
-   host.addEventListener('click',ev=>{
-     if(ev.target.closest('button,a,input,select,textarea'))return;
-     const card=ev.target.closest('.dfc28-room,.domino-choice-card');
-     if(!card||card.parentElement!==host||card.classList.contains('dfc-lab-expanded006'))return;
-     if(!card.classList.contains('dfc-lab-focused007'))return; // La mesa lateral solo se centra.
-     const original=card.querySelector('.dfc28-room-play,.domino-join-mode');
-     if(!original)return; // Si no hay acción real, conservar detalles originales del laboratorio.
-     ev.preventDefault();ev.stopImmediatePropagation();
-     original.click(); // Abre el flujo existente, con ambas acciones y validación del servidor.
-   },true);
+   // LAB 0.13: tap on card body uses existing LAB 0.06 expansion controller.
    const mark=()=>{
      for(const c of host.querySelectorAll(cardsSelector)){
        if(c.dataset.labTitle012)continue;
@@ -19404,6 +19395,262 @@ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006{
    new MutationObserver(mark).observe(host,{childList:true});
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
+</script>
+<style id="dfc-laboratorio-visual-013">
+/* LAB 0.13: Presentación exclusivamente. Economía, saldos, juego y RPC intactos. */
+body.dfc-lab-visual #appView{
+  height:100dvh!important;min-height:100dvh!important;max-height:100dvh!important;
+  overflow:hidden!important;box-sizing:border-box!important;
+  background-image:var(--dfc-z26-official-wallpaper)!important;
+  background-size:cover!important;background-position:center!important;
+}
+body.dfc-lab-visual #appView .dfc09-shell{
+  width:100%!important;max-width:none!important;height:100%!important;max-height:100%!important;
+  box-sizing:border-box!important;padding:3px clamp(5px,1vw,13px) 6px!important;
+  display:flex!important;flex-direction:column!important;gap:3px!important;
+  overflow:hidden!important;background:transparent!important;
+}
+body.dfc-lab-visual #appView .dfc09-header{
+  flex:0 0 auto!important;margin:0!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004{
+  flex:1 1 auto!important;min-height:0!important;max-height:none!important;height:auto!important;
+  display:grid!important;grid-template-columns:clamp(98px,15vw,170px) minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr)!important;align-items:stretch!important;
+  margin:0!important;gap:clamp(3px,.8vw,11px)!important;overflow:visible!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools{
+  min-height:0!important;height:100%!important;justify-content:center!important;
+  gap:clamp(4px,2vh,13px)!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms{
+  min-width:0!important;min-height:0!important;height:100%!important;max-height:none!important;
+  display:flex!important;flex-direction:column!important;justify-content:flex-start!important;
+  border:0!important;border-radius:0!important;padding:0 3px 4px!important;
+  background:transparent!important;overflow:visible!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms::before,
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-rooms::after{
+  content:none!important;display:none!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-section-heading{
+  flex:0 0 auto!important;min-height:clamp(25px,7vh,38px)!important;
+}
+body.dfc-lab-visual #appView #dfcLabStage004 #dfcLabRefresh{
+  position:absolute!important;right:7px!important;bottom:6px!important;
+  z-index:25!important;
+}
+/* El carrusel ahora usa el espacio restante del viewport en lugar de una franja fija. */
+body.dfc-lab-visual #appView #dominoLobbyModes{
+  display:flex!important;flex:1 1 auto!important;
+  flex-flow:row nowrap!important;align-items:center!important;min-height:0!important;
+  height:100%!important;max-height:none!important;
+  width:100%!important;margin:0!important;
+  padding:clamp(5px,2vh,16px) max(6px,calc(50% - min(19vw,195px))) clamp(18px,3vh,28px)!important;
+  scroll-padding-inline:calc(50% - min(19vw,195px))!important;
+  gap:clamp(5px,1.4vw,18px)!important;
+  overflow-x:auto!important;overflow-y:hidden!important;
+  scroll-snap-type:x mandatory!important;touch-action:pan-x!important;
+  box-sizing:border-box!important;
+}
+/* Tarjetas de póker apoyadas sobre el fondo integrado de la app, no emojis. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex:0 0 clamp(235px,38vw,390px)!important;
+  width:clamp(235px,38vw,390px)!important;
+  min-width:235px!important;max-width:390px!important;
+  height:min(100%,clamp(195px,66dvh,420px))!important;
+  min-height:min(190px,66dvh)!important;
+  max-height:100%!important;
+  display:flex!important;flex-direction:column!important;
+  align-items:stretch!important;justify-content:center!important;
+  gap:clamp(5px,1.5vh,10px)!important;
+  padding:clamp(11px,2.5vh,22px)!important;
+  overflow:hidden!important;
+  border:1px solid #d2b370b8!important;border-radius:clamp(15px,2vw,26px)!important;
+  background-image:linear-gradient(165deg,rgba(1,13,30,.22),rgba(0,15,27,.54) 58%,rgba(2,18,32,.83)),var(--dfc-z26-official-wallpaper)!important;
+  background-size:cover!important;background-position:center!important;
+  box-shadow:inset 0 0 0 1px #a6e8ff26,0 12px 25px #001328a8!important;
+  transform:scale(.68)!important;transform-origin:center!important;
+  opacity:.79!important;filter:saturate(.82)!important;
+  scroll-snap-align:center!important;
+  transition:transform .32s ease,opacity .32s ease,filter .32s ease!important;
+  position:relative!important;isolation:isolate!important;
+  cursor:zoom-in!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room.dfc-lab-focused007:not(.dfc-lab-expanded006),
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card.dfc-lab-focused007:not(.dfc-lab-expanded006){
+  transform:scale(1)!important;opacity:1!important;filter:drop-shadow(0 4px 14px #00beec66)!important;
+  border-color:#69e9bc!important;z-index:5!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)::before,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)::before,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)::after,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)::after{
+  content:none!important;display:none!important;
+}
+/* Mostrar TODOS los detalles reales: nombre, modalidad, estado, plazas y entrada. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{
+  display:flex!important;position:relative!important;z-index:2!important;
+  width:100%!important;max-width:none!important;max-height:none!important;
+  overflow:visible!important;margin:0!important;
+  padding:clamp(3px,.8vh,8px)!important;
+  text-align:center!important;align-items:center!important;justify-content:center!important;
+  background:rgba(1,17,35,.50)!important;border:0!important;border-radius:9px!important;
+  box-shadow:none!important;color:#f2fbff!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head{
+  flex-direction:column!important;gap:3px!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head small,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head p{
+  display:block!important;font-size:clamp(10px,1.3vw,13px)!important;color:#b9f6d5!important;
+  white-space:normal!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-head strong,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-head h3{
+  font-size:clamp(15px,2vw,23px)!important;color:white!important;
+  text-shadow:0 2px 4px #000!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-meta{
+  display:flex!important;flex-flow:row wrap!important;gap:5px!important;font-size:clamp(10px,1.1vw,13px)!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price{
+  display:block!important;font-size:clamp(10px,1.1vw,13px)!important;
+  color:#c9e9ff!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-price strong{
+  display:inline!important;font-size:clamp(14px,1.8vw,19px)!important;color:#ffe09e!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-body{
+  flex-direction:column!important;font-size:11px!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .table-stats{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  font-size:clamp(9px,1vw,12px)!important;
+}
+/* No duplicar fondo dentro de la imagen; usar siempre la imagen original como fondo de tarjeta. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006) .dfc28-room-scene,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006) .domino-premium-card-visual{
+  display:none!important;
+}
+/* Acciones visibles y separadas del gesto de ampliación. */
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc13-actions{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:clamp(5px,1vw,11px)!important;width:100%!important;
+  margin:5px 0 0!important;padding:0!important;
+  position:relative!important;z-index:10!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc13-actions button{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  min-height:clamp(33px,7vh,45px)!important;height:auto!important;
+  width:100%!important;padding:5px 6px!important;margin:0!important;
+  border:1px solid #bde8ff!important;border-bottom:2px solid #08293c!important;
+  border-radius:11px!important;box-shadow:0 3px 7px #0008!important;
+  color:white!important;font-weight:850!important;font-size:clamp(10px,1.25vw,13px)!important;
+  white-space:nowrap!important;cursor:pointer!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc13-view{background:linear-gradient(#258fd7,#065487)!important}
+body.dfc-lab-visual #appView #dominoLobbyModes .dfc13-seat{background:linear-gradient(#35be7b,#087448)!important}
+/* Botón original oculto VISUALMENTE; sigue activo para la lógica de selección y confirmación. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006)>.dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006)>.domino-join-mode{
+  position:absolute!important;width:1px!important;height:1px!important;min-height:1px!important;
+  padding:0!important;margin:0!important;border:0!important;
+  opacity:0!important;overflow:hidden!important;pointer-events:none!important;
+}
+/* Zoom del panel antiguo conservado, con fondo de la misma aplicación. */
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006{
+  min-width:min(430px,92vw)!important;max-width:min(500px,94vw)!important;
+  height:auto!important;max-height:min(82dvh,650px)!important;
+  border:2px solid #75e9c3!important;border-radius:22px!important;
+  padding:20px!important;overflow:auto!important;
+  background-image:linear-gradient(#04152cc2,#031527e5),var(--dfc-z26-official-wallpaper)!important;
+  background-size:cover!important;background-position:center!important;
+}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006 .dfc13-actions{margin-top:8px!important}
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006>.dfc28-room-play,
+body.dfc-lab-visual #appView #dominoLobbyModes>.dfc-lab-expanded006>.domino-join-mode{display:none!important}
+/* Eliminar líneas / paneles vacíos inferiores que competían con el carrusel. */
+body.dfc-lab-visual #appView .dfc09-footer-meta,
+body.dfc-lab-visual #appView .dfc09-room-note,
+body.dfc-lab-visual #appView .dfc09-room-preview,
+body.dfc-lab-visual #appView .dfc09-app-nav{display:none!important}
+@media(orientation:landscape) and (max-height:470px){
+ body.dfc-lab-visual #appView #dfcLabStage004 .dfc09-tools .dfc09-tool{
+  min-height:31px!important;height:31px!important;padding:2px 5px!important;
+ }
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  height:100%!important;min-height:160px!important;padding:8px 11px!important;gap:3px!important;
+ }
+ body.dfc-lab-visual #appView #dominoLobbyModes .dfc13-actions button{min-height:29px!important;font-size:10px!important}
+}
+@media(max-width:740px){
+ body.dfc-lab-visual #appView #dfcLabStage004{grid-template-columns:clamp(82px,15vw,116px) minmax(0,1fr)!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes{padding-inline:max(5px,calc(50% - 128px))!important;scroll-padding-inline:calc(50% - 128px)!important}
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room:not(.dfc-lab-expanded006),
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card:not(.dfc-lab-expanded006){
+  flex-basis:256px!important;width:256px!important;min-width:256px!important;max-width:256px!important;
+  height:100%!important;min-height:170px!important;padding:8px!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ body.dfc-lab-visual #appView #dominoLobbyModes>.dfc28-room,
+ body.dfc-lab-visual #appView #dominoLobbyModes>.domino-choice-card{transition:none!important}
+}
+</style>
+<script id="dfc-laboratorio-visual-js-013">
+(function(){'use strict';
+ const $=id=>document.getElementById(id);
+ const selector=':scope > .dfc28-room, :scope > .domino-choice-card';
+ function init(){
+   const host=$('dominoLobbyModes');if(!host||host.dataset.dfcLab013)return;
+   host.dataset.dfcLab013='1';
+   function decorate(){
+     for(const card of host.querySelectorAll(selector)){
+       const native=card.querySelector('.dfc28-room-play,.domino-join-mode');
+       if(!native){continue;}
+       let buttons=card.querySelector('.dfc13-actions');
+       if(!buttons){
+         buttons=document.createElement('div');buttons.className='dfc13-actions';
+         const view=document.createElement('button');view.type='button';view.className='dfc13-view';
+         view.textContent='👁 Ver mesa';view.setAttribute('aria-label','Ver mesa como espectador');
+         const seat=document.createElement('button');seat.type='button';seat.className='dfc13-seat';
+         seat.textContent='🪑 Sentarse';seat.setAttribute('aria-label','Abrir confirmación para sentarse');
+         buttons.append(view,seat);card.append(buttons);
+       }
+     }
+   }
+   function forward(native,view){
+     if(!native||native.disabled)return;
+     // Trigger the original config/table-selection handler. No financial action takes place here.
+     native.click();
+     if(view){
+       // The existing spectator control handles its own backend validations.
+       const modal=$('dominoBuyinPanel');
+       const originalView=$('dfc28ViewTableBtn');
+       if(originalView&&modal?.classList.contains('active'))originalView.click();
+     }
+   }
+   host.addEventListener('click',function(e){
+     const b=e.target.closest('.dfc13-view,.dfc13-seat');
+     if(!b)return;
+     const card=b.closest('.dfc28-room,.domino-choice-card');
+     if(!card)return;
+     e.preventDefault();e.stopPropagation();
+     forward(card.querySelector('.dfc28-room-play,.domino-join-mode'),b.classList.contains('dfc13-view'));
+   },true);
+   // Added buttons do not hijack clicks on background or info: native LAB 0.06 opens expansion.
+   decorate();
+   new MutationObserver(decorate).observe(host,{childList:true,subtree:false});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
 </body>
